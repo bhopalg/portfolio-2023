@@ -1,3 +1,16 @@
+import { Hero } from "@/components/hero";
+
 export default function Home() {
-  return <h1>Hello World</h1>;
+  return (
+    <>
+      <section>
+        <Hero />
+      </section>
+      <section id={"section-2"}>
+        <div className={"w-full h-screen bg-black"}>
+          <h1>sis</h1>
+        </div>
+      </section>
+    </>
+  );
 }
