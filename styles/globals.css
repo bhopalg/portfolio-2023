@@ -11,3 +11,7 @@
 html {
     scroll-behavior: smooth;
 }
+
+.animate-spin-speed-override {
+    animation-duration: 3s;
+}
