@@ -29,7 +29,7 @@ export function Hero() {
           </div>
         </Transition>
       </div>
-      <div className={"absolute w-full h-screen flex z-20 text-white items-center md:px-36"}>
+      <div className={"absolute w-full h-screen flex z-20 text-white items-center px-10 md:px-36"}>
         <div className={"md:max-w-7xl w-full hero-text-typer justify-center flex flex-col"}>
           <HackerText />
           <a
