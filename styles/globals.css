@@ -15,3 +15,7 @@ html {
 .animate-spin-speed-override {
     animation-duration: 3s;
 }
+
+.filter-white {
+    filter: invert(87%) sepia(100%) saturate(0%) hue-rotate(178deg) brightness(111%) contrast(105%);
+}
