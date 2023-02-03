@@ -35,7 +35,7 @@ export function Frameworks() {
   return (
     <div className={"row-span-1 grid grid-cols-1 gap-6 md:grid-cols-2"}>
       {frameworks.map(({ image, animate, alt, height, width }) => (
-        <div key={alt} className={"col-span-1 bg-gray-100 rounded-xl flex justify-center items-center py-8"}>
+        <div key={alt} className={"col-span-1 bg-gray-200 rounded-xl flex justify-center items-center py-8"}>
           <Image
             src={image}
             alt={alt}
