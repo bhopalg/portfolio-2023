@@ -1,3 +1,44 @@
+import Image from "next/image";
+
+const frameworks = [
+  {
+    image: "angular-icon.svg",
+    alt: "Angular",
+    width: 60,
+    height: 60,
+  },
+  {
+    image: "microsoft-azure.svg",
+    alt: "Azure",
+    width: 110,
+    height: 110,
+  },
+  {
+    image: "logo-javascript.svg",
+    alt: "JavaScript",
+    width: 60,
+    height: 60,
+  },
+  {
+    image: "golang.svg",
+    alt: "GoLang",
+    width: 60,
+    height: 60,
+  },
+];
+
+function Frameworks() {
+  return (
+    <div className={"grid grid-cols-1 gap-6 sm:grid-cols-2"}>
+      {frameworks.map(({ image, height, width, alt }) => (
+        <div className={"col-span-1 bg-gray-200 rounded-xl flex justify-center items-center py-8"} key={image}>
+          <Image src={image} alt={alt} width={width} height={height} />
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export function Experience() {
   return (
     <div className={"col-span-1 h-full bg-inherit flex flex-col gap-5"}>
@@ -22,6 +63,7 @@ export function Experience() {
         </h1>
         <p className={"font-spaceMono font-thin pt-8"}>for a large user base.</p>
       </div>
+      <Frameworks />
     </div>
   );
 }
