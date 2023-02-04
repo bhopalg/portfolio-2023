@@ -18,9 +18,25 @@ export default function Home() {
             <Image src={"/computer.jpg"} className={"rounded-xl w-full"} alt={"Gurps"} width={250} height={250} />
           </div>
           <div className={"col-span-1 h-full grid grid-cols-1 gap-6"}>
+            <div className={"col-span-1 bg-gray-200 rounded-xl flex justify-center items-center py-8"}>
+              <h1
+                className={
+                  "text-3xl md:text-5xl font-extrabold text-transparent font-spaceMono bg-clip-text bg-gradient-to-r from-dark-blue-300 to-light-blue-300"
+                }
+              >
+                Websites
+              </h1>
+            </div>
+            <div className={"col-span-1 bg-gray-200 rounded-xl flex justify-center items-center py-8"}>
+              <h1
+                className={
+                  "text-3xl md:text-5xl font-extrabold text-transparent font-spaceMono bg-clip-text bg-gradient-to-r from-dark-blue-300 to-light-blue-300"
+                }
+              >
+                Apps
+              </h1>
+            </div>
             <Socials />
-            <div className={"col-span-1 bg-gray-200 rounded-xl flex justify-center items-center py-8"}></div>
-            <div className={"col-span-1 bg-gray-200 rounded-xl flex justify-center items-center py-8"}></div>
           </div>
         </div>
       </section>
