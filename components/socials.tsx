@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import Image from "next/image";
 
 const socials = [
@@ -23,7 +24,7 @@ const socials = [
   },
 ];
 
-export function Socials() {
+export function Socials({ isInView }: { isInView: boolean }) {
   return (
     <div className={"col-span-1 rounded-xl grid grid-cols-1 gap-6 sm:grid-cols-2"}>
       {socials.map(({ image, link, name }) => (
@@ -32,9 +33,13 @@ export function Socials() {
           href={link}
           target={"_blank"}
           key={name}
-          className={
-            "col-span-1 bg-gray-200 hover:bg-gray-400 transition-all ease-in-out duration-300 rounded-xl flex justify-center items-center py-8 flex flex-col"
-          }
+          className={classNames(
+            {
+              "translate-x-40 opacity-0 blur-lg": !isInView,
+              "translate-x-0 opacity-100 blur-none": isInView,
+            },
+            "transition-all ease-in-out duration-700 col-span-1 bg-gray-200 hover:bg-gray-400 transition-all ease-in-out duration-300 rounded-xl flex justify-center items-center py-8 flex flex-col"
+          )}
         >
           <Image src={image} alt={name} width={60} height={60} className={"px-2 filter-dark-blue"} />
           <h1 className={"font-spaceMono font-thin pt-8"}>{name}</h1>
