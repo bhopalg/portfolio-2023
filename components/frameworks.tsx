@@ -8,13 +8,15 @@ const frameworks = [
     width: 60,
     height: 60,
     animate: true,
+    href: "https://reactjs.org/",
   },
   {
     image: "python-icon.svg",
     alt: "Python",
     width: 60,
     height: 60,
-    animate: true,
+    animate: false,
+    href: "https://www.python.org/",
   },
   {
     image: "mongodb.svg",
@@ -22,6 +24,7 @@ const frameworks = [
     width: 140,
     height: 140,
     animate: false,
+    href: "https://www.mongodb.com/",
   },
   {
     image: "amazon_aws.svg",
@@ -29,21 +32,25 @@ const frameworks = [
     width: 140,
     height: 140,
     animate: false,
+    href: "https://aws.amazon.com/",
   },
 ];
 
 export function Frameworks({ isInView }: { isInView: boolean }) {
   return (
     <div className={"row-span-1 grid grid-cols-1 gap-6 md:grid-cols-2"}>
-      {frameworks.map(({ image, animate, alt, height, width }) => (
-        <div
+      {frameworks.map(({ image, animate, alt, height, width, href }) => (
+        <a
+          target={"_blank"}
+          rel={"noreferrer"}
+          href={href}
           key={alt}
           className={classNames(
             {
               "-translate-y-40 opacity-0 blur-lg": !isInView,
               "translate-y-0 opacity-100 blur-none": isInView,
             },
-            "transition-all ease-in-out duration-700 col-span-1 bg-gray-200 rounded-xl flex justify-center items-center py-8"
+            "transition-all ease-in-out duration-700 col-span-1 bg-gray-200 hover:bg-gray-400 rounded-xl flex justify-center items-center py-8"
           )}
         >
           <Image
@@ -53,7 +60,7 @@ export function Frameworks({ isInView }: { isInView: boolean }) {
             height={height}
             className={animate ? "animate-spin animate-spin-speed-override" : ""}
           />
-        </div>
+        </a>
       ))}
     </div>
   );
