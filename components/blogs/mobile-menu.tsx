@@ -1,22 +1,18 @@
+import { BackToSiteButton } from "@/components/blogs/back-to-site-button";
+import { Navigation } from "@/components/blogs/navigation";
 import { PostMetadata } from "@/lib/use-get-posts";
 import { Dialog, Transition } from "@headlessui/react";
-import { ArrowUturnLeftIcon, XMarkIcon } from "@heroicons/react/24/outline";
-import classNames from "classnames";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { Fragment, useMemo } from "react";
+import { XMarkIcon } from "@heroicons/react/24/outline";
+import { Fragment } from "react";
 
 interface MobileMenuProps {
   sidebarOpen: boolean;
   setSidebarOpen: (open: boolean) => void;
   navigation: PostMetadata[];
+  isLoading: boolean;
 }
 
-export function MobileMenu({ setSidebarOpen, sidebarOpen, navigation }: MobileMenuProps) {
-  const { asPath } = useRouter();
-
-  const currentRoute = useMemo(() => asPath.replace("/blogs/", "").trim(), [asPath]);
-
+export function MobileMenu({ setSidebarOpen, sidebarOpen, navigation, isLoading }: MobileMenuProps) {
   return (
     <div>
       <Transition.Root show={sidebarOpen} as={Fragment}>
@@ -65,35 +61,10 @@ export function MobileMenu({ setSidebarOpen, sidebarOpen, navigation }: MobileMe
                   </div>
                 </Transition.Child>
                 <div className="h-0 flex-1 overflow-y-auto pt-5 pb-4">
-                  <nav className="mt-5 flex-1 space-y-1 bg-dark-blue-200 px-2">
-                    {navigation.map(({ data, slug }) => (
-                      <a
-                        key={slug}
-                        href={slug}
-                        className={classNames(
-                          {
-                            "bg-light-blue-200 text-white": currentRoute === slug,
-                            "text-white hover:bg-light-blue-300 hover:text-gray-100": currentRoute !== slug,
-                          },
-                          "group flex items-center px-2 py-2 text-sm font-medium rounded-md transition-colors duration-300 ease-in-out"
-                        )}
-                      >
-                        {data.title ?? "Untitled"}
-                      </a>
-                    ))}
-                  </nav>
+                  <Navigation navigation={navigation} isLoading={isLoading} />
                 </div>
                 <div className="flex flex-shrink-0 border-t border-gray-200 p-4">
-                  <Link href="/" className="group block w-full flex-shrink-0">
-                    <div className="flex items-center">
-                      <div>
-                        <ArrowUturnLeftIcon className={"text-white h-5 w-5"} />
-                      </div>
-                      <div className="ml-3">
-                        <p className="text-sm font-medium text-white group-hover:text-gray-900">Back to site</p>
-                      </div>
-                    </div>
-                  </Link>
+                  <BackToSiteButton />
                 </div>
               </Dialog.Panel>
             </Transition.Child>
