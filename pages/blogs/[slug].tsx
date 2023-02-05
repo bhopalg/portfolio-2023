@@ -3,9 +3,17 @@ import { getPost, getPosts } from "@/lib/api";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 
-function Post({ content }: { content: MDXRemoteSerializeResult<Record<string, unknown>, Record<string, string>> }) {
+function Post({
+  content,
+  data,
+}: {
+  data: { [key: string]: any };
+  content: MDXRemoteSerializeResult<Record<string, unknown>, Record<string, string>>;
+}) {
+  console.log(data);
+
   return (
-    <BlogLayout>
+    <BlogLayout metadata={data}>
       <MDXRemote {...content} />
     </BlogLayout>
   );

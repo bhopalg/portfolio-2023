@@ -2,6 +2,7 @@ import { DesktopMenu } from "@/components/blogs/desktop-menu";
 import { MobileMenu } from "@/components/blogs/mobile-menu";
 import { useGetPosts } from "@/lib/use-get-posts";
 import { Bars3BottomLeftIcon, XCircleIcon } from "@heroicons/react/20/solid";
+import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { ReactNode } from "react";
@@ -56,13 +57,17 @@ function ErrorLayout() {
   );
 }
 
-export function BlogLayout({ children }: { children: ReactNode }) {
+export function BlogLayout({ children, metadata }: { children: ReactNode; metadata: { [key: string]: any } }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const { data, isLoading, isError } = useGetPosts();
 
   return (
     <>
+      <Head>
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+      </Head>
       <MobileMenu isLoading={isLoading} navigation={data ?? []} setSidebarOpen={setSidebarOpen} sidebarOpen={sidebarOpen} />
       <DesktopMenu isLoading={isLoading} navigation={data ?? []} />
       <div className="flex flex-1 flex-col md:pl-64">
@@ -78,7 +83,21 @@ export function BlogLayout({ children }: { children: ReactNode }) {
         </div>
         <main className="flex-1 sm:px-6 lg:px-8">
           {isLoading && !isError && <LoadingLayout />}
-          {!isLoading && !isError && <div className="py-6 text-white">{children}</div>}
+          {!isLoading && !isError && (
+            <div className="py-6 text-white">
+              <div className="relative px-6 pt-12 pb-16 sm:pt-16 lg:mx-auto lg:grid lg:max-w-7xl lg:px-8">
+                <div className="lg:pl-8">
+                  <div className="text-base lg:max-w-5xl">
+                    <h2 className="font-semibold leading-6 text-indigo-600">{metadata.date ?? "No Date"}</h2>
+                    <h3 className="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-100 sm:text-4xl">
+                      {metadata.title ?? "Untitled"}
+                    </h3>
+                    <div className={"pt-10"}>{children}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
           {isError && <ErrorLayout />}
         </main>
       </div>
