@@ -11,7 +11,10 @@
   "dependencies": {
     "@headlessui/react": "^1.7.8",
     "@heroicons/react": "^2.0.14",
+    "@mdx-js/loader": "^2.2.1",
+    "@mdx-js/react": "^2.2.1",
     "@next/font": "13.1.5",
+    "@next/mdx": "^13.1.6",
     "@types/node": "18.11.18",
     "@types/react": "18.0.27",
     "@types/react-dom": "18.0.10",
