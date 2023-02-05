@@ -1,30 +1,9 @@
 import { DesktopMenu } from "@/components/blogs/desktop-menu";
 import { MobileMenu } from "@/components/blogs/mobile-menu";
-import { MobileMenuButton } from "@/components/blogs/mobile-menu-button";
-import { getPosts } from "@/lib/api";
 import { useGetPosts } from "@/lib/use-get-posts";
-import { Bars3BottomLeftIcon, PlusIcon as PlusIconMini } from "@heroicons/react/20/solid";
-import {
-  Bars3Icon,
-  CalendarIcon,
-  ChartBarIcon,
-  FolderIcon,
-  HomeIcon,
-  InboxIcon,
-  UsersIcon,
-} from "@heroicons/react/24/outline";
-import { PlusIcon as PlusIconOutline } from "@heroicons/react/24/outline";
+import { Bars3BottomLeftIcon } from "@heroicons/react/20/solid";
 import { ReactNode } from "react";
-import { Fragment, useState } from "react";
-
-const navigation = [
-  { name: "Dashboard", href: "#", icon: HomeIcon, current: true },
-  { name: "Team", href: "#", icon: UsersIcon, current: false },
-  { name: "Projects", href: "#", icon: FolderIcon, current: false },
-  { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
-  { name: "Documents", href: "#", icon: InboxIcon, current: false },
-  { name: "Reports", href: "#", icon: ChartBarIcon, current: false },
-];
+import { useState } from "react";
 
 export function BlogLayout({ children }: { children: ReactNode }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
