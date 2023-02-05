@@ -7,11 +7,9 @@ function Post({
   content,
   data,
 }: {
-  data: { [key: string]: any };
+  data: { [_: string]: any };
   content: MDXRemoteSerializeResult<Record<string, unknown>, Record<string, string>>;
 }) {
-  console.log(data);
-
   return (
     <BlogLayout metadata={data}>
       <MDXRemote {...content} />
