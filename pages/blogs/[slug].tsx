@@ -1,18 +1,19 @@
 import { BlogLayout } from "@/components/blogs/blog-layout";
 import { getPost, getPosts } from "@/lib/api";
-import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
-import { serialize } from "next-mdx-remote/serialize";
+import dynamic from "next/dynamic";
 
-function Post({
-  content,
-  data,
-}: {
-  data: { [_: string]: any };
-  content: MDXRemoteSerializeResult<Record<string, unknown>, Record<string, string>>;
-}) {
+function getDynamicPost(slug: string) {
+  return dynamic(() => import(`../../posts/${slug}.mdx`), {
+    loading: () => <p>Loading...</p>,
+  });
+}
+
+function Post({ data }: { data: { [_: string]: any } }) {
+  const MDXContent = getDynamicPost(data.slug);
+
   return (
     <BlogLayout metadata={data}>
-      <MDXRemote {...content} />
+      <MDXContent />
     </BlogLayout>
   );
 }
@@ -30,11 +31,10 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params: { slug } }: { params: { slug: string } }) => {
   const post = getPost(slug);
-  const mdxSource = await serialize(post.content);
+
   return {
     props: {
-      data: post.data,
-      content: mdxSource,
+      data: { slug, ...post.data },
     },
   };
 };
