@@ -1,7 +1,7 @@
-import { Card } from "@/components/Card";
-import { SimpleLayout } from "@/components/SimpleLayout";
-import { formatDate } from "@/lib/formatDate";
-import { getAllArticles } from "@/lib/getAllArticles";
+import { Card } from "@/components/card";
+import { SimpleLayout } from "@/components/simple-layout";
+import { formatDate } from "@/lib/format-date";
+import { getAllArticles } from "@/lib/get-all-articles";
 import { Article as ArticleModel } from "@/models/article.model";
 import Head from "next/head";
 
@@ -52,7 +52,7 @@ export default function ArticlesIndex({ articles }: { articles: ArticleModel[] }
 export async function getStaticProps() {
   return {
     props: {
-      articles: (await getAllArticles()).map(({ component, ...meta }) => meta),
+      articles: (await getAllArticles()).map(({ ...meta }) => meta),
     },
   };
 }

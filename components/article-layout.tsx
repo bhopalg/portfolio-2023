@@ -1,21 +1,15 @@
-import Head from 'next/head'
-import { useRouter } from 'next/router'
+import { Container } from "@/components/container";
+import { Prose } from "@/components/prose";
+import { formatDate } from "@/lib/format-date";
+import Head from "next/head";
+import { useRouter } from "next/router";
 
-import { Container } from '@/components/Container'
-import { Prose } from '@/components/Prose'
-import { formatDate } from '@/lib/formatDate'
-
-function ArrowLeftIcon(props) {
+function ArrowLeftIcon(props: any) {
   return (
     <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
-      <path
-        d="M7.25 11.25 3.75 8m0 0 3.5-3.25M3.75 8h8.5"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+      <path d="M7.25 11.25 3.75 8m0 0 3.5-3.25M3.75 8h8.5" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
-  )
+  );
 }
 
 export function ArticleLayout({
@@ -23,11 +17,16 @@ export function ArticleLayout({
   meta,
   isRssFeed = false,
   previousPathname,
+}: {
+  children: React.ReactNode;
+  meta: { title: string; description: string; date: string };
+  isRssFeed?: boolean;
+  previousPathname?: string;
 }) {
-  let router = useRouter()
+  const router = useRouter();
 
   if (isRssFeed) {
-    return children
+    return children;
   }
 
   return (
@@ -36,7 +35,7 @@ export function ArticleLayout({
         <title>{`${meta.title} - Spencer Sharp`}</title>
         <meta name="description" content={meta.description} />
       </Head>
-      <Container className="mt-16 lg:mt-32">
+      <Container className={"mt-16 lg:mt-32"}>
         <div className="xl:relative">
           <div className="mx-auto max-w-2xl">
             {previousPathname && (
@@ -68,5 +67,5 @@ export function ArticleLayout({
         </div>
       </Container>
     </>
-  )
+  );
 }
