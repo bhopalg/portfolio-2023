@@ -1,3 +1,4 @@
+import { Header } from "@/components/header";
 import { Space_Mono } from "@next/font/google";
 import Head from "next/head";
 import { ReactNode } from "react";
@@ -18,6 +19,7 @@ export function Layout({ children }: { children: ReactNode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Header />
       <main className={`bg-black ${spaceMono.variable} font-sans`}>{children}</main>
     </>
   );
