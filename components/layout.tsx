@@ -1,4 +1,4 @@
-import { Header } from "@/components/header";
+import { Header } from "@/components/header/header";
 import { Space_Mono } from "@next/font/google";
 import Head from "next/head";
 import { ReactNode } from "react";
