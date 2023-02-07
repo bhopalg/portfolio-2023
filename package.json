@@ -16,6 +16,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.8",
     "@heroicons/react": "^2.0.14",
+    "@mapbox/rehype-prism": "^0.8.0",
     "@mdx-js/loader": "^2.2.1",
     "@mdx-js/react": "^2.2.1",
     "@next/font": "13.1.5",
@@ -32,6 +33,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-intersection-observer": "^9.4.1",
+    "remark-gfm": "^3.0.1",
     "typeit-react": "^2.6.4",
     "typescript": "4.9.4"
   },
