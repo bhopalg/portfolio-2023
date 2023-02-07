@@ -52,7 +52,7 @@ export default function ArticlesIndex({ articles }: { articles: ArticleModel[] }
 export async function getStaticProps() {
   return {
     props: {
-      articles: (await getAllArticles()).map(({ ...meta }) => meta),
+      articles: (await getAllArticles()).map(({ component, ...meta }) => meta),
     },
   };
 }
