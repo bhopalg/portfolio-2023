@@ -1,9 +1,9 @@
 import { Experience } from "@/components/experience";
 import { Frameworks } from "@/components/frameworks";
+import { Resume } from "@/components/resume";
 import { Socials } from "@/components/socials";
 import { useMediaQuery } from "@/lib/use-media-query";
 import classNames from "classnames";
-import Image from "next/image";
 import { useInView } from "react-intersection-observer";
 
 export function AboutMe() {
@@ -19,21 +19,7 @@ export function AboutMe() {
         <Experience isInView={isMobile ? true : inView} />
         <div className={"col-span-1 grid grid-rows-1 gap-6"}>
           <Frameworks isInView={isMobile ? true : inView} />
-          <Image
-            src={"/computer.jpg"}
-            className={classNames(
-              !isMobile
-                ? {
-                    "translate-y-40 opacity-0 blur-lg": !inView,
-                    "translate-y-0 opacity-100 blur-none": inView,
-                  }
-                : null,
-              "transition-all ease-in-out duration-700 rounded-xl w-full"
-            )}
-            alt={"Gurps"}
-            width={250}
-            height={250}
-          />
+          <Resume />
         </div>
         <div className={"col-span-1 h-full grid grid-cols-1 gap-6"}>
           <div
