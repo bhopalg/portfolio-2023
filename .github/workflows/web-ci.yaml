@@ -1,0 +1,47 @@
+name: Web CI
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "**/*"
+      - ".github/workflows/web-ci.yaml"
+      - "!**/.vscode/**/*"
+      - "!**.md"
+  push:
+    branches:
+      - main
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+"
+    paths:
+      - "**/*"
+      - ".github/workflows/web-ci.yaml"
+      - "!**/.vscode/**/*"
+      - "!**.md"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    working-directory: web
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3.6.0
+        with:
+          node-version-file: package.json
+          cache: "yarn"
+          cache-dependency-path: yarn.lock
+
+      - run: yarn install
+
+      - run: yarn lint
+
+      - run: yarn build
