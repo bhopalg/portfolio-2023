@@ -29,18 +29,10 @@ export const RESUME = [
   },
   {
     company: "Smarter Data Solutions",
-    title: "Senior Software Engineer",
-    logo: "/sdm-logo.jpeg",
-    start: "2020",
-    end: "2022",
-    href: "https://www.smarterds.com/",
-  },
-  {
-    company: "Smarter Data Solutions",
     title: "Software Engineer",
     logo: "/sdm-logo.jpeg",
     start: "2016",
-    end: "2020",
+    end: "2022",
     href: "https://www.smarterds.com/",
   },
   {
