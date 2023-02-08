@@ -4,6 +4,10 @@ export const NAVIGATION = [
     href: "/",
   },
   {
+    name: "About",
+    href: "/#about-me",
+  },
+  {
     name: "Articles",
     href: "/articles",
   },
