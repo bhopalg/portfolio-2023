@@ -12,3 +12,5 @@ export const NAVIGATION = [
     href: "/articles",
   },
 ];
+
+export const EXPERIENCE_START_YEAR = 2015;
