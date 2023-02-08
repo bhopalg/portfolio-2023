@@ -14,7 +14,12 @@ function removeProperty(property: string) {
   document.documentElement.style.removeProperty(property);
 }
 
-export function updateHeaderStyles(isInitial: MutableRefObject<boolean>, downDelay: number, upDelay: number) {
+export function updateHeaderStyles(
+  isInitial: MutableRefObject<boolean>,
+  downDelay: number,
+  upDelay: number,
+  headerRef: MutableRefObject<HTMLElement | undefined>
+) {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   const { top, height } = headerRef.current.getBoundingClientRect();
