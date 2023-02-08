@@ -25,6 +25,7 @@ export const RESUME = [
       label: "Present",
       dateTime: new Date().getFullYear(),
     },
+    href: "https://www.res-group.com/",
   },
   {
     company: "Smarter Data Solutions",
@@ -32,6 +33,7 @@ export const RESUME = [
     logo: "/sdm-logo.jpeg",
     start: "2020",
     end: "2022",
+    href: "https://www.smarterds.com/",
   },
   {
     company: "Smarter Data Solutions",
@@ -39,6 +41,7 @@ export const RESUME = [
     logo: "/sdm-logo.jpeg",
     start: "2016",
     end: "2020",
+    href: "https://www.smarterds.com/",
   },
   {
     company: "Sports Direct",
@@ -46,5 +49,6 @@ export const RESUME = [
     logo: "sports-direct.svg",
     start: "2014",
     end: "2015",
+    href: "https://www.sportsdirectplc.com",
   },
 ];
