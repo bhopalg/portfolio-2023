@@ -16,7 +16,9 @@ export function Header() {
     const upDelay = 64;
 
     function updateStyles() {
-      updateHeaderStyles(isInitial, downDelay, upDelay);
+      if (headerRef !== undefined) {
+        updateHeaderStyles(isInitial, downDelay, upDelay, headerRef);
+      }
       isInitial.current = false;
     }
 

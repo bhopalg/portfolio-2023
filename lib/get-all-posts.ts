@@ -11,7 +11,7 @@ async function importArticle(articleFilename: string) {
   };
 }
 
-export async function getAllArticles() {
+export async function getAllPosts() {
   const articleFilenames: string[] = await glob(["*.mdx", "*/index.mdx"], {
     cwd: path.join(process.cwd(), "pages/articles"),
   });
