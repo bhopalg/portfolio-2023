@@ -44,12 +44,12 @@ export function AboutMe() {
                     "translate-y-0 opacity-100 blur-none": inView,
                   }
                 : null,
-              "transition-all ease-in-out duration-700 col-span-1 bg-gray-200 rounded-xl flex justify-center items-center py-8"
+              "transition-all ease-in-out duration-700 col-span-1 bg-zinc-900 ring-1 ring-zinc-300/20 hover:bg-zinc-700 rounded-xl flex justify-center items-center py-8"
             )}
           >
             <h1
               className={
-                "text-3xl md:text-5xl font-extrabold text-transparent font-spaceMono bg-clip-text bg-gradient-to-r from-dark-blue-300 to-light-blue-300"
+                "text-3xl md:text-5xl font-extrabold text-transparent font-spaceMono bg-clip-text bg-gradient-to-r from-light-blue-600 to-light-blue-300"
               }
             >
               Websites
@@ -64,12 +64,12 @@ export function AboutMe() {
                     "translate-y-0 opacity-100 blur-none": inView,
                   }
                 : null,
-              "transition-all ease-in-out duration-700 col-span-1 bg-gray-200 rounded-xl flex justify-center items-center py-8"
+              "transition-all ease-in-out duration-700 col-span-1 bg-zinc-900 ring-1 ring-zinc-300/20 hover:bg-zinc-700 rounded-xl flex justify-center items-center py-8"
             )}
           >
             <h1
               className={
-                "text-3xl md:text-5xl font-extrabold text-transparent font-spaceMono bg-clip-text bg-gradient-to-r from-dark-blue-300 to-light-blue-300"
+                "text-3xl md:text-5xl font-extrabold text-transparent font-spaceMono bg-clip-text bg-gradient-to-r from-light-blue-600 to-light-blue-300"
               }
             >
               Apps
