@@ -19,7 +19,7 @@ export function AboutMe() {
         <Experience isInView={isMobile ? true : inView} />
         <div className={"col-span-1 grid grid-rows-1 gap-6"}>
           <Frameworks isInView={isMobile ? true : inView} />
-          <Resume />
+          <Resume isInView={isMobile ? true : inView} />
         </div>
         <div className={"col-span-1 h-full grid grid-cols-1 gap-6"}>
           <div

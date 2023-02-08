@@ -1,10 +1,19 @@
 import { RESUME } from "@/common/constants";
 import { BriefcaseIcon } from "@heroicons/react/24/outline";
+import classNames from "classnames";
 import Image from "next/image";
 
-export function Resume() {
+export function Resume({ isInView }: { isInView: boolean }) {
   return (
-    <div className="rounded-2xl bg-zinc-900 ring-1 ring-zinc-300/20 p-6">
+    <div
+      className={classNames(
+        {
+          "translate-y-40 opacity-0 blur-lg": !isInView,
+          "translate-y-0 opacity-100 blur-none": isInView,
+        },
+        "transition-all ease-in-out duration-700 rounded-xl bg-zinc-900 ring-1 ring-zinc-300/20 p-6"
+      )}
+    >
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <BriefcaseIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Work</span>
