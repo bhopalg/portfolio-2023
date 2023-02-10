@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "prism.css";
 
 .hackerText {
     border-radius: clamp(0.4rem, 0.75vw, 1rem);
@@ -16,4 +17,9 @@ html {
 
 .filter-dark-blue {
     filter: invert(95%) sepia(10%) saturate(70%) hue-rotate(182deg) brightness(98%) contrast(89%);
+}
+
+.prose :where(li):not(:where([class~="not-prose"] *)) {
+    margin-top: 0;
+    margin-bottom: 0;
 }

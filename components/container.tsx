@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import clsx from "clsx";
 import { ForwardedRef, forwardRef } from "react";
 
@@ -13,23 +14,41 @@ const OuterContainer = forwardRef(function OuterContainer(
 });
 
 const InnerContainer = forwardRef(function InnerContainer(
-  { className, children, ...props }: { className?: string; children: React.ReactNode },
+  {
+    className,
+    children,
+    isBackgroundColourRequired,
+    ...props
+  }: { className?: string; children: React.ReactNode; isBackgroundColourRequired?: boolean },
   ref: ForwardedRef<any>
 ) {
   return (
     <div ref={ref} className={clsx("relative px-4 sm:px-8 lg:px-12", className)} {...props}>
-      <div className="mx-auto max-w-2xl lg:max-w-5xl">{children}</div>
+      <div
+        className={classNames(
+          {
+            "bg-zinc-900 ring-1 ring-zinc-300/20 rounded-xl": isBackgroundColourRequired,
+          },
+          "mx-auto max-w-2xl lg:max-w-5xl"
+        )}
+      >
+        {children}
+      </div>
     </div>
   );
 });
 
 export const Container = forwardRef(function Container(
-  { children, ...props }: { children: React.ReactNode; className: string; style?: any },
+  {
+    children,
+    isBackgroundColourRequired,
+    ...props
+  }: { children: React.ReactNode; className: string; style?: any; isBackgroundColourRequired?: boolean },
   ref: ForwardedRef<any>
 ) {
   return (
     <OuterContainer ref={ref} {...props}>
-      <InnerContainer>{children}</InnerContainer>
+      <InnerContainer isBackgroundColourRequired={isBackgroundColourRequired}>{children}</InnerContainer>
     </OuterContainer>
   );
 });

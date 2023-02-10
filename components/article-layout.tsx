@@ -19,7 +19,7 @@ export function ArticleLayout({
   previousPathname,
 }: {
   children: React.ReactNode;
-  meta: { title: string; description: string; date: string };
+  meta: { title: string; description: string; date: string; author: string };
   isRssFeed?: boolean;
   previousPathname?: string;
 }) {
@@ -32,11 +32,11 @@ export function ArticleLayout({
   return (
     <>
       <Head>
-        <title>{`${meta.title} - Spencer Sharp`}</title>
+        <title>{meta.title}</title>
         <meta name="description" content={meta.description} />
       </Head>
-      <Container className={"mt-16 lg:mt-32"}>
-        <div className="xl:relative">
+      <Container className={"mt-16 lg:mt-32"} isBackgroundColourRequired={true}>
+        <div className="xl:relative py-14">
           <div className="mx-auto max-w-2xl">
             {previousPathname && (
               <button
@@ -60,6 +60,7 @@ export function ArticleLayout({
                   <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500" />
                   <span className="ml-3">{formatDate(meta.date)}</span>
                 </time>
+                {meta.author && <p className={"text-base text-zinc-400 dark:text-zinc-500 pt-3"}>By {meta.author}</p>}
               </header>
               <Prose className="mt-8">{children}</Prose>
             </article>
