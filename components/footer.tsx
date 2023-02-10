@@ -1,5 +1,6 @@
-import { NAVIGATION } from "@/common/constants";
-import { Container, InnerContainer, OuterContainer } from "@/components/container";
+import { NAVIGATION, SOCIALS } from "@/common/constants";
+import { InnerContainer, OuterContainer } from "@/components/container";
+import { Tooltip } from "flowbite-react";
 import Image from "next/image";
 import Link from "next/link";
 import { ReactNode } from "react";
@@ -32,10 +33,14 @@ function Navigation() {
 
 function SocialIcons() {
   return (
-    <div className={"grid grid-cols-2 sm:grid-cols-4"}>
-      <div className={"col-span-1"}>
-        <Image src={"/github-icon.svg"} className={"filter-white"} alt={"GitHub"} width={24} height={24} />
-      </div>
+    <div className={"grid grid-cols-4 gap-5"}>
+      {SOCIALS.map(({ name, link, image }) => (
+        <Tooltip key={name} content={`Follow me on ${name}`}>
+          <a href={link} target={"_blank"} rel={"noreferrer"} className={"col-span-1"}>
+            <Image src={image} className={"filter-white"} alt={name} width={20} height={20} />
+          </a>
+        </Tooltip>
+      ))}
     </div>
   );
 }

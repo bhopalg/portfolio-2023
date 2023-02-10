@@ -1,33 +1,11 @@
+import { SOCIALS } from "@/common/constants";
 import classNames from "classnames";
 import Image from "next/image";
-
-const socials = [
-  {
-    name: "GitHub",
-    link: "https://github.com/bhopalg",
-    image: "/github-icon.svg",
-  },
-  {
-    name: "LinkedIn",
-    link: "https://www.linkedin.com/in/gurpreet-bhopal-063a6a73/",
-    image: "/linkedin-icon.svg",
-  },
-  {
-    name: "Twitter",
-    link: "https://twitter.com/GBhopal",
-    image: "/twitter-icon.svg",
-  },
-  {
-    name: "Instagram",
-    link: "https://instagram.com/gurps_bhopal?igshid=YmMyMTA2M2Y=",
-    image: "/instagram-icon.svg",
-  },
-];
 
 export function Socials({ isInView }: { isInView: boolean }) {
   return (
     <div className={"col-span-1 rounded-xl grid grid-cols-1 gap-6 sm:grid-cols-2"}>
-      {socials.map(({ image, link, name }) => (
+      {SOCIALS.map(({ image, link, name }) => (
         <a
           rel={"noreferrer"}
           href={link}

@@ -44,3 +44,26 @@ export const RESUME = [
     href: "https://www.sportsdirectplc.com",
   },
 ];
+
+export const SOCIALS = [
+  {
+    name: "GitHub",
+    link: "https://github.com/bhopalg",
+    image: "/github-icon.svg",
+  },
+  {
+    name: "LinkedIn",
+    link: "https://www.linkedin.com/in/gurpreet-bhopal-063a6a73/",
+    image: "/linkedin-icon.svg",
+  },
+  {
+    name: "Twitter",
+    link: "https://twitter.com/GBhopal",
+    image: "/twitter-icon.svg",
+  },
+  {
+    name: "Instagram",
+    link: "https://instagram.com/gurps_bhopal?igshid=YmMyMTA2M2Y=",
+    image: "/instagram-icon.svg",
+  },
+];
