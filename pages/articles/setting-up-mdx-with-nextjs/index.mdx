@@ -12,9 +12,31 @@ export const meta = {
 
 export default (props) => <ArticleLayout meta={meta} {...props} />
 
-Most companies try to stay ahead of the curve when it comes to visual design, but for Planetaria we needed to create a brand that would still inspire us 100 years from now when humanity has spread across our entire solar system.
+This is my first time using MDX with Next.js, this is a fun adventure setting up it up.
 
-<Image src={designSystem} alt="" />
+# Useful links
+- [Next.js](https://nextjs.org/)
+- [MDX](https://mdxjs.com/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [React](https://reactjs.org/)
+- [NPM](https://www.npmjs.com/)
+- [Yarn](https://yarnpkg.com/)
+- [Node.js](https://nodejs.org/en/)
+
+MDX is a popular syntax for writing dynamic and interactive content in Markdown format. With the integration of MDX, Next.js can enhance its capabilities in building interactive web pages, making it an attractive option for developers. In this tutorial, we will be covering the process of adding MDX to Next.js with TailwindCSS, a popular utility-first CSS framework.
+
+The blog assumes that you have a basic understanding of Next.js and TailwindCSS. If you are new to Next.js, you can check out the [official documentation](https://nextjs.org/docs/getting-started) to get started. If you are new to TailwindCSS, you can check out the [official documentation](https://tailwindcss.com/docs) to get started.
+
+# Step One
+
+Install the following dependencies:
+
+```bash
+yarn add @mapbox/rehype-prism @mdx-js/loader \
+  @mdx-js/react @next/mdx remark-gfm
+```
+
+# Step Two
 
 I knew that to get it right I was going to have to replicate the viewing conditions of someone from the future, so I grabbed my space helmet from the closet, created a new Figma document, and got to work.
 
