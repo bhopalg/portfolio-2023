@@ -1,10 +1,13 @@
 import clsx from "clsx";
+import { useRouter } from "next/router";
 import { ForwardedRef, forwardRef } from "react";
 
 const OuterContainer = forwardRef(function OuterContainer(
   { className, children, ...props }: { className?: string; children: React.ReactNode },
   ref: ForwardedRef<any>
 ) {
+  const { pathname } = useRouter();
+  const isArticlesPage = pathname.includes("/articles");
   return (
     <div ref={ref} className={clsx("sm:px-8", className)} {...props}>
       <div className="mx-auto max-w-7xl lg:px-8">{children}</div>
