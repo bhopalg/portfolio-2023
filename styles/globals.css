@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "prism.css";
 
 .hackerText {
     border-radius: clamp(0.4rem, 0.75vw, 1rem);

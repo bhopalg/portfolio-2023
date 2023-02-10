@@ -38,6 +38,33 @@ yarn add @mapbox/rehype-prism @mdx-js/loader \
 
 # Step Two
 
+Update the `next.config.js` file to include the following:
+
+```js
+import nextMDX from '@next/mdx'
+import remarkGfm from 'remark-gfm'
+import rehypePrism from '@mapbox/rehype-prism'
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  pageExtensions: ['ts', 'tsx', 'mdx'],
+  reactStrictMode: true,
+  experimental: {
+    scrollRestoration: true,
+  },
+}
+
+const withMDX = nextMDX({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [remarkGfm],
+    rehypePlugins: [rehypePrism],
+  },
+})
+
+export default withMDX(nextConfig)
+```
+
 I knew that to get it right I was going to have to replicate the viewing conditions of someone from the future, so I grabbed my space helmet from the closet, created a new Figma document, and got to work.
 
 ## Sermone fata
