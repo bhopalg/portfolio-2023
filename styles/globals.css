@@ -15,7 +15,7 @@ html {
     animation-duration: 3s;
 }
 
-.filter-dark-blue {
+.filter-white {
     filter: invert(95%) sepia(10%) saturate(70%) hue-rotate(182deg) brightness(98%) contrast(89%);
 }
 
