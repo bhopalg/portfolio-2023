@@ -36,7 +36,7 @@ export function ArticleLayout({
         <meta name="description" content={meta.description} />
       </Head>
       <Container className={"mt-16 lg:mt-32"} isBackgroundColourRequired={true}>
-        <div className="xl:relative">
+        <div className="xl:relative py-14">
           <div className="mx-auto max-w-2xl">
             {previousPathname && (
               <button
