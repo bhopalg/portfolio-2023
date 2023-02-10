@@ -1,3 +1,4 @@
+import { Footer } from "@/components/footer";
 import { Header } from "@/components/header/header";
 import { Space_Mono } from "@next/font/google";
 import Head from "next/head";
@@ -21,6 +22,7 @@ export function Layout({ children }: { children: ReactNode }) {
       </Head>
       <Header />
       <main className={`bg-black ${spaceMono.variable} font-sans`}>{children}</main>
+      <Footer />
     </>
   );
 }

@@ -41,7 +41,7 @@ export function Socials({ isInView }: { isInView: boolean }) {
             "transition-all ease-in-out duration-700 col-span-1 bg-zinc-900 ring-1 ring-zinc-300/20 hover:bg-zinc-700 hover:bg-zinc-700 transition-all ease-in-out duration-300 rounded-xl flex justify-center items-center py-8 flex flex-col"
           )}
         >
-          <Image src={image} alt={name} width={60} height={60} className={"px-2 filter-dark-blue"} />
+          <Image src={image} alt={name} width={60} height={60} className={"px-2 filter-white"} />
           <h1 className={"font-spaceMono text-gray-200 font-thin pt-8"}>{name}</h1>
         </a>
       ))}
