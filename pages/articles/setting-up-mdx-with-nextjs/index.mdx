@@ -13,6 +13,7 @@ export default (props) => <ArticleLayout meta={meta} {...props} />
 
 This is my first time using MDX with Next.js, this is a fun adventure setting up it up.
 
+
 <Header>
     Useful Links
 </Header>
@@ -35,10 +36,13 @@ The blog assumes that you have a basic understanding of Next.js and TailwindCSS.
 
 Install the following dependencies:
 
-```bash
-yarn add @mapbox/rehype-prism @mdx-js/loader \
-  @mdx-js/react @next/mdx remark-gfm
-```
+<CH.Section>
+    <CH.Code>
+        ```bash terminal
+        yarn add @mapbox/rehype-prism @mdx-js/loader @mdx-js/react @next/mdx remark-gfm
+        ```
+    </CH.Code>
+</CH.Section>
 
 <Header>
     Step Two
@@ -46,30 +50,34 @@ yarn add @mapbox/rehype-prism @mdx-js/loader \
 
 Update the `next.config.js` file to include the following:
 
-```js
-import nextMDX from '@next/mdx'
-import remarkGfm from 'remark-gfm'
-import rehypePrism from '@mapbox/rehype-prism'
+<CH.Section>
+    <CH.Code>
+        ```js next.config.mjs
+            import nextMDX from '@next/mdx'
+            import remarkGfm from 'remark-gfm'
+            import rehypePrism from '@mapbox/rehype-prism'
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  pageExtensions: ['ts', 'tsx', 'mdx'],
-  reactStrictMode: true,
-  experimental: {
-    scrollRestoration: true,
-  },
-}
+            /** @type {import('next').NextConfig} */
+            const nextConfig = {
+                pageExtensions: ['ts', 'tsx', 'mdx'],
+                reactStrictMode: true,
+                experimental: {
+                    scrollRestoration: true,
+                },
+            }
 
-const withMDX = nextMDX({
-  extension: /\.mdx?$/,
-  options: {
-    remarkPlugins: [remarkGfm],
-    rehypePlugins: [rehypePrism],
-  },
-})
+            const withMDX = nextMDX({
+                    extension: /\.mdx?$/,
+                    options: {
+                    remarkPlugins: [remarkGfm],
+                    rehypePlugins: [rehypePrism],
+                },
+            });
 
-export default withMDX(nextConfig)
-```
+            export default withMDX(nextConfig)
+        ```
+    </CH.Code>
+</CH.Section>
 
 Here we are wrapping nextConfig with the `withMDX` function, which will allow us to use MDX in our Next.js application.
 
@@ -81,93 +89,98 @@ We also add `remark-gfm`, a plugin for remark that adds support for GitHub Flavo
 
 One of the cool features of MDX with can use React components in our Markdown files. To do this, we need to create a `components` folder in the root of our project. Inside this folder, we will create a `layout.tsx` file, which will be our layout component.
 
-Layout.tsx
-```tsx
-import { Container } from "@/components/container";
-import { Prose } from "@/components/prose";
-import { formatDate } from "@/lib/format-date";
-import Head from "next/head";
-import { useRouter } from "next/router";
+<CH.Section>
+    <CH.Code>
+    ```tsx components/layout.tsx
+    import { Container } from "@/components/container";
+    import { Prose } from "@/components/prose";
+    import { formatDate } from "@/lib/format-date";
+    import Head from "next/head";
+    import { useRouter } from "next/router";
 
-function ArrowLeftIcon(props: any) {
-  return (
-    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
-      <path d="M7.25 11.25 3.75 8m0 0 3.5-3.25M3.75 8h8.5" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
+    function ArrowLeftIcon(props: any) {
+      return (
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
+          <path d="M7.25 11.25 3.75 8m0 0 3.5-3.25M3.75 8h8.5" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      );
+    }
 
-export function ArticleLayout({
-  children,
-  meta,
-  isRssFeed = false,
-  previousPathname,
-}: {
-  children: React.ReactNode;
-  meta: { title: string; description: string; date: string };
-  isRssFeed?: boolean;
-  previousPathname?: string;
-}) {
-  const router = useRouter();
+    export function ArticleLayout({
+      children,
+      meta,
+      isRssFeed = false,
+      previousPathname,
+    }: {
+      children: React.ReactNode;
+      meta: { title: string; description: string; date: string };
+      isRssFeed?: boolean;
+      previousPathname?: string;
+    }) {
+      const router = useRouter();
 
-  if (isRssFeed) {
-    return children;
-  }
+      if (isRssFeed) {
+        return children;
+      }
 
-  return (
-    <>
-      <Head>
-        <title>{meta.title}</title>
-        <meta name="description" content={meta.description} />
-      </Head>
-      <Container className={"mt-16 lg:mt-32"}>
-        <div className="xl:relative py-14">
-          <div className="mx-auto max-w-2xl">
-            {previousPathname && (
-              <button
-                type="button"
-                onClick={() => router.back()}
-                aria-label="Go back to articles"
-                className="group mb-8 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 transition dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20 lg:absolute lg:-left-5 lg:mb-0 lg:-mt-2 xl:-top-1.5 xl:left-0 xl:mt-0"
-              >
-                <ArrowLeftIcon className="h-4 w-4 stroke-zinc-500 transition group-hover:stroke-zinc-700 dark:stroke-zinc-500 dark:group-hover:stroke-zinc-400" />
-              </button>
-            )}
-            <article>
-              <header className="flex flex-col">
-                <h1 className="mt-6 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-                  {meta.title}
-                </h1>
-                <time
-                  dateTime={meta.date}
-                  className="order-first flex items-center text-base text-zinc-400 dark:text-zinc-500"
-                >
-                  <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500" />
-                  <span className="ml-3">{formatDate(meta.date)}</span>
-                </time>
-              </header>
-              <Prose className="mt-8">{children}</Prose>
-            </article>
-          </div>
-        </div>
-      </Container>
-    </>
-  );
-}
+      return (
+        <>
+          <Head>
+            <title>{meta.title}</title>
+            <meta name="description" content={meta.description} />
+          </Head>
+          <Container className={"mt-16 lg:mt-32"}>
+            <div className="xl:relative py-14">
+              <div className="mx-auto max-w-2xl">
+                {previousPathname && (
+                  <button
+                    type="button"
+                    onClick={() => router.back()}
+                    aria-label="Go back to articles"
+                    className="group mb-8 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 transition dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20 lg:absolute lg:-left-5 lg:mb-0 lg:-mt-2 xl:-top-1.5 xl:left-0 xl:mt-0"
+                  >
+                    <ArrowLeftIcon className="h-4 w-4 stroke-zinc-500 transition group-hover:stroke-zinc-700 dark:stroke-zinc-500 dark:group-hover:stroke-zinc-400" />
+                  </button>
+                )}
+                <article>
+                  <header className="flex flex-col">
+                    <h1 className="mt-6 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+                      {meta.title}
+                    </h1>
+                    <time
+                      dateTime={meta.date}
+                      className="order-first flex items-center text-base text-zinc-400 dark:text-zinc-500"
+                    >
+                      <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500" />
+                      <span className="ml-3">{formatDate(meta.date)}</span>
+                    </time>
+                  </header>
+                  <Prose className="mt-8">{children}</Prose>
+                </article>
+              </div>
+            </div>
+          </Container>
+        </>
+      );
+    }
 
-```
+    ```
+    </CH.Code>
+</CH.Section>
 
-prose.tsx
+<CH.Section>
+    <CH.Code>
+        ```tsx prose.tsx
+        import clsx from "clsx";
+        import { ReactNode } from "react";
 
-```tsx
-import clsx from "clsx";
-import { ReactNode } from "react";
+        export function Prose({ children, className }: { children: ReactNode; className?: string }) {
+            return <div className={clsx(className, "prose dark:prose-invert")}>{children}</div>;
+        }
 
-export function Prose({ children, className }: { children: ReactNode; className?: string }) {
-  return <div className={clsx(className, "prose dark:prose-invert")}>{children}</div>;
-}
-
-```
+        ```
+    </CH.Code>
+</CH.Section>
 
 The children of the `ArticleLayout` component will be the content of our blog post. We will also pass in the `meta` object, which contains the title, description, and date of the blog post. We also pass in the `previousPathname` prop, which will be the pathname of the previous blog post. This will allow us to create a back button that will take the user back to the previous blog post.
 
@@ -180,20 +193,25 @@ Now that we have our layout component, we can create our blog post. Create a new
 
 I'm using this blog post as an example, so I will copy the content of the blog post and paste it into the `my-first-blog.mdx` file.
 
-```md
-import { ArticleLayout } from '@/components/article-layout'
-import {Header} from "@/components/arcticels/header";
+<CH.Section>
+    <CH.Code>
+        ```mdx pages/articles/my-first-blog.mdx
+        import { ArticleLayout } from '@/components/article-layout'
+        import {Header} from "@/components/arcticels/header";
 
-export const meta = {
-  author: 'Gurps',
-  date: '2023-02-08',
-  title: 'My fun adventure setting up MDX with Next.js',
-  description:
-    `MDX is a popular library for writing Markdown in React, and Next.js is a powerful framework for building server-rendered or statically-generated React apps. In this blog, we'll show you how to set up MDX in Next.js`,
-}
+        export const meta = {
+            author: 'Gurps',
+            date: '2023-02-08',
+            title: 'My fun adventure setting up MDX with Next.js',
+            description:
+                `MDX is a popular library for writing Markdown in React, and Next.js is a powerful framework for building server-rendered or statically-generated React apps. In this blog, we'll show you how to set up MDX in Next.js`,
+        }
 
-export default (props) => <ArticleLayout meta={meta} {...props} />
-```
+        export default (props) => <ArticleLayout meta={meta} {...props} />
+        ```
+    </CH.Code>
+</CH.Section>
+
 
 Here we are setting up metadata for our blog post. We are also importing the `ArticleLayout` component that we created earlier. We are passing in the `meta` object as a prop to the `ArticleLayout` component. We are also passing in the `props` object, which contains the `children` prop. The `children` prop will contain the content of our blog post.
 
@@ -206,26 +224,34 @@ Now we have our blog post metadata and layout set up, we can start writing our b
 
 One of the cool features of MDX is the ability to write JSX inside of Markdown. This means that we can write our blog post in Markdown, and then add in some JSX to add some extra functionality.
 
-```md
-<Header>
-    Step One
-</Header>
+<CH.Section>
+    <CH.Code>
+        ```mdx pages/articles/my-first-blog.mdx
+        <Header>
+            Step One
+        </Header>
 
-Install the following dependencies:
+        Install the following dependencies:
 
-yarn add @mapbox/rehype-prism @mdx-js/loader \
-  @mdx-js/react @next/mdx remark-gfm
-```
+        yarn add @mapbox/rehype-prism @mdx-js/loader \
+        @mdx-js/react @next/mdx remark-gfm
+        ```
+    </CH.Code>
+</CH.Section>
 
 As you can see I have a Header component that renders an `h1` tag. I can then apply extra styling to the heading.
 
-```tsx
-import { ReactNode } from "react";
+<CH.Section>
+    <CH.Code>
+        ```tsx components/header.tsx
+        import { ReactNode } from "react";
 
-export function Header({ children }: { children: ReactNode }) {
-  return <h1 className={"text-2xl font-bold font-spaceMono"}>{children}</h1>;
-}
-```
+        export function Header({ children }: { children: ReactNode }) {
+            return <h1 className={"text-2xl font-bold font-spaceMono"}>{children}</h1>;
+        }
+        ```
+    </CH.Code>
+</CH.Section>
 
 <Header>
     Step Six
@@ -233,10 +259,14 @@ export function Header({ children }: { children: ReactNode }) {
 
 Now time to test it out. Run the following command to start the development server:
 
-```bash
-yarn dev
-```
+<CH.Section>
+    <CH.Code>
+        ```bash terminal
+        yarn dev
+        ```
+    </CH.Code>
+</CH.Section>
 
-This will start the development server on `localhost:3000`. Navigate to `localhost:3000/articles/my-first-blog` to see your blog post.
+This will start the development server on `localhost:3000`. Navigate to [My First Blog](http://localhost:3000/articles/my-first-blog) to see your blog post.
 
 And that's it! You have successfully set up MDX in Next.js.
