@@ -1,6 +1,9 @@
 import nextMDX from '@next/mdx'
 import remarkGfm from 'remark-gfm'
-import rehypePrism from '@mapbox/rehype-prism'
+import rehypePrism from '@mapbox/rehype-prism';
+
+import { remarkCodeHike } from '@code-hike/mdx';
+import theme from 'shiki/themes/github-dark.json' assert { type: 'json' };
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -14,7 +17,7 @@ const nextConfig = {
 const withMDX = nextMDX({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [remarkGfm],
+    remarkPlugins: [remarkGfm, [remarkCodeHike, { theme, showCopyButton: true }]],
     rehypePlugins: [rehypePrism],
   },
 })

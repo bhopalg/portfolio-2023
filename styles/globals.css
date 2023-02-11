@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @import "prism.css";
+@import "code-hike.css";
 
 .hackerText {
     border-radius: clamp(0.4rem, 0.75vw, 1rem);
@@ -22,4 +23,12 @@ html {
 .prose :where(li):not(:where([class~="not-prose"] *)) {
     margin-top: 0;
     margin-bottom: 0;
+}
+
+.ch-codeblock .ch-code-button {
+    display: none;
+}
+
+.ch-codeblock:hover .ch-code-button {
+    display: block;
 }
