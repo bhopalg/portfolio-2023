@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "prism.css";
+@import "code-hike.css";
 
 .hackerText {
     border-radius: clamp(0.4rem, 0.75vw, 1rem);
@@ -16,6 +16,19 @@ html {
     animation-duration: 3s;
 }
 
-.filter-dark-blue {
-    filter: invert(8%) sepia(99%) saturate(4239%) hue-rotate(203deg) brightness(92%) contrast(97%);
+.filter-white {
+    filter: invert(95%) sepia(10%) saturate(70%) hue-rotate(182deg) brightness(98%) contrast(89%);
+}
+
+.prose :where(li):not(:where([class~="not-prose"] *)) {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.ch-codeblock .ch-code-button {
+    display: none;
+}
+
+.ch-codeblock:hover .ch-code-button {
+    display: block;
 }

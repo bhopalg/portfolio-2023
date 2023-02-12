@@ -1,5 +1,15 @@
+import { Footer } from "@/components/footer";
+import { Header } from "@/components/header/header";
+import { Space_Mono } from "@next/font/google";
 import Head from "next/head";
 import { ReactNode } from "react";
+
+const spaceMono = Space_Mono({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  variable: "--font-space-mono",
+  display: "swap",
+});
 
 export function Layout({ children }: { children: ReactNode }) {
   return (
@@ -10,7 +20,9 @@ export function Layout({ children }: { children: ReactNode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={"bg-black"}>{children}</main>
+      <Header />
+      <main className={`bg-black ${spaceMono.variable} font-sans`}>{children}</main>
+      <Footer />
     </>
   );
 }

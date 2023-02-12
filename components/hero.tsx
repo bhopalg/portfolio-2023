@@ -25,7 +25,7 @@ export function Hero() {
           enterTo="opacity-100"
         >
           <div className={"flex w-full"}>
-            <Image src={"hero-background.svg"} alt={"ss"} width={2560} height={947} />
+            <Image src={"hero-background.svg"} alt={"Gurp's Portfolio"} width={2560} height={947} />
           </div>
         </Transition>
       </div>
@@ -33,7 +33,7 @@ export function Hero() {
         <div className={"md:max-w-7xl w-full hero-text-typer justify-center flex flex-col mx-auto"}>
           <HackerText />
           <a
-            href={"#section-2"}
+            href={"#about-me"}
             className={
               "w-12 h-12 mx-auto rounded-full bg-dark-blue-500 mt-6 animate-bounce border-2 border-white drop-shadow-2xl"
             }
