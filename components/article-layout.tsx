@@ -21,7 +21,7 @@ export function ArticleLayout({
   previousPathname,
 }: {
   children: React.ReactNode;
-  meta: { title: string; description: string; date: string; author: string; github?: string };
+  meta: { title: string; description: string; date: string; author: string; github?: string; keywords?: string[] };
   isRssFeed?: boolean;
   previousPathname?: string;
 }) {
@@ -31,13 +31,16 @@ export function ArticleLayout({
     return children;
   }
 
-  const { title, github, date, description, author } = meta;
+  const { title, github, date, description, author, keywords } = meta;
 
   return (
     <>
       <Head>
         <title>{title}</title>
+        <meta charSet={"utf-8"} />
         <meta name="description" content={description} />
+        <meta name="author" content={author} />
+        {keywords && <meta name="keywords" content={keywords?.join(", ")} />}
       </Head>
       <Container className={"mt-16 lg:mt-32"} isBackgroundColourRequired={true}>
         <div className="xl:relative py-14">

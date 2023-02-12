@@ -26,6 +26,18 @@ function Article({ article }: { article: ArticleModel }) {
 const DESCRIPTION =
   "All of my long-form thoughts on programming, leadership, product design, and more, collected in chronological order.";
 const TITLE = "Writing on software design and company building.";
+const KEYWORDS = [
+  "Blog page",
+  "List of blogs",
+  "Archived blogs",
+  "Blog directory",
+  "All blogs",
+  "Blog collection",
+  "Blog index",
+  "Blog library",
+  "Blog archive",
+  "Blog repository",
+];
 
 export default function ArticlesIndex({ articles }: { articles: ArticleModel[] }) {
   return (
@@ -33,6 +45,7 @@ export default function ArticlesIndex({ articles }: { articles: ArticleModel[] }
       <Head>
         <title>Articles - Spencer Sharp</title>
         <meta name="description" content={DESCRIPTION} />
+        <meta name="keywords" content={KEYWORDS.join(", ")} />
       </Head>
       <SimpleLayout title={TITLE} intro={DESCRIPTION}>
         <div className="md:border-l md:pl-6 md:border-zinc-700/40">
