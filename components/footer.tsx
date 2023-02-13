@@ -14,9 +14,7 @@ function NavLink({ href, children }: { href: string; children: ReactNode }) {
 }
 
 function CopyrightText() {
-  return (
-    <p className="text-sm text-zinc-400 dark:text-zinc-500">&copy; {new Date().getFullYear()} Gurps. All rights reserved.</p>
-  );
+  return <p className="text-sm text-zinc-500">&copy; {new Date().getFullYear()} Gurps. All rights reserved.</p>;
 }
 
 function Navigation() {
@@ -49,7 +47,7 @@ export function Footer() {
   return (
     <footer className="mt-32 bg-zinc-900 ring-1 ring-zinc-300/20">
       <OuterContainer>
-        <div className="border-t border-zinc-100 pt-10 pb-16 dark:border-zinc-700/40">
+        <div className="border-t pt-10 pb-16 border-zinc-700/40">
           <InnerContainer>
             <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
               <Navigation />

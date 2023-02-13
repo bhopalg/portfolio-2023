@@ -21,7 +21,7 @@ export function ArticleLayout({
   previousPathname,
 }: {
   children: React.ReactNode;
-  meta: { title: string; description: string; date: string; author: string; github?: string };
+  meta: { title: string; description: string; date: string; author: string; github?: string; keywords?: string[] };
   isRssFeed?: boolean;
   previousPathname?: string;
 }) {
@@ -31,13 +31,16 @@ export function ArticleLayout({
     return children;
   }
 
-  const { title, github, date, description, author } = meta;
+  const { title, github, date, description, author, keywords } = meta;
 
   return (
     <>
       <Head>
         <title>{title}</title>
+        <meta charSet={"utf-8"} />
         <meta name="description" content={description} />
+        <meta name="author" content={author} />
+        {keywords && <meta name="keywords" content={keywords?.join(", ")} />}
       </Head>
       <Container className={"mt-16 lg:mt-32"} isBackgroundColourRequired={true}>
         <div className="xl:relative py-14">
@@ -47,22 +50,20 @@ export function ArticleLayout({
                 type="button"
                 onClick={() => router.back()}
                 aria-label="Go back to articles"
-                className="group mb-8 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 transition dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20 lg:absolute lg:-left-5 lg:mb-0 lg:-mt-2 xl:-top-1.5 xl:left-0 xl:mt-0"
+                className="group mb-8 flex h-10 w-10 items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 transition border border-zinc-700/50 bg-zinc-800 dark:ring-0 ring-white/10 hover:border-zinc-700 hover:ring-white/20 lg:absolute lg:-left-5 lg:mb-0 lg:-mt-2 xl:-top-1.5 xl:left-0 xl:mt-0"
               >
-                <ArrowLeftIcon className="h-4 w-4 stroke-zinc-500 transition group-hover:stroke-zinc-700 dark:stroke-zinc-500 dark:group-hover:stroke-zinc-400" />
+                <ArrowLeftIcon className="h-4 w-4 transition stroke-zinc-500 group-hover:stroke-zinc-400" />
               </button>
             )}
-            <article>
+            <article className={"md:px-0 px-5"}>
               <header className="flex flex-col">
-                <h1 className="mt-6 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-                  {title}
-                </h1>
-                <time dateTime={date} className="order-first flex items-center text-base text-zinc-400 dark:text-zinc-500">
-                  <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500" />
+                <h1 className="mt-6 text-4xl font-bold tracking-tight text-zinc-100 sm:text-5xl">{title}</h1>
+                <time dateTime={date} className="order-first flex items-center text-base text-zinc-500">
+                  <span className="h-4 w-0.5 rounded-full bg-zinc-500" />
                   <span className="ml-3">{formatDate(date)}</span>
                 </time>
                 <div className={"flex gap-6 items-center pt-3"}>
-                  {author && <p className={"text-base text-zinc-400 dark:text-zinc-500"}>By {author}</p>}
+                  {author && <p className={"text-base text-zinc-500"}>By {author}</p>}
                   {github && (
                     <Tooltip content={`Check out the repository over on GitHub`}>
                       <a href={github} target={"_blank"} rel={"noreferrer"} className={"col-span-1"}>
@@ -72,7 +73,7 @@ export function ArticleLayout({
                   )}
                 </div>
               </header>
-              <Prose className="mt-8">{children}</Prose>
+              <Prose className="mt-8 text-zinc-300">{children}</Prose>
             </article>
           </div>
         </div>
