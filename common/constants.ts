@@ -1,3 +1,5 @@
+import { UsesListProps } from "@/components/uses/list";
+
 export const NAVIGATION = [
   {
     name: "Home",
@@ -10,6 +12,10 @@ export const NAVIGATION = [
   {
     name: "Articles",
     href: "/articles",
+  },
+  {
+    name: "Uses",
+    href: "/uses",
   },
 ];
 
@@ -65,5 +71,20 @@ export const SOCIALS = [
     name: "Instagram",
     link: "https://instagram.com/gurps_bhopal?igshid=YmMyMTA2M2Y=",
     image: "/instagram-icon.svg",
+  },
+];
+
+export const USES_LIST: UsesListProps[] = [
+  {
+    title: "Workstation",
+    description: "My main workstation",
+    items: [
+      {
+        name: "MacBook Pro",
+        imageUrl: "/macbook-pro.png",
+        link: "https://www.apple.com/macbook-pro-13/",
+        description: "My main workstation",
+      },
+    ],
   },
 ];
