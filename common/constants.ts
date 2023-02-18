@@ -81,9 +81,93 @@ export const USES_LIST: UsesListProps[] = [
     items: [
       {
         name: "MacBook Pro",
-        imageUrl: "/macbook-pro.png",
-        link: "https://www.apple.com/macbook-pro-13/",
-        description: "My main workstation",
+        imageUrl: "/macbook-pro.jpeg",
+        link: "https://www.apple.com/shop/buy-mac/macbook-pro/14-inch",
+        description: "14 inch, M1 Pro, 32GB RAM, 1TB SSD",
+      },
+      {
+        name: "ipad Mini",
+        imageUrl: "/ipad-mini.webp",
+        link: "https://www.apple.com/ipad-mini/",
+        description: "6th Generation, 64GB",
+      },
+      {
+        name: "LG HDR 4K Display",
+        imageUrl: "/lg-monitors.jpeg",
+        link: "https://www.lg.com/uk/monitors/lg-27UK650",
+        description: "27 inch, 4K, HDR",
+      },
+      {
+        name: "Logitech MX Master 3",
+        imageUrl: "/logitech-mx-master.jpeg",
+        link: "https://www.logitech.com/en-gb/products/mice/mx-master-3s.910-006559.html",
+        description: "Wireless Mouse",
+      },
+      {
+        name: "Logitech MX Keys",
+        imageUrl: "/logitech-mx-keys.jpeg",
+        link: "https://www.logitech.com/en-gb/products/keyboards/mx-keys-wireless-keyboard.html",
+        description: "Wireless Keyboard",
+      },
+      {
+        name: "iPhone 13 Pro",
+        imageUrl: "/iphone-13-pro.jpg",
+        link: "https://www.apple.com/iphone-13-pro/",
+        description: "128GB, Sierra Blue",
+      },
+    ],
+  },
+  {
+    title: "Development tools",
+    description: "My main development tools",
+    items: [
+      {
+        name: "IntelliJ IDEA",
+        imageUrl: "/intellij-idea.png",
+        link: "https://www.jetbrains.com/idea/",
+        description: "My main IDE",
+      },
+      {
+        name: "Intellij PyCharm",
+        imageUrl: "/pycharm.png",
+        link: "https://www.jetbrains.com/pycharm/",
+        description: "My main Python IDE",
+      },
+      {
+        name: "iTerm2",
+        imageUrl: "/iterm2.png",
+        link: "https://iterm2.com/",
+        description: "My main terminal",
+      },
+      {
+        name: "Fish Shell",
+        imageUrl: "/fish-shell.png",
+        link: "https://fishshell.com/",
+        description: "My main shell",
+      },
+    ],
+  },
+  {
+    title: "Productivity",
+    description: "My main productivity tools",
+    items: [
+      {
+        name: "Alfred",
+        imageUrl: "/alfred.png",
+        link: "https://www.alfredapp.com/",
+        description: "I use Alfred to launch applications, search the web, and more",
+      },
+      {
+        name: "Airmail",
+        imageUrl: "/airmail.png",
+        link: "https://airmailapp.com/",
+        description: "My main email client",
+      },
+      {
+        name: "Brave Browser",
+        imageUrl: "/brave-browser.svg",
+        link: "https://brave.com/",
+        description: "My main browser",
       },
     ],
   },

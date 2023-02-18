@@ -1,4 +1,3 @@
-import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 
 interface ItemProp {
@@ -27,18 +26,19 @@ function Item({ item }: { item: ItemProp }) {
   const { name, description, imageUrl, link } = item;
 
   return (
-    <li className="bg-zinc-800 ring-1 ring-zinc-300/20 py-10 px-8 rounded-xl">
-      <Image width={192} height={192} className="mx-auto h-48 w-48 rounded-full md:h-56 md:w-56" src={imageUrl} alt={name} />
-      <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-white">{name}</h3>
-      <p className="text-sm leading-6 text-gray-400">{description}</p>
-      <ul className="mt-6 flex justify-center gap-x-6">
-        <li>
-          <a href={link} className="text-gray-400 hover:text-gray-300">
-            <span className="sr-only">{name} Link</span>
-            <ArrowTopRightOnSquareIcon className="h-5 w-5" />
-          </a>
-        </li>
-      </ul>
+    <li className="bg-zinc-800 ring-1 ring-zinc-300/20 hover:bg-zinc-900 transition-colors duration-300 ease-in-out py-10 px-8 rounded-xl">
+      <a href={link} target={"_blank"} rel={"noreferrer"}>
+        <span className="sr-only">{name} Link</span>
+        <Image
+          width={192}
+          height={192}
+          className="mx-auto h-48 w-48 rounded-full md:h-56 md:w-56 bg-white"
+          src={imageUrl}
+          alt={name}
+        />
+        <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-white">{name}</h3>
+        <p className="text-sm leading-6 text-gray-400">{description}</p>
+      </a>
     </li>
   );
 }

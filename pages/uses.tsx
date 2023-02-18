@@ -51,11 +51,11 @@ export default function Uses() {
         <meta name="keywords" content={KEYWORDS.join(", ")} />
       </Head>
       <SimpleLayout title={TITLE} intro={""} isHScreenRequired={false}>
-        <>
+        <div className={"flex flex-col gap-10"}>
           {USES_LIST.map(({ title, description, items }) => (
             <UsesList key={title} items={items} title={title} description={description} />
           ))}
-        </>
+        </div>
       </SimpleLayout>
     </>
   );
