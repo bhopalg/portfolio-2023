@@ -3,6 +3,7 @@ export interface ItemProp {
   description: string;
   imageUrl: string;
   link: string;
+  transitionDelay?: string;
 }
 
 export interface UsesListProps {
