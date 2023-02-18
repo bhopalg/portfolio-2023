@@ -1,4 +1,8 @@
 import { UsesListProps } from "@/components/uses/uses.model";
+import * as process from "process";
+
+export const EXPERIENCE_START_YEAR = 2014;
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL;
 
 export const NAVIGATION = [
   {
@@ -18,8 +22,6 @@ export const NAVIGATION = [
     href: "/uses",
   },
 ];
-
-export const EXPERIENCE_START_YEAR = 2014;
 
 export const RESUME = [
   {
