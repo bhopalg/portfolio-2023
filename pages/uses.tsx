@@ -1,6 +1,7 @@
 import { USES_LIST } from "@/common/constants";
 import { SimpleLayout } from "@/components/simple-layout";
-import { UsesList } from "@/components/uses/list";
+import { DesktopUsesList } from "@/components/uses/desktop-list";
+import { MobileList } from "@/components/uses/mobile-list";
 import Head from "next/head";
 
 const TITLE = "Tools, IDEs, and Workstation Items I Use ";
@@ -53,7 +54,14 @@ export default function Uses() {
       <SimpleLayout title={TITLE} intro={""} isHScreenRequired={false}>
         <div className={"flex flex-col gap-10"}>
           {USES_LIST.map(({ title, description, items }) => (
-            <UsesList key={title} items={items} title={title} description={description} />
+            <div key={title}>
+              <span className={"md:block hidden"}>
+                <DesktopUsesList items={items} title={title} description={description} />
+              </span>
+              <span className={"md:hidden block"}>
+                <MobileList items={items} title={title} description={description} />
+              </span>
+            </div>
           ))}
         </div>
       </SimpleLayout>

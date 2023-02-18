@@ -1,18 +1,5 @@
+import { ItemProp, UsesListProps } from "@/components/uses/uses.model";
 import Image from "next/image";
-
-interface ItemProp {
-  name: string;
-  description: string;
-  imageUrl: string;
-  link: string;
-}
-
-export interface UsesListProps {
-  title: string;
-  description: string;
-
-  items: ItemProp[];
-}
 
 function Title({ title }: { title: string }) {
   return <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">{title}</h2>;
@@ -53,7 +40,7 @@ function ItemList({ items }: { items: ItemProp[] }) {
   );
 }
 
-export function UsesList({ title, description, items }: UsesListProps) {
+export function DesktopUsesList({ title, description, items }: UsesListProps) {
   return (
     <div className="bg-zinc-900 ring-1 ring-zinc-300/20 rounded-xl py-10">
       <div className="mx-auto max-w-7xl px-6 text-center lg:px-8">

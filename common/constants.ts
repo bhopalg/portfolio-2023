@@ -1,4 +1,4 @@
-import { UsesListProps } from "@/components/uses/list";
+import { UsesListProps } from "@/components/uses/uses.model";
 
 export const NAVIGATION = [
   {
