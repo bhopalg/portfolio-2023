@@ -1,0 +1,148 @@
+import { ArticleLayout } from '@/components/article-layout'
+import { Tabs } from "@/components/arcticels/tabs"
+import { Header } from "@/components/arcticels/header";
+
+export const meta = {
+    author: 'Gurps',
+    date: '2023-02-22',
+    title: 'How to Transfer Domains from GoDaddy to AWS Route 53',
+    description:
+        `Learn how to transfer your .com, .co.uk, or .uk domains from GoDaddy to AWS Route 53, and discover the benefits of using AWS Route 53 for your DNS management.`,
+    keywords: ["AWS", "Route 53", "GoDaddy", "domain transfer", "DNS management", "performance", "scalability", "cost-effectiveness", "step-by-step guide", "com domains", "co.uk domains", "uk domains"],
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+<Tabs>
+    <Tabs.List>
+        <Tabs.Tab>.com Domains</Tabs.Tab>
+        <Tabs.Tab>.co.uk, .uk Domains</Tabs.Tab>
+    </Tabs.List>
+    <Tabs.Panels>
+        <Tabs.Panel>
+            <Header>How to Transfer `.com` Domains from GoDaddy to AWS Route 53</Header>
+
+            If you're planning to move your domain registration from GoDaddy to AWS Route 53, you may be wondering how to get started. Fortunately, transferring domains is a straightforward process that can be completed in just a few steps.
+
+            In this blog post, we'll show you how to transfer .com, .co.uk, and .uk domains from GoDaddy to AWS Route 53, including examples and links.
+
+            ## Prerequisites
+
+            Before you begin, you'll need to have the following:
+
+            - An AWS account
+            - A domain name that you want to transfer from GoDaddy to Route 53
+            - Access to the email address associated with the domain's administrative contact in the WHOIS database
+
+            ## Step 1: Unlock Your Domain
+            Before you can transfer your domain, you'll need to unlock it in your GoDaddy account. Here's how:
+
+            1. Log in to your GoDaddy account.
+            2. Go to the "Domains" section of your account.
+            3. Find the domain you want to transfer and click on its name.
+            4. Scroll down to the "Additional Settings" section and click "Manage" next to "Domain lock".
+            5. Click the toggle button to unlock your domain.
+            ## Step 2: Get Your Authorization Code
+
+            To transfer your domain to Route 53, you'll need an authorization code (also known as an EPP code or transfer code) from GoDaddy. Here's how to get it:
+
+            1. In your GoDaddy account, go to the "Domains" section.
+            2. Find the domain you want to transfer and click on its name.
+            3. Scroll down to the "Additional Settings" section and click "Transfer Domain Away From GoDaddy".
+            4. Follow the prompts to get your authorization code.
+
+            ## Step 3: Start the Transfer in Route 53
+
+            Now that you have your authorization code, you can start the transfer process in AWS Route 53. Here's how:
+
+            1. Log in to your AWS account and go to the Route 53 console.
+            2. Click on "Registered domains" in the left-hand menu.
+            3. Click "Transfer domain" and enter the domain name you want to transfer.
+            4. Follow the prompts to complete the transfer process.
+
+            ## Step 4: Verify Your Email Address
+
+            After you initiate the transfer in Route 53, you'll receive an email from Amazon to the administrative contact email address associated with your domain. Follow the instructions in the email to verify your email address.
+
+            ## Step 5: Wait for the Transfer to Complete
+
+            Once you've verified your email address, the transfer process will begin. It can take up to seven days for the transfer to complete, but it's usually much faster than that. During this time, your domain will still be accessible on GoDaddy, but you won't be able to make any changes to it.
+
+            ## Step 6: Update Your DNS Records
+
+            Once the transfer is complete, you'll need to update your DNS records to point to your AWS resources. Here's how:
+
+            1. Log in to your AWS account and go to the Route 53 console.
+            2. Click on "Hosted zones" in the left-hand menu.
+            3. Click on the hosted zone that corresponds to your domain.
+            4. Update your DNS records to point to your AWS resources.
+
+            And that's it! You've successfully transferred your domain from GoDaddy
+
+            Note: It may take up to 7 Days for the transfer to complete.
+        </Tabs.Panel>
+        <Tabs.Panel>
+            <Header>How to Transfer `.uk`, `.co.uk` Domains from GoDaddy to AWS Route 53</Header>
+
+            Transferring .uk domains from GoDaddy to AWS Route 53 is a simple process, but it does require a few extra steps compared to other TLDs. In this blog post, we'll show you how to transfer .uk domains from GoDaddy to AWS Route 53, including examples and links.
+
+            ## Prerequisites
+
+            Before you begin, you'll need to have the following:
+
+            - An AWS account
+            - A `.uk`, `.co.uk` domain name that you want to transfer from GoDaddy to Route 53
+            - Access to the email address associated with the domain's administrative contact in the Nominet database
+
+            ## Step 1: Unlock Your Domain
+
+            Before you can transfer your domain, you'll need to unlock it in your GoDaddy account. Here's how:
+
+            1. Log in to your GoDaddy account.
+            2. Go to the "Domains" section of your account.
+            3. Find the domain you want to transfer and click on its name.
+            4. Scroll down to the "Additional Settings" section and click "Manage" next to "Domain lock".
+            5. Click the toggle button to unlock your domain.
+
+            ## Step 2: Get Your IPS Tag
+
+            To transfer your .uk domain to Route 53, you'll need to change its IPS tag to GANDI. Here's how to get your IPS tag:
+
+            1. In your GoDaddy account, go to the "Domains" section.
+            2. Find the domain you want to transfer and click on its name.
+            3. Scroll down to the "Additional Settings" section and click "Transfer Domain Away From GoDaddy".
+            4. Follow the prompts to change the IPS tag to GANDI.
+
+            Note: This may take up to 24 hours to take effect.
+
+            ## Step 3: Start the Transfer in Route 53
+
+            After you've changed the IPS tag to AWS, you can start the transfer process in AWS Route 53. Here's how:
+
+            1. Log in to your AWS account and go to the Route 53 console.
+            2. Click on "Registered domains" in the left-hand menu.
+            3. Click "Transfer domain" and enter the domain name you want to transfer.
+            4. Follow the prompts to complete the transfer process.
+
+            ## Step 5: Verify Your Email Address
+
+            After you initiate the transfer in Route 53, you'll receive an email from Amazon to the administrative contact email address associated with your domain. Follow the instructions in the email to verify your email address.
+
+            ## Step 6: Wait for the Transfer to Complete
+
+            Once you've verified your email address, the transfer process will begin. It can take up to seven days for the transfer to complete, but it's usually much faster than that. During this time, your domain will still be accessible on GoDaddy, but you won't be able to make any changes to it.
+
+            ## Step 7: Update Your DNS Records
+
+            Once the transfer is complete, you'll need to update your DNS records to point to your AWS resources. Here's how:
+
+            1. Log in to your AWS account and go to the Route 53 console.
+            2. Click on "Hosted zones" in the left-hand menu.
+            3. Click on the hosted zone that corresponds to your domain
+
+            And that's it! You've successfully transferred your domain from GoDaddy
+
+            Note: It may take up to 24 hours for the transfer to complete.
+        </Tabs.Panel>
+    </Tabs.Panels>
+</Tabs>
