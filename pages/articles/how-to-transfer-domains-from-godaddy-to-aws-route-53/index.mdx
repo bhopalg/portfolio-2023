@@ -1,6 +1,11 @@
-import { ArticleLayout } from '@/components/article-layout'
-import { Tabs } from "@/components/arcticels/tabs"
+import Image from 'next/image';
+
+import { ArticleLayout } from '@/components/article-layout';
+import { Tabs } from "@/components/arcticels/tabs";
 import { Header } from "@/components/arcticels/header";
+import manageDomains from '@/pages/articles/how-to-transfer-domains-from-godaddy-to-aws-route-53/manage-domains.png';
+import transferDomain from '@/pages/articles/how-to-transfer-domains-from-godaddy-to-aws-route-53/transfer-domain-away.png';
+import registeredDomains from '@/pages/articles/how-to-transfer-domains-from-godaddy-to-aws-route-53/registered-domains.png';
 
 export const meta = {
     author: 'Gurps',
@@ -30,26 +35,30 @@ export default (props) => <ArticleLayout meta={meta} {...props} />
 
             Before you begin, you'll need to have the following:
 
-            - An AWS account
-            - A domain name that you want to transfer from GoDaddy to Route 53
+            - An AWS account <a href={"https://console.aws.amazon.com/console/home?nc2=h_ct&src=header-signin"} target={"_blank"} rel={"noreferrer"}>here</a>
+            - A domain name that you want to transfer from GoDaddy to Route 53 <a href={"https://www.godaddy.com/products"} target={"_blank"} rel={"noreferrer"}>here</a>
             - Access to the email address associated with the domain's administrative contact in the WHOIS database
 
             ## Step 1: Unlock Your Domain
             Before you can transfer your domain, you'll need to unlock it in your GoDaddy account. Here's how:
 
             1. Log in to your GoDaddy account.
-            2. Go to the "Domains" section of your account.
+            2. Go to the "Domains" section of your account. <a href={"https://dcc.godaddy.com/products"} target={"_blank"} rel={"noreferrer"}>here</a>
             3. Find the domain you want to transfer and click on its name.
-            4. Scroll down to the "Additional Settings" section and click "Manage" next to "Domain lock".
-            5. Click the toggle button to unlock your domain.
+            4. Click on Manage Domain in Quick Links section (on the right side).
+
+            <br/>
+            <Image src={manageDomains} alt="Manage Domains" />
+
             ## Step 2: Get Your Authorization Code
 
             To transfer your domain to Route 53, you'll need an authorization code (also known as an EPP code or transfer code) from GoDaddy. Here's how to get it:
 
-            1. In your GoDaddy account, go to the "Domains" section.
-            2. Find the domain you want to transfer and click on its name.
-            3. Scroll down to the "Additional Settings" section and click "Transfer Domain Away From GoDaddy".
-            4. Follow the prompts to get your authorization code.
+            1. Scroll down to the "Additional Settings" section and click "Transfer Domain Away From GoDaddy".
+            2. Follow the prompts to get your authorization code.
+
+            <br/>
+            <Image src={transferDomain} alt="Transfer Domain Away" />
 
             ## Step 3: Start the Transfer in Route 53
 
@@ -59,6 +68,9 @@ export default (props) => <ArticleLayout meta={meta} {...props} />
             2. Click on "Registered domains" in the left-hand menu.
             3. Click "Transfer domain" and enter the domain name you want to transfer.
             4. Follow the prompts to complete the transfer process.
+
+            <br/>
+            <Image src={registeredDomains} alt="Registered Domains" />
 
             ## Step 4: Verify Your Email Address
 
@@ -99,19 +111,19 @@ export default (props) => <ArticleLayout meta={meta} {...props} />
             Before you can transfer your domain, you'll need to unlock it in your GoDaddy account. Here's how:
 
             1. Log in to your GoDaddy account.
-            2. Go to the "Domains" section of your account.
+            2. Go to the "Domains" section of your account. <a href={"https://dcc.godaddy.com/products"} target={"_blank"} rel={"noreferrer"}>here</a>
             3. Find the domain you want to transfer and click on its name.
-            4. Scroll down to the "Additional Settings" section and click "Manage" next to "Domain lock".
-            5. Click the toggle button to unlock your domain.
+            4. Click on Manage Domain in Quick Links section (on the right side).
+
+            <br/>
+            <Image src={manageDomains} alt="Manage Domains" />
 
             ## Step 2: Get Your IPS Tag
 
             To transfer your .uk domain to Route 53, you'll need to change its IPS tag to GANDI. Here's how to get your IPS tag:
 
-            1. In your GoDaddy account, go to the "Domains" section.
-            2. Find the domain you want to transfer and click on its name.
-            3. Scroll down to the "Additional Settings" section and click "Transfer Domain Away From GoDaddy".
-            4. Follow the prompts to change the IPS tag to GANDI.
+            1. Scroll down to the "Additional Settings" section and click "Transfer Domain Away From GoDaddy".
+            2. Follow the prompts to change the IPS tag to GANDI.
 
             Note: This may take up to 24 hours to take effect.
 
@@ -123,6 +135,9 @@ export default (props) => <ArticleLayout meta={meta} {...props} />
             2. Click on "Registered domains" in the left-hand menu.
             3. Click "Transfer domain" and enter the domain name you want to transfer.
             4. Follow the prompts to complete the transfer process.
+
+            <br/>
+            <Image src={registeredDomains} alt="Registered Domains" />
 
             ## Step 5: Verify Your Email Address
 
