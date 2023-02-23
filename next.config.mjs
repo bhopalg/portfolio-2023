@@ -5,6 +5,12 @@ import rehypePrism from '@mapbox/rehype-prism';
 import { remarkCodeHike } from '@code-hike/mdx';
 import theme from 'shiki/themes/github-dark.json' assert { type: 'json' };
 
+import nextPWA from 'next-pwa';
+
+const withPWA = nextPWA({
+  dest: 'public',
+});
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ['ts', 'tsx', 'mdx'],
@@ -22,4 +28,4 @@ const withMDX = nextMDX({
   },
 })
 
-export default withMDX(nextConfig)
+export default withPWA(withMDX(nextConfig));
