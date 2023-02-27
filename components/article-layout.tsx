@@ -36,7 +36,7 @@ export function ArticleLayout({
   return (
     <>
       <Head>
-        <title>{title}</title>
+        <title>{title} | Gurpreet Bhopal</title>
         <meta charSet={"utf-8"} />
         <meta name="description" content={description} />
         <meta name="author" content={author} />

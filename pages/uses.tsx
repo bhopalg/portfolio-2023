@@ -47,7 +47,7 @@ export default function Uses() {
   return (
     <>
       <Head>
-        <title>{`${TITLE} | Gurp's Portfolio`}</title>
+        <title>{TITLE} | Gurpreet Bhopal</title>
         <meta name="description" content={DESCRIPTION} />
         <meta name="keywords" content={KEYWORDS.join(", ")} />
       </Head>
