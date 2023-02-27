@@ -30,6 +30,7 @@ export function AboutMe() {
               "col-span-1 bg-zinc-900 ring-1 ring-zinc-300/20 rounded-xl flex justify-center items-center py-8"
             )}
           >
+            <span className={"sr-only"}>About Me</span>
             <h1
               className={
                 "text-3xl md:text-5xl font-extrabold text-transparent font-spaceMono bg-clip-text bg-gradient-to-r from-light-blue-600 to-light-blue-300"
@@ -52,6 +53,7 @@ export function AboutMe() {
               "transition-all ease-in-out duration-700 col-span-1 bg-zinc-900 ring-1 ring-zinc-300/20 rounded-xl flex justify-center items-center py-8"
             )}
           >
+            <span className={"sr-only"}>Website</span>
             <h1
               className={
                 "text-3xl md:text-5xl font-extrabold text-transparent font-spaceMono bg-clip-text bg-gradient-to-r from-light-blue-600 to-light-blue-300"
@@ -72,6 +74,7 @@ export function AboutMe() {
               "transition-all ease-in-out duration-700 col-span-1 bg-zinc-900 ring-1 ring-zinc-300/20 rounded-xl flex justify-center items-center py-8"
             )}
           >
+            <span className={"sr-only"}>Apps</span>
             <h1
               className={
                 "text-3xl md:text-5xl font-extrabold text-transparent font-spaceMono bg-clip-text bg-gradient-to-r from-light-blue-600 to-light-blue-300"
