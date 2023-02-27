@@ -43,7 +43,7 @@ export default function ArticlesIndex({ articles }: { articles: ArticleModel[] }
   return (
     <>
       <Head>
-        <title>Articles - Spencer Sharp</title>
+        <title>Articles | Gurpreet Bhopal</title>
         <meta name="description" content={DESCRIPTION} />
         <meta name="keywords" content={KEYWORDS.join(", ")} />
       </Head>

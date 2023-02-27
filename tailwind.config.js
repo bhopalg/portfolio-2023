@@ -4,7 +4,6 @@ const { fontFamily } = require("tailwindcss/defaultTheme");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./node_modules/flowbite-react/**/*.js", "./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
-  darkMode: false, // or 'media' or 'class'
   theme: {
     typography: (theme) => ({
       invert: {
@@ -33,14 +32,14 @@ module.exports = {
       DEFAULT: {
         css: {
           "--tw-prose-body": theme("colors.zinc.600"),
-          "--tw-prose-headings": theme("colors.zinc.900"),
-          "--tw-prose-links": theme("colors.teal.500"),
-          "--tw-prose-links-hover": theme("colors.teal.600"),
+          "--tw-prose-headings": theme("colors.zinc.300"),
+          "--tw-prose-links": theme("colors.light-blue.300"),
+          "--tw-prose-links-hover": theme("colors.light-blue.400"),
           "--tw-prose-underline": theme("colors.teal.500 / 0.2"),
-          "--tw-prose-underline-hover": theme("colors.teal.500"),
+          "--tw-prose-underline-hover": theme("colors.light-blue.300"),
           "--tw-prose-bold": theme("colors.zinc.900"),
           "--tw-prose-counters": theme("colors.zinc.900"),
-          "--tw-prose-bullets": theme("colors.zinc.900"),
+          "--tw-prose-bullets": theme("colors.zinc.300"),
           "--tw-prose-hr": theme("colors.zinc.100"),
           "--tw-prose-quote-borders": theme("colors.zinc.200"),
           "--tw-prose-captions": theme("colors.zinc.400"),
@@ -54,10 +53,10 @@ module.exports = {
 
           "--tw-prose-invert-body": theme("colors.zinc.400"),
           "--tw-prose-invert-headings": theme("colors.zinc.200"),
-          "--tw-prose-invert-links": theme("colors.teal.400"),
-          "--tw-prose-invert-links-hover": theme("colors.teal.400"),
-          "--tw-prose-invert-underline": theme("colors.teal.400 / 0.3"),
-          "--tw-prose-invert-underline-hover": theme("colors.teal.400"),
+          "--tw-prose-invert-links": theme("colors.light-blue.400"),
+          "--tw-prose-invert-links-hover": theme("colors.light-blue.400"),
+          "--tw-prose-invert-underline": theme("colors.light-blue.400 / 0.3"),
+          "--tw-prose-invert-underline-hover": theme("colors.light-blue.400"),
           "--tw-prose-invert-bold": theme("colors.zinc.200"),
           "--tw-prose-invert-counters": theme("colors.zinc.200"),
           "--tw-prose-invert-bullets": theme("colors.zinc.200"),

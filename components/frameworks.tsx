@@ -53,6 +53,7 @@ export function Frameworks({ isInView }: { isInView: boolean }) {
             "transition-all ease-in-out duration-700 col-span-1 bg-zinc-900 ring-1 ring-zinc-300/20 hover:bg-zinc-700 hover:bg-zinc-700 rounded-xl flex justify-center items-center py-8"
           )}
         >
+          <span className={"sr-only"}>{alt} Image</span>
           <Image
             src={image}
             alt={alt}

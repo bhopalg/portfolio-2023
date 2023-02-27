@@ -51,6 +51,7 @@ function Frameworks({ isInView }: { isInView: boolean }) {
           )}
           key={image}
         >
+          <span className={"sr-only"}>{alt} Image</span>
           <Image src={image} alt={alt} width={width} height={height} />
         </a>
       ))}
@@ -74,6 +75,7 @@ export function Experience({ isInView }: { isInView: boolean }) {
           "transition-all ease-in-out duration-700 rounded-lg flex flex-col justify-center items-center py-6 bg-zinc-900 ring-1 ring-zinc-300/20"
         )}
       >
+        <span className={"sr-only"}>{yearsOfExperience} years of experience</span>
         <h1
           className={
             "text-3xl md:text-5xl font-extrabold text-transparent font-spaceMono bg-clip-text bg-gradient-to-r from-light-blue-600 to-light-blue-300"
@@ -92,6 +94,7 @@ export function Experience({ isInView }: { isInView: boolean }) {
           "transition-all ease-in-out duration-700 bg-zinc-900 ring-1 ring-zinc-300/20 rounded-lg flex flex-col justify-center items-center py-6"
         )}
       >
+        <span className={"sr-only"}>Expertise in building data analysis tools and apps for a large user base.</span>
         <p className={"font-spaceMono text-gray-200 font-thin pb-8"}>Expertise in Building</p>
         <h1
           className={
