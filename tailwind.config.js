@@ -183,7 +183,7 @@ module.exports = {
             fontWeight: theme("fontWeight.semibold"),
           },
           "ol > li::marker": {
-            color: "var(--tw-prose-counters)",
+            color: theme("colors.zinc.300"),
           },
           "ul > li::marker": {
             color: "var(--tw-prose-bullets)",
