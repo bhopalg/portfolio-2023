@@ -19,6 +19,8 @@ export function Card({
   className?: string;
   children: React.ReactNode;
 }) {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   return <Component className={clsx(className, "group relative flex flex-col items-start")}>{children}</Component>;
 }
 
@@ -49,6 +51,8 @@ Card.Title = function CardTitle({
   children: React.ReactNode;
 }) {
   return (
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     <Component className="text-base font-semibold tracking-tight text-zinc-100">
       {href ? <Card.Link href={href}>{children}</Card.Link> : children}
     </Component>
@@ -83,6 +87,8 @@ Card.Eyebrow = function CardEyebrow({
 } & JSX.IntrinsicAttributes &
   React.HTMLAttributes<HTMLElement>) {
   return (
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     <Component
       className={clsx(
         className,
