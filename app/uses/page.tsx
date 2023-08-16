@@ -1,8 +1,8 @@
-import { USES_LIST } from "@/common/constants";
 import { SimpleLayout } from "@/components/simple-layout";
+import { USES_LIST } from "@/common/constants";
 import { DesktopUsesList } from "@/components/uses/desktop-list";
 import { MobileList } from "@/components/uses/mobile-list";
-import Head from "next/head";
+import { Metadata } from "next";
 
 const TITLE = "Tools, IDEs, and Workstation Items I Use ";
 const DESCRIPTION =
@@ -43,28 +43,27 @@ const KEYWORDS = [
   "LG HDR 4K Display",
 ];
 
-export default function Uses() {
+export const metadata: Metadata = {
+  title: TITLE,
+  description: DESCRIPTION,
+  keywords: KEYWORDS.join(", "),
+};
+
+export default function Page() {
   return (
-    <>
-      <Head>
-        <title>{TITLE} | Gurpreet Bhopal</title>
-        <meta name="description" content={DESCRIPTION} />
-        <meta name="keywords" content={KEYWORDS.join(", ")} />
-      </Head>
-      <SimpleLayout title={TITLE} intro={""} isHScreenRequired={false}>
-        <div className={"flex flex-col gap-10"}>
-          {USES_LIST.map(({ title, description, items }) => (
-            <div key={title}>
-              <span className={"md:block hidden"}>
-                <DesktopUsesList items={items} title={title} description={description} />
-              </span>
-              <span className={"md:hidden block"}>
-                <MobileList items={items} title={title} description={description} />
-              </span>
-            </div>
-          ))}
-        </div>
-      </SimpleLayout>
-    </>
+    <SimpleLayout title={TITLE} intro={""} isHScreenRequired={false}>
+      <div className={"flex flex-col gap-10"}>
+        {USES_LIST.map(({ title, description, items }) => (
+          <div key={title}>
+            <span className={"md:block hidden"}>
+              <DesktopUsesList items={items} title={title} description={description} />
+            </span>
+            <span className={"md:hidden block"}>
+              <MobileList items={items} title={title} description={description} />
+            </span>
+          </div>
+        ))}
+      </div>
+    </SimpleLayout>
   );
 }
