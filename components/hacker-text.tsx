@@ -12,8 +12,8 @@ export function HackerText() {
     const intervalTwo = hackerText(hackerTextTwoRef);
 
     return () => {
-      intervalOne ? clearTimeout(intervalOne) : null;
-      intervalTwo ? clearTimeout(intervalTwo) : null;
+      intervalOne ? clearTimeout(intervalOne as any) : null;
+      intervalTwo ? clearTimeout(intervalTwo as any) : null;
     };
   }, [hackerTextOneRef]);
 
