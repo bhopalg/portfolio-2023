@@ -1,6 +1,6 @@
 "use client";
 
-import { HackerText } from "@/components/hacker-text";
+import { HackerText } from "@/components/HackerText";
 import { ArrowDownIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 

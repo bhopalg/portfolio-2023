@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { Hero } from "@/components/hero";
+import { Hero } from "@/components/Hero";
 import { AboutMe } from "@/components/about-me";
 
 export const metadata: Metadata = {
