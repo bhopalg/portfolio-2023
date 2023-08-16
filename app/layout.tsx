@@ -1,5 +1,8 @@
 import "@/styles/globals.css";
 import "@code-hike/mdx/dist/index.css";
+import { Roboto_Mono } from "next/font/google";
+
+const robotoMono = Roboto_Mono({ subsets: ["latin"] });
 
 export default function RootLayout({
   // Layouts must accept a children prop.
@@ -10,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="h-full bg-black overflow-x-hidden">{children}</body>
+      <body className={"h-full bg-black overflow-x-hidden " + robotoMono.className}>{children}</body>
     </html>
   );
 }
