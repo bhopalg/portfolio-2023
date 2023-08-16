@@ -1,3 +1,5 @@
+"use client";
+
 import { ItemProp, UsesListProps } from "@/components/uses/uses.model";
 import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
 import classNames from "classnames";
@@ -23,7 +25,7 @@ function Item({ item, inView }: { item: ItemProp; inView: boolean }) {
             "opacity-0 blur-lg": !inView,
             "opacity-100 blur-none": inView,
           },
-          `transition-all duration-700 ease-in-out ${transitionDelay ? `${transitionDelay}` : ""}`
+          `transition-all duration-700 ease-in-out ${transitionDelay ? `${transitionDelay}` : ""}`,
         )}
       >
         <h3 className="text-lg font-semibold text-white text-left">{name}</h3>

@@ -1,3 +1,5 @@
+"use client";
+
 import { hackerText } from "@/common/hacker-text";
 import { useEffect, useRef } from "react";
 

@@ -1,3 +1,5 @@
+"use client";
+
 import { NAVIGATION, SOCIALS } from "@/common/constants";
 import { InnerContainer, OuterContainer } from "@/components/container";
 import { Tooltip } from "flowbite-react";

@@ -1,3 +1,5 @@
+"use client";
+
 import { Container } from "@/components/container";
 import classNames from "classnames";
 import { ReactNode } from "react";
@@ -16,7 +18,7 @@ export function SimpleLayout({ title, intro, children, isHScreenRequired = true 
         {
           "h-screen": isHScreenRequired,
         },
-        "mt-16 sm:mt-32"
+        "mt-16 sm:mt-32",
       )}
     >
       <header className="max-w-2xl">

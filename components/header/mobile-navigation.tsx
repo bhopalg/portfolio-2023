@@ -1,3 +1,5 @@
+"use client";
+
 import { NAVIGATION } from "@/common/constants";
 import { MobileNavItem } from "@/components/header/mobile-nav-item";
 import { Popover, Transition } from "@headlessui/react";

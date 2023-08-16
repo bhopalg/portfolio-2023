@@ -1,3 +1,5 @@
+"use client";
+
 import { Tab as HeadlessUITab } from "@headlessui/react";
 import classNames from "classnames";
 import { ReactNode } from "react";
@@ -19,7 +21,7 @@ Tabs.Tab = function Tab({ children }: { children: ReactNode }) {
             "bg-white text-black shadow": selected,
             "text-zinc-300 hover:bg-white/[0.12] hover:text-white": !selected,
           },
-          "w-full rounded-lg py-2.5 text-sm font-medium leading-5 ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2"
+          "w-full rounded-lg py-2.5 text-sm font-medium leading-5 ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2",
         )
       }
     >

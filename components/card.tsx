@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 import Link from "next/link";
 import { SVGProps } from "react";
@@ -93,7 +95,7 @@ Card.Eyebrow = function CardEyebrow({
       className={clsx(
         className,
         "relative z-10 order-first mb-3 flex items-center text-sm text-zinc-500",
-        decorate && "pl-3.5"
+        decorate && "pl-3.5",
       )}
       {...props}
     >

@@ -1,3 +1,5 @@
+"use client";
+
 import { Container } from "@/components/container";
 import { Prose } from "@/components/prose";
 import { formatDate } from "@/lib/format-date";

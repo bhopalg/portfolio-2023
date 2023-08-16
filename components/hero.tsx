@@ -1,3 +1,5 @@
+"use client";
+
 import { HackerText } from "@/components/hacker-text";
 import { Transition } from "@headlessui/react";
 import { ArrowDownIcon } from "@heroicons/react/24/outline";

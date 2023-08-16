@@ -1,3 +1,5 @@
+"use client";
+
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header/header";
 import { Space_Mono } from "next/font/google";

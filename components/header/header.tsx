@@ -1,3 +1,5 @@
+"use client";
+
 import { Container } from "@/components/container";
 import { DesktopNavigation } from "@/components/header/desktop-navigation";
 import { MobileNavigation } from "@/components/header/mobile-navigation";

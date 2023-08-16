@@ -1,3 +1,5 @@
+"use client";
+
 import { Experience } from "@/components/experience";
 import { Frameworks } from "@/components/frameworks";
 import { Resume } from "@/components/resume";
@@ -27,7 +29,7 @@ export function AboutMe() {
                     "opacity-100 blur-none": inView,
                   }
                 : null,
-              "col-span-1 bg-zinc-900 ring-1 ring-zinc-300/20 rounded-xl flex justify-center items-center py-8"
+              "col-span-1 bg-zinc-900 ring-1 ring-zinc-300/20 rounded-xl flex justify-center items-center py-8",
             )}
           >
             <span className={"sr-only"}>About Me</span>
@@ -50,7 +52,7 @@ export function AboutMe() {
                     "translate-y-0 opacity-100 blur-none": inView,
                   }
                 : null,
-              "transition-all ease-in-out duration-700 col-span-1 bg-zinc-900 ring-1 ring-zinc-300/20 rounded-xl flex justify-center items-center py-8"
+              "transition-all ease-in-out duration-700 col-span-1 bg-zinc-900 ring-1 ring-zinc-300/20 rounded-xl flex justify-center items-center py-8",
             )}
           >
             <span className={"sr-only"}>Website</span>
@@ -71,7 +73,7 @@ export function AboutMe() {
                     "translate-y-0 opacity-100 blur-none": inView,
                   }
                 : null,
-              "transition-all ease-in-out duration-700 col-span-1 bg-zinc-900 ring-1 ring-zinc-300/20 rounded-xl flex justify-center items-center py-8"
+              "transition-all ease-in-out duration-700 col-span-1 bg-zinc-900 ring-1 ring-zinc-300/20 rounded-xl flex justify-center items-center py-8",
             )}
           >
             <span className={"sr-only"}>Apps</span>

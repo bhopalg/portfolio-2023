@@ -1,3 +1,5 @@
+"use client";
+
 import { NAVIGATION } from "@/common/constants";
 import { NavItem } from "@/components/header/nav-item";
 

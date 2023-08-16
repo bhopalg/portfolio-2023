@@ -1,3 +1,5 @@
+"use client";
+
 import { ItemProp, UsesListProps } from "@/components/uses/uses.model";
 import classNames from "classnames";
 import Image from "next/image";
@@ -23,7 +25,7 @@ function Item({ item, inView }: { item: ItemProp; inView: boolean }) {
         },
         `transition-all bg-zinc-800 ring-1 ring-zinc-300/20 hover:bg-zinc-900 duration-700 ease-in-out py-10 px-8 rounded-xl ${
           transitionDelay ? `${transitionDelay}` : ""
-        }`
+        }`,
       )}
     >
       <a href={link} target={"_blank"} rel={"noreferrer"}>
