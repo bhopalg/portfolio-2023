@@ -4,11 +4,12 @@ import { Container } from "@/components/container";
 import { DesktopNavigation } from "@/components/header/desktop-navigation";
 import { MobileNavigation } from "@/components/header/mobile-navigation";
 import { updateHeaderStyles } from "@/lib/update-header-styles";
-import { useRouter } from "next/router";
 import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 
 export function Header() {
-  const isHomePage = useRouter().pathname === "/";
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
 
   const headerRef = useRef();
   const isInitial = useRef(true);
