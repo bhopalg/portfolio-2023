@@ -1,6 +1,6 @@
 "use client";
 
-import { ItemProp, UsesListProps } from "@/components/uses/uses.model";
+import { ItemProp, UsesListProps } from "@/models/Uses";
 import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
 import { useInView } from "react-intersection-observer";
 import clsx from "clsx";
