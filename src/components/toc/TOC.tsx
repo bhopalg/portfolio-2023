@@ -1,6 +1,6 @@
 "use client";
 
-import { navigation } from "@/constants";
+import { MY_DOCS_NAVIGATION } from "@/common/constants";
 import Link from "next/link";
 import { Navigation } from "@/models/Navigation";
 
@@ -9,11 +9,9 @@ const linkClassName = "text-zinc-50 hover:text-zinc-400 duration-300 ease-in-out
 export default function TOC() {
   return (
     <ul>
-      {navigation
-        .filter(({ isHome }) => !isHome)
-        .map((item, index) => (
-          <Item key={item.name} item={item} position={index + 1} />
-        ))}
+      {MY_DOCS_NAVIGATION.filter(({ isHome }) => !isHome).map((item, index) => (
+        <Item key={item.name} item={item} position={index + 1} />
+      ))}
     </ul>
   );
 }

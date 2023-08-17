@@ -204,12 +204,12 @@ export const MY_DOCS_NAVIGATION: MyDocsNavigation[] = [
   { name: "Home", href: "/", icon: HomeIcon, isHome: true },
   {
     name: "Useful Links",
-    href: "/useful-links",
+    href: "/my-docs/useful-links",
     icon: LinkIcon,
   },
   {
     name: "Tailwind CSS",
-    href: "/tailwindcss",
+    href: "/my-docs/tailwindcss",
     icon: TailwindCSSIcon,
     children: [
       {
@@ -225,7 +225,7 @@ export const MY_DOCS_NAVIGATION: MyDocsNavigation[] = [
   },
   {
     name: "React",
-    href: "/react",
+    href: "/my-docs/react",
     icon: ReactIcon,
     children: [
       {
@@ -237,7 +237,7 @@ export const MY_DOCS_NAVIGATION: MyDocsNavigation[] = [
   },
   {
     name: "Kubernetes",
-    href: "/kubernetes",
+    href: "/my-docs/kubernetes",
     icon: Kubernetes,
   },
 ];

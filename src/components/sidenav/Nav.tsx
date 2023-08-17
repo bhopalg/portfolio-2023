@@ -2,7 +2,7 @@
 
 import { clsx } from "clsx";
 import { usePathname } from "next/navigation";
-import { navigation } from "@/constants";
+import { MY_DOCS_NAVIGATION } from "@/common/constants";
 import Link from "next/link";
 import { Navigation } from "@/models/Navigation";
 import { Disclosure, Transition } from "@headlessui/react";
@@ -11,10 +11,10 @@ export default function Nav() {
   const pathname = usePathname();
   return (
     <nav className="flex flex-1 flex-col">
-      <ul role="list" className="flex flex-1 flex-col gap-y-7">
+      <ul className="flex flex-1 flex-col gap-y-7">
         <li>
-          <ul role="list" className="-mx-2 space-y-1">
-            {navigation.map((item) => (
+          <ul className="-mx-2 space-y-1">
+            {MY_DOCS_NAVIGATION.map((item) => (
               <li key={item.name}>
                 {!item.children && <NavLink item={item} pathname={pathname} />}
                 {item.children && <MultiNav item={item} pathname={pathname} />}

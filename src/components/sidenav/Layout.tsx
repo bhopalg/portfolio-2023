@@ -27,7 +27,7 @@ export default function SideNavLayout({ children }: { children: ReactNode }) {
 
         <MobileHeader setSidebarOpen={setSidebarOpen} />
 
-        <main className="py-10 lg:pl-72">
+        <main className="py-10 lg:pl-72 min-h-screen">
           <div className="px-4 sm:px-6 lg:px-8">{children}</div>
         </main>
       </div>
