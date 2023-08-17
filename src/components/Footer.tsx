@@ -47,7 +47,7 @@ function SocialIcons() {
 
 export function Footer() {
   return (
-    <footer className="mt-32 bg-zinc-900 ring-1 ring-zinc-300/20">
+    <footer className="bg-zinc-900 ring-1 ring-zinc-300/20">
       <OuterContainer>
         <div className="border-t pt-10 pb-16 border-zinc-700/40">
           <InnerContainer>

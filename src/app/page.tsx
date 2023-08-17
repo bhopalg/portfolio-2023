@@ -40,11 +40,8 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <>
-      <section className={"relative"}>
-        <Hero />
-      </section>
-      <AboutMe />
-    </>
+    <section className={"relative"}>
+      <Hero />
+    </section>
   );
 }

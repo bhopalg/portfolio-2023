@@ -11,7 +11,7 @@ export const NAVIGATION = [
   },
   {
     name: "About",
-    href: "/#about-me",
+    href: "/about-me",
   },
   {
     name: "Uses",
