@@ -2,8 +2,8 @@
 
 import { ItemProp, UsesListProps } from "@/components/uses/uses.model";
 import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
-import classNames from "classnames";
 import { useInView } from "react-intersection-observer";
+import clsx from "clsx";
 
 function Title({ title }: { title: string }) {
   return <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">{title}</h2>;
@@ -20,12 +20,11 @@ function Item({ item, inView }: { item: ItemProp; inView: boolean }) {
     <li className="mb-10 ml-4">
       <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
       <div
-        className={classNames(
-          {
-            "opacity-0 blur-lg": !inView,
-            "opacity-100 blur-none": inView,
-          },
-          `transition-all duration-700 ease-in-out ${transitionDelay ? `${transitionDelay}` : ""}`,
+        className={clsx(
+          !inView && "opacity-0 blur-lg",
+          inView && "opacity-100 blur-none",
+          `transition-all duration-700 ease-in-out`,
+          transitionDelay && transitionDelay,
         )}
       >
         <h3 className="text-lg font-semibold text-white text-left">{name}</h3>
@@ -35,7 +34,7 @@ function Item({ item, inView }: { item: ItemProp; inView: boolean }) {
             href={link}
             target={"_blank"}
             rel={"noreferrer"}
-            className="inline-flex items-center px-4 py-2 text-sm font-medium border rounded-lg hover:bg-gray-100 focus:z-10 focus:ring-4 focus:outline-none focus:text-white bg-gray-800 text-gray-400 border-gray-600 hover:text-white hover:bg-gray-700 focus:ring-gray-700"
+            className="inline-flex items-center px-4 py-2 text-sm font-medium border rounded-lg focus:z-10 focus:ring-4 focus:outline-none focus:text-white bg-gray-800 text-gray-400 border-gray-600 hover:text-white hover:bg-gray-700 focus:ring-gray-700"
           >
             Learn more <ArrowLongRightIcon className="w-3 h-3 ml-2" />
           </a>

@@ -1,9 +1,9 @@
 "use client";
 
 import { ItemProp, UsesListProps } from "@/components/uses/uses.model";
-import classNames from "classnames";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
+import clsx from "clsx";
 
 function Title({ title }: { title: string }) {
   return <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">{title}</h2>;
@@ -18,14 +18,11 @@ function Item({ item, inView }: { item: ItemProp; inView: boolean }) {
 
   return (
     <li
-      className={classNames(
-        {
-          "opacity-0 blur-lg": !inView,
-          "opacity-100 blur-none": inView,
-        },
-        `transition-all bg-zinc-800 ring-1 ring-zinc-300/20 hover:bg-zinc-900 duration-700 ease-in-out py-10 px-8 rounded-xl ${
-          transitionDelay ? `${transitionDelay}` : ""
-        }`,
+      className={clsx(
+        !inView && "opacity-0 blur-lg",
+        inView && "opacity-100 blur-none",
+        `transition-all bg-zinc-800 ring-1 ring-zinc-300/20 hover:bg-zinc-900 duration-700 ease-in-out py-10 px-8 rounded-xl`,
+        transitionDelay && transitionDelay,
       )}
     >
       <a href={link} target={"_blank"} rel={"noreferrer"}>

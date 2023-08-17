@@ -2,9 +2,10 @@
 
 import clsx from "clsx";
 import Link from "next/link";
-import { SVGProps } from "react";
+import React, { AnchorHTMLAttributes, ElementType, ReactNode, SVGProps } from "react";
+import IntrinsicAttributes = React.JSX.IntrinsicAttributes;
 
-function ChevronRightIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
+function ChevronRightIcon(props: IntrinsicAttributes & SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
       <path d="M6.75 5.75 9.25 8l-2.5 2.25" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -17,9 +18,9 @@ export function Card({
   className,
   children,
 }: {
-  as?: React.ElementType;
+  as?: ElementType;
   className?: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
@@ -29,7 +30,7 @@ export function Card({
 Card.Link = function CardLink({
   children,
   ...props
-}: { children: React.ReactNode } & JSX.IntrinsicAttributes & React.AnchorHTMLAttributes<HTMLAnchorElement>) {
+}: { children: ReactNode } & IntrinsicAttributes & AnchorHTMLAttributes<HTMLAnchorElement>) {
   return (
     <>
       <div className="absolute -inset-y-6 -inset-x-4 z-0 scale-95 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl" />
@@ -48,9 +49,9 @@ Card.Title = function CardTitle({
   href,
   children,
 }: {
-  as?: React.ElementType;
+  as?: ElementType;
   href?: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -61,11 +62,11 @@ Card.Title = function CardTitle({
   );
 };
 
-Card.Description = function CardDescription({ children }: { children: React.ReactNode }) {
+Card.Description = function CardDescription({ children }: { children: ReactNode }) {
   return <p className="relative z-10 mt-2 text-sm text-zinc-400">{children}</p>;
 };
 
-Card.Cta = function CardCta({ children }: { children: React.ReactNode }) {
+Card.Cta = function CardCta({ children }: { children: ReactNode }) {
   return (
     <div aria-hidden="true" className="relative z-10 mt-4 flex items-center text-sm font-medium text-light-blue-500">
       {children}
@@ -81,12 +82,12 @@ Card.Eyebrow = function CardEyebrow({
   children,
   ...props
 }: {
-  as?: React.ElementType;
+  as?: ElementType;
   decorate?: boolean;
   dateTime?: string;
   className?: string;
-  children: React.ReactNode;
-} & JSX.IntrinsicAttributes &
+  children: ReactNode;
+} & IntrinsicAttributes &
   React.HTMLAttributes<HTMLElement>) {
   return (
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment

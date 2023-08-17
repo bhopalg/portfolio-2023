@@ -5,8 +5,8 @@ import { Frameworks } from "@/components/Frameworks";
 import { Resume } from "@/components/Resume";
 import { Socials } from "@/components/Socials";
 import { useMediaQuery } from "@/lib/use-media-query";
-import classNames from "classnames";
 import { useInView } from "react-intersection-observer";
+import clsx from "clsx";
 
 export function AboutMe() {
   const { ref, inView } = useInView({
@@ -22,7 +22,7 @@ export function AboutMe() {
         <div className={"col-span-1 grid grid-rows-1 gap-6"}>
           <Frameworks isInView={isMobile ? true : inView} />
           <div
-            className={classNames(
+            className={clsx(
               !isMobile
                 ? {
                     "opacity-0 blur-lg": !inView,
@@ -45,7 +45,7 @@ export function AboutMe() {
         </div>
         <div className={"col-span-1 h-full grid grid-cols-1 gap-6"}>
           <div
-            className={classNames(
+            className={clsx(
               !isMobile
                 ? {
                     "translate-y-40 opacity-0 blur-lg": !inView,
@@ -66,7 +66,7 @@ export function AboutMe() {
           </div>
           <div
             ref={!isMobile ? ref : null}
-            className={classNames(
+            className={clsx(
               !isMobile
                 ? {
                     "translate-y-40 opacity-0 blur-lg": !inView,

@@ -1,8 +1,8 @@
 "use client";
 
 import { SOCIALS } from "@/common/constants";
-import classNames from "classnames";
 import Image from "next/image";
+import clsx from "clsx";
 
 export function Socials({ isInView }: { isInView: boolean }) {
   return (
@@ -13,12 +13,10 @@ export function Socials({ isInView }: { isInView: boolean }) {
           href={link}
           target={"_blank"}
           key={name}
-          className={classNames(
-            {
-              "translate-x-40 opacity-0 blur-lg": !isInView,
-              "translate-x-0 opacity-100 blur-none": isInView,
-            },
-            "col-span-1 bg-zinc-900 ring-1 ring-zinc-300/20 hover:bg-zinc-700 hover:bg-zinc-700 transition-all ease-in-out duration-300 rounded-xl justify-center items-center py-8 flex flex-col",
+          className={clsx(
+            !isInView && "translate-x-40 opacity-0 blur-lg",
+            isInView && "translate-x-0 opacity-100 blur-none",
+            "col-span-1 bg-zinc-900 ring-1 ring-zinc-300/20 hover:bg-zinc-700 transition-all ease-in-out duration-300 rounded-xl justify-center items-center py-8 flex flex-col",
           )}
         >
           <span className={"sr-only"}>Follow me on {name}</span>
