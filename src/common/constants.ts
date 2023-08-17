@@ -1,4 +1,4 @@
-import { UsesListProps } from "@/components/uses/uses.model";
+import { UsesListProps } from "@/models/Uses";
 import * as process from "process";
 import { ArrowPathIcon, HomeIcon, LinkIcon, RectangleGroupIcon, WindowIcon } from "@heroicons/react/20/solid";
 import TailwindCSSIcon from "@/components/icons/TailwindCSS";
@@ -23,8 +23,7 @@ export const NAVIGATION = [
   },
   {
     name: "My Docs",
-    href: "https://my-docs.gbhopal.co.uk",
-    target: "_blank",
+    href: "/my-docs",
   },
 ];
 
