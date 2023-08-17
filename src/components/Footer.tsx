@@ -24,8 +24,8 @@ function CopyrightText() {
 function Navigation() {
   return (
     <div className="flex gap-6 text-sm font-medium text-zinc-200">
-      {NAVIGATION.map(({ name, href, target }) => (
-        <NavLink key={name} href={href} target={target}>
+      {NAVIGATION.map(({ name, href }) => (
+        <NavLink key={name} href={href} target={""}>
           {name}
         </NavLink>
       ))}

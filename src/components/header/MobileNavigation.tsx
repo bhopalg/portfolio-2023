@@ -46,8 +46,8 @@ export function MobileNavigation({ className }: { className?: string }) {
             </div>
             <nav className="mt-6">
               <ul className="-my-2 divide-y text-base divide-zinc-100/5 text-zinc-300">
-                {NAVIGATION.map(({ href, name, target }) => (
-                  <MobileNavItem key={name} href={href} target={target}>
+                {NAVIGATION.map(({ href, name }) => (
+                  <MobileNavItem key={name} href={href} target={""}>
                     {name}
                   </MobileNavItem>
                 ))}
