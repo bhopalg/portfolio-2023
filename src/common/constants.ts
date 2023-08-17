@@ -1,6 +1,6 @@
 import { UsesListProps } from "@/models/Uses";
 import * as process from "process";
-import { ArrowPathIcon, HomeIcon, LinkIcon, RectangleGroupIcon, WindowIcon } from "@heroicons/react/20/solid";
+import { ArrowPathIcon, HomeIcon, LinkIcon, RectangleGroupIcon, TableCellsIcon, WindowIcon } from "@heroicons/react/20/solid";
 import TailwindCSSIcon from "@/components/icons/TailwindCSS";
 import ReactIcon from "@/components/icons/React";
 import Kubernetes from "@/components/icons/Kubernetes";
@@ -202,6 +202,7 @@ export interface MyDocsNavigation {
 
 export const MY_DOCS_NAVIGATION: MyDocsNavigation[] = [
   { name: "Home", href: "/", icon: HomeIcon, isHome: true },
+  { name: "Table of contents", href: "/my-docs", icon: TableCellsIcon },
   {
     name: "Useful Links",
     href: "/my-docs/useful-links",

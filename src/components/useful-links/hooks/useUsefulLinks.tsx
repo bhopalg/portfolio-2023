@@ -2,7 +2,7 @@
 
 import { UsefulLink } from "@/models/UseLink";
 import { APIError } from "@/utils/api-error";
-import { MILLISECONDS_IN_ONE_MINUTE } from "@/constants";
+import { MILLISECONDS_IN_ONE_MINUTE } from "@/common/constants";
 import { useQuery } from "@tanstack/react-query";
 
 async function getUsefulLinks() {

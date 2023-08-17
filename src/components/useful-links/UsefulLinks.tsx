@@ -74,9 +74,9 @@ export default function UsefulLinks() {
       </div>
       <ul className="list-disc px-4 sm:px-6 lg:px-8">
         {filteredData.map(({ id, name, link, categories }) => (
-          <li className="my-2" key={id}>
+          <li className="my-2 text-zinc-50" key={id}>
             <div className={clsx(categories && " gap-2 py-2 flex flex-col")}>
-              <Link href={link} target={"_blank"}>
+              <Link href={link} target={"_blank"} className="text-zinc-50">
                 {name}
               </Link>
               <div className="flex flex-row flex-wrap gap-2 max-w-2xl w-full">
