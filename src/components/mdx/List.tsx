@@ -11,7 +11,7 @@ function UnorderedList({ children }: { children: ReactNode }) {
 }
 
 function ListItem({ children }: { children: ReactNode }) {
-  return <li className="py-2">{children}</li>;
+  return <li className="py-2 text-zinc-50">{children}</li>;
 }
 
 export const List = {
