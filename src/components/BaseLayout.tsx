@@ -34,6 +34,8 @@ export default function BaseLayout({ children }: { children: ReactNode }) {
         <MobileHeaderTitleContextProvider>
           {!pathname.includes("my-docs") && <Header />}
           <main>
+            {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+            {/*@ts-ignore*/}
             <MDXProvider components={components}>{children}</MDXProvider>
           </main>
           <Footer />
