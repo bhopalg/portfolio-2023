@@ -64,7 +64,7 @@ function MultiNav({ item, pathname, parentHref }: { item: Navigation; pathname: 
             */}
             <Disclosure.Panel static>
               {item.children && (
-                <ul role="list" className="space-y-1 w-full">
+                <ul className="space-y-1 w-full">
                   {item.children.map((_item) => (
                     <li key={_item.name} className="w-full">
                       {!_item.children && (
