@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={"h-full bg-black overflow-x-hidden " + robotoMono.className}>
+      <body className={"h-full bg-black overflow-x-hidden font-sans" + robotoMono.className}>
         <BaseLayout>{children}</BaseLayout>
       </body>
     </html>
