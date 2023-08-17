@@ -6,6 +6,8 @@ import { Tooltip } from "flowbite-react";
 import Image from "next/image";
 import Link from "next/link";
 import { ReactNode } from "react";
+import { usePathname } from "next/navigation";
+import clsx from "clsx";
 
 function NavLink({ href, children, target }: { href: string; children: ReactNode; target?: string }) {
   return (
@@ -46,8 +48,9 @@ function SocialIcons() {
 }
 
 export function Footer() {
+  const pathname = usePathname();
   return (
-    <footer className="bg-zinc-900 ring-1 ring-zinc-300/20">
+    <footer className={clsx("bg-zinc-900 ring-1 ring-zinc-300/20", pathname === "/uses" && "mt-10")}>
       <OuterContainer>
         <div className="border-t pt-10 pb-16 border-zinc-700/40">
           <InnerContainer>
