@@ -13,11 +13,14 @@ export function AboutMe() {
     threshold: 0,
   });
 
-  const isMobile = useMediaQuery(767);
+  const isMobile = useMediaQuery(1024);
 
   return (
-    <section id={"about-me"} className={"relative md:h-screen flex items-center px-10 overflow-x-hidden"}>
-      <div className={"grid grid-cols-1 md:grid-cols-3 md:max-w-7xl w-full mx-auto gap-10"}>
+    <section
+      id="about-me"
+      className="relative lg:min-h-[calc(100vh_-_190px)] flex items-center px-10 overflow-x-hidden lg:py-0 py-10"
+    >
+      <div className="grid grid-cols-1 lg:grid-cols-3 md:max-w-7xl w-full mx-auto gap-7">
         <Experience isInView={isMobile ? true : inView} />
         <div className={"col-span-1 grid grid-rows-1 gap-6"}>
           <Frameworks isInView={isMobile ? true : inView} />
