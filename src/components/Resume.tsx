@@ -4,6 +4,7 @@ import { RESUME } from "@/common/constants";
 import { BriefcaseIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import clsx from "clsx";
+import Link from "next/link";
 
 export function Resume({ isInView }: { isInView: boolean }) {
   return (
@@ -21,14 +22,14 @@ export function Resume({ isInView }: { isInView: boolean }) {
       <ol className="mt-6 space-y-4">
         {RESUME.map(({ logo, company, start, title, end, href }, roleIndex) => (
           <li key={roleIndex} className="flex gap-4">
-            <a
+            <Link
               target={"_blank"}
               href={href}
               rel={"noreferrer"}
               className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 border border-zinc-700/50 bg-zinc-800 ring-0"
             >
               <Image src={logo} alt={company} width={28} height={28} className={"rounded-full"} />
-            </a>
+            </Link>
             <dl className="flex flex-auto flex-wrap gap-x-2">
               <dt className="sr-only">Company</dt>
               <dd className="w-full flex-none text-sm font-medium text-zinc-100">{company}</dd>
