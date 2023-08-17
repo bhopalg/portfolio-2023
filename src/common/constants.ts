@@ -1,5 +1,9 @@
 import { UsesListProps } from "@/components/uses/uses.model";
 import * as process from "process";
+import { ArrowPathIcon, HomeIcon, LinkIcon, RectangleGroupIcon, WindowIcon } from "@heroicons/react/20/solid";
+import TailwindCSSIcon from "@/components/icons/TailwindCSS";
+import ReactIcon from "@/components/icons/React";
+import Kubernetes from "@/components/icons/Kubernetes";
 
 export const EXPERIENCE_START_YEAR = 2014;
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL;
@@ -184,5 +188,57 @@ export const USES_LIST: UsesListProps[] = [
         transitionDelay: "delay-300",
       },
     ],
+  },
+];
+
+export const MILLISECONDS_IN_ONE_MINUTE = 60000;
+
+export interface MyDocsNavigation {
+  name: string;
+  href: string;
+  icon?: any;
+  isHome?: boolean;
+  children?: MyDocsNavigation[];
+}
+
+export const MY_DOCS_NAVIGATION: MyDocsNavigation[] = [
+  { name: "Home", href: "/", icon: HomeIcon, isHome: true },
+  {
+    name: "Useful Links",
+    href: "/useful-links",
+    icon: LinkIcon,
+  },
+  {
+    name: "Tailwind CSS",
+    href: "/tailwindcss",
+    icon: TailwindCSSIcon,
+    children: [
+      {
+        name: "Templates",
+        href: "/templates",
+        icon: RectangleGroupIcon,
+        children: [
+          { name: "Side Navigation", href: "/side-nav", icon: WindowIcon },
+          { name: "Loading Spinner", href: "/loading-spinner", icon: ArrowPathIcon },
+        ],
+      },
+    ],
+  },
+  {
+    name: "React",
+    href: "/react",
+    icon: ReactIcon,
+    children: [
+      {
+        name: "React Query",
+        href: "/react-query",
+        icon: ReactIcon,
+      },
+    ],
+  },
+  {
+    name: "Kubernetes",
+    href: "/kubernetes",
+    icon: Kubernetes,
   },
 ];
