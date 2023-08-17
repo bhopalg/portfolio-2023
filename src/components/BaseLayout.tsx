@@ -3,6 +3,7 @@
 import { ReactNode } from "react";
 import { Header } from "@/components/header/Header";
 import { Footer } from "@/components/Footer";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function BaseLayout({ children }: { children: ReactNode }) {
   return (
@@ -10,6 +11,7 @@ export default function BaseLayout({ children }: { children: ReactNode }) {
       <Header />
       <main>{children}</main>
       <Footer />
+      <Analytics />
     </>
   );
 }
