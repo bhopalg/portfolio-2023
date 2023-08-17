@@ -2,7 +2,7 @@ import UsefulLinksLayout from "@/components/useful-links/Layout";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "My Docs - Useful Links",
+  title: "Gurp's Portfolio My Docs - Useful Links",
   description: "List of useful links",
   twitter: {
     card: "summary",
