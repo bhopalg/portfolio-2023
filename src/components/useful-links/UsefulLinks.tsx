@@ -80,7 +80,7 @@ export default function UsefulLinks() {
                 {name}
               </Link>
               <div className="flex flex-row flex-wrap gap-2 max-w-2xl w-full">
-                {categories?.map((category) => (
+                {categories?.map((category: string) => (
                   <span
                     key={`${category}-${id}-${name}`}
                     className="inline-flex items-center rounded-md bg-gray-400/10 px-2 py-1 text-xs font-medium text-gray-400 ring-1 ring-inset ring-gray-400/20"
