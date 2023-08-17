@@ -1,0 +1,202 @@
+import { RectangleGroupIcon } from "@heroicons/react/20/solid";
+
+<div className="lg:flex-row gap-3 lg:flex hidden">
+    <RectangleGroupIcon className="h-10 w-10 text-zinc-50"/>
+    # Side Navigation
+</div>
+<br/>
+
+<CH.Section>
+    <CH.Code>
+        ```typescript Layout.tsx
+        "use client";
+
+        import { ReactNode, useState } from "react";
+        import Logo from "@/components/Logo";
+        import Nav from "@/components/sidenav/Nav";
+        import MobileNav from "@/components/sidenav/MobileNav";
+        import MobileHeader from "@/components/sidenav/MobileHeader";
+
+        export default function SideNavLayout({ children }: { children: ReactNode }) {
+        const [sidebarOpen, setSidebarOpen] = useState(false);
+
+        return (
+                <>
+                    <div>
+                        <MobileNav setSidebarOpen={setSidebarOpen} sidebarOpen={sidebarOpen} />
+
+                        {/* Static sidebar for desktop */}
+                        <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
+                            {/* Sidebar component, swap this element with another sidebar if you like */}
+                            <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-zinc-200 bg-black px-6">
+                                <div className="flex h-16 shrink-0 items-center justify-center">
+                                    <Logo className="w-8" />
+                                </div>
+                                <Nav />
+                            </div>
+                        </div>
+
+                        <MobileHeader setSidebarOpen={setSidebarOpen} />
+
+                        <main className="py-10 lg:pl-72">
+                            <div className="px-4 sm:px-6 lg:px-8">{children}</div>
+                        </main>
+                    </div>
+                </>
+            );
+        }
+        ```
+    </CH.Code>
+</CH.Section>
+<CH.Section>
+    <CH.Code>
+        ```typescript MobileNav.tsx
+        "use client";
+
+        import { Dispatch, Fragment, SetStateAction } from "react";
+        import { Dialog, Transition } from "@headlessui/react";
+        import { XMarkIcon } from "@heroicons/react/24/outline";
+        import Nav from "@/components/sidenav/Nav";
+        import Logo from "@/components/Logo";
+
+        interface MobileNavProps {
+            sidebarOpen: boolean;
+            setSidebarOpen: Dispatch<SetStateAction<boolean>>;
+        }
+
+        export default function MobileNav({ setSidebarOpen, sidebarOpen }: MobileNavProps) {
+            return (
+                <Transition.Root show={sidebarOpen} as={Fragment}>
+                    <Dialog as="div" className="relative z-50 lg:hidden" onClose={setSidebarOpen}>
+                        <Transition.Child
+                            as={Fragment}
+                            enter="transition-opacity ease-linear duration-300"
+                            enterFrom="opacity-0"
+                            enterTo="opacity-100"
+                            leave="transition-opacity ease-linear duration-300"
+                            leaveFrom="opacity-100"
+                            leaveTo="opacity-0"
+                        >
+                            <div className="fixed inset-0 bg-zinc-900/80" />
+                        </Transition.Child>
+
+                        <div className="fixed inset-0 flex">
+                            <Transition.Child
+                                as={Fragment}
+                                enter="transition ease-in-out duration-300 transform"
+                                enterFrom="-translate-x-full"
+                                enterTo="translate-x-0"
+                                leave="transition ease-in-out duration-300 transform"
+                                leaveFrom="translate-x-0"
+                                leaveTo="-translate-x-full"
+                            >
+                                <Dialog.Panel className="relative mr-16 flex w-full max-w-xs flex-1">
+                                    <Transition.Child
+                                        as={Fragment}
+                                        enter="ease-in-out duration-300"
+                                        enterFrom="opacity-0"
+                                        enterTo="opacity-100"
+                                        leave="ease-in-out duration-300"
+                                        leaveFrom="opacity-100"
+                                        leaveTo="opacity-0"
+                                    >
+                                        <div className="absolute left-full top-0 flex w-16 justify-center pt-5">
+                                            <CloseButton setSidebarOpen={setSidebarOpen} />
+                                        </div>
+                                    </Transition.Child>
+                                    {/* Sidebar component, swap this element with another sidebar if you like */}
+                                    <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-black border-r border-zinc-200 px-6 pb-2">
+                                        <div className="flex h-16 shrink-0 items-center justify-center relative z-50">
+                                            <Logo className="w-10 h-10" />
+                                        </div>
+                                        <Nav />
+                                    </div>
+                                </Dialog.Panel>
+                            </Transition.Child>
+                        </div>
+                    </Dialog>
+                </Transition.Root>
+            );
+        }
+
+        function CloseButton({ setSidebarOpen }: { setSidebarOpen: Dispatch<SetStateAction<boolean>> }) {
+            return (
+                <button type="button" className="-m-2.5 p-2.5" onClick={() => setSidebarOpen(false)}>
+                    <span className="sr-only">Close sidebar</span>
+                    <XMarkIcon className="h-6 w-6 text-zinc-50" aria-hidden="true" />
+                </button>
+            );
+        }
+```
+    </CH.Code>
+</CH.Section>
+<CH.Section>
+    <CH.Code>
+        ```typescript MobileHeader.tsx
+        "use client";
+
+        import { Bars3Icon } from "@heroicons/react/24/outline";
+        import { Dispatch, SetStateAction } from "react";
+        import { useMobileHeaderTitleContext } from "@/components/sidenav/context/MobileHeaderTittleContextProvider";
+
+        export default function MobileHeader({ setSidebarOpen }: { setSidebarOpen: Dispatch<SetStateAction<boolean>> }) {
+            const { title } = useMobileHeaderTitleContext();
+            return (
+                <div className="sticky top-0 z-40 flex items-center gap-x-6 bg-black border-b border-zinc-200 px-4 py-4 shadow-sm sm:px-6 lg:hidden">
+                    <button type="button" className="-m-2.5 p-2.5 ext-zinc-50 lg:hidden" onClick={() => setSidebarOpen(true)}>
+                        <span className="sr-only">Open sidebar</span>
+                        <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+                    </button>
+                    <div className="flex-1 text-sm font-semibold leading-6 text-zinc-50">{title ? title : "Dashboard"}</div>
+                </div>
+            );
+        }
+        ```
+    </CH.Code>
+</CH.Section>
+<CH.Section>
+    <CH.Code>
+        ```typescript Nav.tsx
+        "use client";
+
+        import { clsx } from "clsx";
+        import { usePathname } from "next/navigation";
+        import { navigation } from "@/constants";
+
+        export default function Nav() {
+            const pathname = usePathname();
+            return (
+                <nav className="flex flex-1 flex-col">
+                    <ul className="flex flex-1 flex-col gap-y-7">
+                        <li>
+                            <ul className="-mx-2 space-y-1">
+                                {navigation.map((item) => (
+                                    <li key={item.name}>
+                                        <a
+                                            href={item.href}
+                                            className={clsx(
+                                                pathname === item.href && "bg-zinc-50 text-zinc-600",
+                                                pathname !== item.href && "text-zinc-50 hover:text-zinc-600 hover:bg-zinc-50",
+                                                "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold transition-colors ease-in-out",
+                                            )}
+                                        >
+                                            <item.icon
+                                                className={clsx(
+                                                    pathname === item.href ? "text-zinc-500" : "text-zinc-400 group-hover:text-zinc-500",
+                                                    "flex-shrink-0 h-6 w-6",
+                                                )}
+                                                aria-hidden="true"
+                                            />
+                                            {item.name}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            );
+        }
+        ```
+    </CH.Code>
+</CH.Section>

@@ -1,6 +1,6 @@
 "use client";
 
-import { ItemProp, UsesListProps } from "@/components/uses/uses.model";
+import { ItemProp, UsesListProps } from "@/models/Uses";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
 import clsx from "clsx";
