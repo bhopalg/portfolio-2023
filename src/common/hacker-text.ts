@@ -31,7 +31,7 @@ export function hackerText(ref: MutableRefObject<HTMLElement | null>): NodeJS.Ti
         .join("");
 
       if (iteration >= current.dataset.value.length && interval) {
-        clearInterval(interval);
+        clearInterval(interval as any);
       }
 
       iteration += 1 / 3;

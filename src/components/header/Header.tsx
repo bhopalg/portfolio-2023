@@ -1,8 +1,8 @@
 "use client";
 
-import { Container } from "@/components/container";
-import { DesktopNavigation } from "@/components/header/desktop-navigation";
-import { MobileNavigation } from "@/components/header/mobile-navigation";
+import { Container } from "@/components/Container";
+import { DesktopNavigation } from "@/components/header/DesktopNavigation";
+import { MobileNavigation } from "@/components/header/MobileNavigation";
 import { updateHeaderStyles } from "@/lib/update-header-styles";
 import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
@@ -11,7 +11,7 @@ export function Header() {
   const pathname = usePathname();
   const isHomePage = pathname === "/";
 
-  const headerRef = useRef();
+  const headerRef = useRef<HTMLElement | undefined>();
   const isInitial = useRef(true);
 
   useEffect(() => {

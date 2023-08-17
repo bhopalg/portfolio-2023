@@ -14,10 +14,6 @@ export const NAVIGATION = [
     href: "/#about-me",
   },
   {
-    name: "Articles",
-    href: "/articles",
-  },
-  {
     name: "Uses",
     href: "/uses",
   },

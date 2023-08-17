@@ -1,7 +1,7 @@
-import { SimpleLayout } from "@/components/simple-layout";
+import { SimpleLayout } from "@/components/SimpleLayout";
 import { USES_LIST } from "@/common/constants";
-import { DesktopUsesList } from "@/components/uses/desktop-list";
-import { MobileList } from "@/components/uses/mobile-list";
+import { DesktopUsesList } from "@/components/uses/DesktopList";
+import { MobileList } from "@/components/uses/MobileList";
 import { Metadata } from "next";
 
 const TITLE = "Tools, IDEs, and Workstation Items I Use ";

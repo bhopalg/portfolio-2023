@@ -1,7 +1,7 @@
 "use client";
 
 import { NAVIGATION } from "@/common/constants";
-import { MobileNavItem } from "@/components/header/mobile-nav-item";
+import { MobileNavItem } from "@/components/header/MobileNavItem";
 import { Popover, Transition } from "@headlessui/react";
 import { ChevronDownIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Fragment } from "react";
@@ -9,7 +9,7 @@ import { Fragment } from "react";
 export function MobileNavigation(props: any) {
   return (
     <Popover {...props}>
-      <Popover.Button className="group flex items-center rounded-full px-4 py-2 text-sm font-medium text-zinc-200 ring-1 backdrop-blur rounded-full shadow-md shadow-zinc-800/5 border border-zinc-700/50 bg-zinc-800 ring-0">
+      <Popover.Button className="group flex items-center rounded-full px-4 py-2 text-sm font-medium text-zinc-200 backdrop-blur shadow-md shadow-zinc-800/5 border border-zinc-700/50 bg-zinc-800 ring-0">
         Menu
         <ChevronDownIcon className="ml-3 h-auto w-2 stroke-zinc-500 group-hover:stroke-zinc-400" />
       </Popover.Button>

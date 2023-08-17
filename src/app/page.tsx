@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { Hero } from "@/components/Hero";
-import { AboutMe } from "@/components/about-me";
+import { AboutMe } from "@/components/AboutMe";
 
 export const metadata: Metadata = {
   title: "Gurp's Portfolio",

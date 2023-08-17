@@ -1,9 +1,9 @@
 "use client";
 
-import { Experience } from "@/components/experience";
-import { Frameworks } from "@/components/frameworks";
-import { Resume } from "@/components/resume";
-import { Socials } from "@/components/socials";
+import { Experience } from "@/components/Experience";
+import { Frameworks } from "@/components/Frameworks";
+import { Resume } from "@/components/Resume";
+import { Socials } from "@/components/Socials";
 import { useMediaQuery } from "@/lib/use-media-query";
 import classNames from "classnames";
 import { useInView } from "react-intersection-observer";

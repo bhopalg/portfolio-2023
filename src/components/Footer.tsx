@@ -1,7 +1,7 @@
 "use client";
 
 import { NAVIGATION, SOCIALS } from "@/common/constants";
-import { InnerContainer, OuterContainer } from "@/components/container";
+import { InnerContainer, OuterContainer } from "@/components/Container";
 import { Tooltip } from "flowbite-react";
 import Image from "next/image";
 import Link from "next/link";

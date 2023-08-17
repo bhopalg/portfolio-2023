@@ -54,10 +54,3 @@ export const Container = forwardRef(function Container(
     </OuterContainer>
   );
 });
-
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-Container.Outer = OuterContainer;
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-Container.Inner = InnerContainer;

@@ -1,7 +1,7 @@
 "use client";
 
 import { NAVIGATION } from "@/common/constants";
-import { NavItem } from "@/components/header/nav-item";
+import { NavItem } from "@/components/header/NavItem";
 
 export function DesktopNavigation(props: any) {
   return (
