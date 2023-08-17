@@ -17,6 +17,11 @@ export const NAVIGATION = [
     name: "Uses",
     href: "/uses",
   },
+  {
+    name: "My Docs",
+    href: "https://my-docs.gbhopal.co.uk",
+    target: "_blank",
+  },
 ];
 
 export const RESUME = [

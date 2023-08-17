@@ -7,9 +7,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { ReactNode } from "react";
 
-function NavLink({ href, children }: { href: string; children: ReactNode }) {
+function NavLink({ href, children, target }: { href: string; children: ReactNode; target?: string }) {
   return (
-    <Link href={href} className="transition hover:text-light-blue-300">
+    <Link href={href} target={target} className="transition hover:text-light-blue-300">
       {children}
     </Link>
   );
@@ -22,8 +22,8 @@ function CopyrightText() {
 function Navigation() {
   return (
     <div className="flex gap-6 text-sm font-medium text-zinc-200">
-      {NAVIGATION.map(({ name, href }) => (
-        <NavLink key={name} href={href}>
+      {NAVIGATION.map(({ name, href, target }) => (
+        <NavLink key={name} href={href} target={target}>
           {name}
         </NavLink>
       ))}

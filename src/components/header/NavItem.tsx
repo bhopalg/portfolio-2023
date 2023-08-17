@@ -5,13 +5,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ReactNode } from "react";
 
-export function NavItem({ href, children }: { href: string; children: ReactNode }) {
+export function NavItem({ href, children, target }: { href: string; children: ReactNode; target?: string }) {
   const pathname = usePathname();
   const isActive = pathname === href;
 
   return (
     <li>
       <Link
+        target={target}
         href={href}
         className={clsx("relative block px-3 py-2 transition", isActive ? "text-light-blue-300" : "hover:text-light-blue-300")}
       >
