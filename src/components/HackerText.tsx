@@ -32,7 +32,7 @@ export function HackerText() {
         className={"text-white text-4xl md:text-8xl font-spaceMono font-bold hackerText uppercase"}
         data-value="Gurps's Portfolio"
       >
-        Gurps&apos;s Portfolio
+        Gurp&apos;s Portfolio
       </h1>
     </div>
   );
