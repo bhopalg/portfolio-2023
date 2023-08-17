@@ -11,6 +11,7 @@ import { Components } from "@mdx-js/react/lib";
 import { Heading } from "@/components/mdx/Header";
 import { Paragraph } from "@/components/mdx/Paragraph";
 import { List } from "@/components/mdx/List";
+import { usePathname } from "next/navigation";
 
 const components: Components = {
   h1: Heading.H1 as any,
@@ -26,11 +27,12 @@ const components: Components = {
 const queryClient = new QueryClient();
 
 export default function BaseLayout({ children }: { children: ReactNode }) {
+  const pathname = usePathname();
   return (
     <>
       <QueryClientProvider client={queryClient}>
         <MobileHeaderTitleContextProvider>
-          <Header />
+          {!pathname.includes("my-docs") && <Header />}
           <main>
             <MDXProvider components={components}>{children}</MDXProvider>
           </main>
