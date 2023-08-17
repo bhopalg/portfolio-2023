@@ -22,10 +22,11 @@ const nextConfig = {
 }
 
 const withMDX = nextMDX({
-  extension: /\.mdx?$/,
   options: {
+    extension: /\.mdx?$/,
     remarkPlugins: [remarkGfm, [remarkCodeHike, { theme, showCopyButton: true }]],
     rehypePlugins: [rehypePrism],
+    providerImportSource: "@mdx-js/react",
   },
 })
 
