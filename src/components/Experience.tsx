@@ -92,11 +92,7 @@ export function Experience({ isInView }: { isInView: boolean }) {
       >
         <span className={"sr-only"}>Expertise in building data analysis tools and apps for a large user base.</span>
         <p className={"font-spaceMono text-gray-200 font-thin pb-8"}>Expertise in Building</p>
-        <h1
-          className={
-            "text-2xl text-center md:text-4xl font-extrabold text-transparent font-spaceMono bg-clip-text bg-gradient-to-r from-light-blue-600 to-light-blue-300"
-          }
-        >
+        <h1 className="text-2xl text-center md:text-4xl font-extrabold text-transparent font-spaceMono bg-clip-text bg-gradient-to-r from-light-blue-600 to-light-blue-300 px-5">
           Data analysis tools and apps
         </h1>
         <p className={"font-spaceMono text-gray-200 font-thin pt-8"}>for a large user base.</p>

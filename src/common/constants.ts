@@ -4,6 +4,7 @@ import { ArrowPathIcon, HomeIcon, LinkIcon, RectangleGroupIcon, TableCellsIcon, 
 import TailwindCSSIcon from "@/components/icons/TailwindCSS";
 import ReactIcon from "@/components/icons/React";
 import Kubernetes from "@/components/icons/Kubernetes";
+import BJSSIcon from "@/components/icons/BJSS";
 
 export const EXPERIENCE_START_YEAR = 2014;
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL;
@@ -18,26 +19,43 @@ export const NAVIGATION = [
     href: "/about-me",
   },
   {
-    name: "Uses",
-    href: "/uses",
-  },
-  {
     name: "My Docs",
     href: "/my-docs",
   },
 ];
 
-export const RESUME = [
+interface ResumeItem {
+  company: string;
+  title: string;
+  icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+  logo?: string;
+  start: string;
+  end: string | { label: string; dateTime: number };
+  href: string;
+  exclude: boolean;
+}
+
+export const RESUME: ResumeItem[] = [
+  {
+    company: "BJSS",
+    title: "Software Engineer",
+    icon: BJSSIcon,
+    start: "2023",
+    end: {
+      label: "Present",
+      dateTime: new Date().getFullYear(),
+    },
+    href: "https://www.bjss.com/",
+    exclude: false,
+  },
   {
     company: "RES",
     title: "Software Engineer",
     logo: "res-group.svg",
     start: "2022",
-    end: {
-      label: "Present",
-      dateTime: new Date().getFullYear(),
-    },
+    end: "2023",
     href: "https://www.res-group.com/",
+    exclude: false,
   },
   {
     company: "Smarter Data Solutions",
@@ -46,6 +64,7 @@ export const RESUME = [
     start: "2016",
     end: "2022",
     href: "https://www.smarterds.com/",
+    exclude: false,
   },
   {
     company: "Sports Direct",
@@ -54,6 +73,7 @@ export const RESUME = [
     start: "2014",
     end: "2015",
     href: "https://www.sportsdirectplc.com",
+    exclude: true,
   },
 ];
 
