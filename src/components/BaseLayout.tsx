@@ -33,7 +33,7 @@ export default function BaseLayout({ children }: { children: ReactNode }) {
       <QueryClientProvider client={queryClient}>
         <MobileHeaderTitleContextProvider>
           {!pathname.includes("my-docs") && <Header />}
-          <main>
+          <main className="min-h-full">
             {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
             {/*@ts-ignore*/}
             <MDXProvider components={components}>{children}</MDXProvider>

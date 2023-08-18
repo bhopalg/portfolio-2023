@@ -63,7 +63,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="h-full">
       <body className={"h-full bg-black overflow-x-hidden font-sans" + robotoMono.className}>
         <BaseLayout>{children}</BaseLayout>
       </body>
