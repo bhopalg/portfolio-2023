@@ -7,6 +7,7 @@ import GitHub from "@/components/icons/GitHub";
 import Instagram from "@/components/icons/Instagram";
 import Linkedin from "@/components/icons/Linkedin";
 import Twitter from "@/components/icons/Twitter";
+import RES from "@/components/icons/RES";
 
 export const EXPERIENCE_START_YEAR = 2014;
 
@@ -52,7 +53,7 @@ export const RESUME: ResumeItem[] = [
   {
     company: "RES",
     title: "Software Engineer",
-    logo: "res-group.svg",
+    icon: RES,
     start: "2022",
     end: "2023",
     href: "https://www.res-group.com/",
@@ -66,15 +67,6 @@ export const RESUME: ResumeItem[] = [
     end: "2022",
     href: "https://www.smarterds.com/",
     exclude: false,
-  },
-  {
-    company: "Sports Direct",
-    title: "Web Designer",
-    logo: "sports-direct.svg",
-    start: "2014",
-    end: "2015",
-    href: "https://www.sportsdirectplc.com",
-    exclude: true,
   },
 ];
 
