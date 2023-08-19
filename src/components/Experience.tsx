@@ -3,6 +3,7 @@
 import { EXPERIENCE_START_YEAR } from "@/common/constants";
 import { ReactNode, useMemo } from "react";
 import clsx from "clsx";
+import Interests from "@/components/Interests";
 
 export function Experience({ isInView }: { isInView: boolean }) {
   const yearsOfExperience = useMemo(() => {
@@ -36,6 +37,7 @@ export function Experience({ isInView }: { isInView: boolean }) {
         <Title className="px-5">Data analysis tools and apps</Title>
         <Description>for a large user base.</Description>
       </div>
+      <Interests isInView={isInView} />
     </div>
   );
 }
