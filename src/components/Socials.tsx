@@ -3,12 +3,13 @@
 import { SOCIALS } from "@/common/constants";
 import Image from "next/image";
 import clsx from "clsx";
+import Link from "next/link";
 
 export function Socials({ isInView }: { isInView: boolean }) {
   return (
     <div className={"col-span-1 rounded-xl grid grid-cols-1 gap-6 sm:grid-cols-2"}>
       {SOCIALS.map(({ image, link, name }) => (
-        <a
+        <Link
           rel={"noreferrer"}
           href={link}
           target={"_blank"}
@@ -22,7 +23,7 @@ export function Socials({ isInView }: { isInView: boolean }) {
           <span className={"sr-only"}>Follow me on {name}</span>
           <Image src={image} alt={name} width={60} height={60} className={"px-2 filter-white"} />
           <h1 className={"font-spaceMono text-gray-200 font-thin pt-8"}>{name}</h1>
-        </a>
+        </Link>
       ))}
     </div>
   );

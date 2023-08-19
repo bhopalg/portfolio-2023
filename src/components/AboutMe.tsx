@@ -7,6 +7,7 @@ import { Socials } from "@/components/Socials";
 import { useMediaQuery } from "@/lib/use-media-query";
 import { useInView } from "react-intersection-observer";
 import clsx from "clsx";
+import { ReactNode } from "react";
 
 export function AboutMe() {
   const { ref, inView } = useInView({
@@ -36,13 +37,7 @@ export function AboutMe() {
             )}
           >
             <span className={"sr-only"}>About Me</span>
-            <h1
-              className={
-                "text-3xl md:text-5xl font-extrabold text-transparent font-spaceMono bg-clip-text bg-gradient-to-r from-light-blue-600 to-light-blue-300"
-              }
-            >
-              About Me
-            </h1>
+            <Title>About Me</Title>
           </div>
           <Resume isInView={isMobile ? true : inView} />
         </div>
@@ -59,13 +54,7 @@ export function AboutMe() {
             )}
           >
             <span className={"sr-only"}>Website</span>
-            <h1
-              className={
-                "text-3xl md:text-5xl font-extrabold text-transparent font-spaceMono bg-clip-text bg-gradient-to-r from-light-blue-600 to-light-blue-300"
-              }
-            >
-              Websites
-            </h1>
+            <Title>Websites</Title>
           </div>
           <div
             ref={!isMobile ? ref : null}
@@ -80,17 +69,20 @@ export function AboutMe() {
             )}
           >
             <span className={"sr-only"}>Apps</span>
-            <h1
-              className={
-                "text-3xl md:text-5xl font-extrabold text-transparent font-spaceMono bg-clip-text bg-gradient-to-r from-light-blue-600 to-light-blue-300"
-              }
-            >
-              Apps
-            </h1>
+            <Title>Apps</Title>
           </div>
           <Socials isInView={isMobile ? true : inView} />
         </div>
       </div>
     </section>
   );
+}
+
+function Title({ children, className }: { children: ReactNode; className?: string }) {
+  const classes = clsx(
+    "text-3xl md:text-5xl font-extrabold text-transparent font-spaceMono bg-clip-text bg-gradient-to-r from-light-blue-600 to-light-blue-300",
+    className,
+  );
+
+  return <h1 className={classes}>{children}</h1>;
 }
