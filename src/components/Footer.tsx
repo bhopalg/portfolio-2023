@@ -36,10 +36,10 @@ function Navigation() {
 function SocialIcons() {
   return (
     <div className={"grid grid-cols-4 gap-5"}>
-      {SOCIALS.map(({ name, link, image }) => (
-        <Tooltip key={name} content={`Follow me on ${name}`}>
-          <a href={link} target={"_blank"} rel={"noreferrer"} className={"col-span-1"}>
-            <Image src={image} className={"filter-white"} alt={name} width={20} height={20} />
+      {SOCIALS.map((item) => (
+        <Tooltip key={item.name} content={`Follow me on ${item.name}`}>
+          <a href={item.link} target={"_blank"} rel={"noreferrer"} className={"col-span-1"}>
+            <item.icon className="text-zinc-50 w-5 h-5" />
           </a>
         </Tooltip>
       ))}

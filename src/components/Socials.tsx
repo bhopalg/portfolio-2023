@@ -21,7 +21,6 @@ export function Socials({ isInView }: { isInView: boolean }) {
         >
           <span className={"sr-only"}>Follow me on {item.name}</span>
           <item.icon className="text-zinc-50 w-14 h-14" />
-          {/*<Image src={image} alt={name} width={60} height={60} className={"px-2 filter-white"} />*/}
           <h1 className={"font-spaceMono text-gray-200 font-thin pt-8"}>{item.name}</h1>
         </Link>
       ))}
