@@ -3,7 +3,6 @@
 import { NAVIGATION, SOCIALS } from "@/common/constants";
 import { InnerContainer, OuterContainer } from "@/components/Container";
 import { Tooltip } from "flowbite-react";
-import Image from "next/image";
 import Link from "next/link";
 import { ReactNode } from "react";
 import { usePathname } from "next/navigation";
