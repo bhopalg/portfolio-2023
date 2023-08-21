@@ -46,7 +46,7 @@ export function AboutMe() {
             className={clsx(
               !isMobile
                 ? {
-                    "translate-y-40 opacity-0 blur-lg": !inView,
+                    "-translate-y-40 opacity-0 blur-lg": !inView,
                     "translate-y-0 opacity-100 blur-none": inView,
                   }
                 : null,
@@ -61,7 +61,7 @@ export function AboutMe() {
             className={clsx(
               !isMobile
                 ? {
-                    "translate-y-40 opacity-0 blur-lg": !inView,
+                    "-translate-y-40 opacity-0 blur-lg": !inView,
                     "translate-y-0 opacity-100 blur-none": inView,
                   }
                 : null,

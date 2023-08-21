@@ -10,7 +10,7 @@ export function Experience({ isInView }: { isInView: boolean }) {
     return new Date().getFullYear() - EXPERIENCE_START_YEAR;
   }, []);
 
-  const transitionsClass = isInView ? "translate-x-0 opacity-100 blur-none" : "translate-x-40 opacity-0 blur-lg";
+  const transitionsClass = isInView ? "translate-x-0 opacity-100 blur-none" : "-translate-x-40 opacity-0 blur-lg";
   const baseClass = "transition-all ease-in-out duration-700";
   return (
     <div className="col-span-1 h-full bg-inherit flex flex-col gap-5">

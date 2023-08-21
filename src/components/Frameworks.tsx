@@ -40,7 +40,7 @@ export function Frameworks({ isInView }: { isInView: boolean }) {
           href={item.href}
           key={item.alt}
           className={clsx(
-            !isInView && "translate-y-40 opacity-0 blur-lg",
+            !isInView && "-translate-y-40 opacity-0 blur-lg",
             isInView && "translate-y-0 opacity-100 blur-none",
             "transition-all ease-in-out duration-700 col-span-1 bg-zinc-900 ring-1 ring-zinc-300/20 hover:bg-zinc-700 rounded-xl flex justify-center items-center py-8",
           )}
