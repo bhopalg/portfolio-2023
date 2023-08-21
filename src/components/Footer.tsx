@@ -49,7 +49,13 @@ function SocialIcons() {
 export function Footer() {
   const pathname = usePathname();
   return (
-    <footer className={clsx("bg-zinc-900 ring-1 ring-zinc-300/20", pathname === "/uses" && "mt-10")}>
+    <footer
+      className={clsx(
+        "bg-zinc-900 ring-1 ring-zinc-300/20",
+        pathname === "/uses" && "mt-10",
+        pathname.includes("/my-docs") && "lg:pl-72",
+      )}
+    >
       <OuterContainer>
         <div className="border-t pt-10 pb-16 border-zinc-700/40">
           <InnerContainer>
