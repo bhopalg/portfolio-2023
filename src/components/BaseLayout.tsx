@@ -31,7 +31,6 @@ function BaseProvider({ children }: { children: ReactNode }) {
     <QueryClientProvider client={queryClient}>
       <MobileHeaderTitleContextProvider>
         {children}
-        <Footer />
         <Analytics />
       </MobileHeaderTitleContextProvider>
     </QueryClientProvider>
@@ -49,14 +48,18 @@ export default function BaseLayout({ children }: { children: ReactNode }) {
           {/*@ts-ignore*/}
           <MDXProvider components={components}>{children}</MDXProvider>
         </main>
+        <Footer />
       </BaseProvider>
     );
   }
 
   return (
     <BaseProvider>
-      <Header />
-      <main>{children}</main>
+      <div className="flex flex-col min-h-screen">
+        <Header />
+        <main className="flex-1 flex flex-col">{children}</main>
+        <Footer />
+      </div>
     </BaseProvider>
   );
 }

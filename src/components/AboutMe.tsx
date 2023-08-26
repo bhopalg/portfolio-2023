@@ -17,10 +17,7 @@ export function AboutMe() {
   const isMobile = useMediaQuery(1024);
 
   return (
-    <section
-      id="about-me"
-      className="relative lg:min-h-[calc(100vh_-_190px)] flex items-center px-10 overflow-x-hidden lg:py-0 py-10"
-    >
+    <section id="about-me" className="relative grow flex items-center overflow-x-hidden p-10">
       <div className="grid grid-cols-1 lg:grid-cols-3 md:max-w-7xl w-full mx-auto gap-7">
         <Experience isInView={isMobile ? true : inView} />
         <div className={"col-span-1 grid grid-rows-1 gap-6"}>
