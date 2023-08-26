@@ -9,9 +9,7 @@
   },
   "author": "Gurpreet Bhopal",
   "engines": {
-    "node": ">=16.13.0",
-    "npm": "PLEASE USE YARN TO DO INSTALL",
-    "yarn": ">=1.22.17"
+    "npm": "PLEASE USE YARN TO DO INSTALL"
   },
   "scripts": {
     "dev": "next dev",

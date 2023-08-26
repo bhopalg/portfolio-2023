@@ -26,22 +26,37 @@ const components: Components = {
 
 const queryClient = new QueryClient();
 
+function BaseProvider({ children }: { children: ReactNode }) {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <MobileHeaderTitleContextProvider>
+        {children}
+        <Footer />
+        <Analytics />
+      </MobileHeaderTitleContextProvider>
+    </QueryClientProvider>
+  );
+}
+
 export default function BaseLayout({ children }: { children: ReactNode }) {
   const pathname = usePathname();
+
+  if (pathname.includes("my-docs")) {
+    return (
+      <BaseProvider>
+        <main className="min-h-full">
+          {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+          {/*@ts-ignore*/}
+          <MDXProvider components={components}>{children}</MDXProvider>
+        </main>
+      </BaseProvider>
+    );
+  }
+
   return (
-    <>
-      <QueryClientProvider client={queryClient}>
-        <MobileHeaderTitleContextProvider>
-          {!pathname.includes("my-docs") && <Header />}
-          <main className="min-h-full">
-            {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-            {/*@ts-ignore*/}
-            <MDXProvider components={components}>{children}</MDXProvider>
-          </main>
-          <Footer />
-          <Analytics />
-        </MobileHeaderTitleContextProvider>
-      </QueryClientProvider>
-    </>
+    <BaseProvider>
+      <Header />
+      <main>{children}</main>
+    </BaseProvider>
   );
 }
