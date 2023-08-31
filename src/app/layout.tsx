@@ -7,7 +7,7 @@ import { Metadata } from "next";
 const robotoMono = Roboto_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Gurp's Portfolio",
+  title: "Gurps's Portfolio",
   description:
     "Explore my portfolio website showcasing my skills and experience in web development. I'm a full-stack developer proficient in web technologies like React, Node.js, Express, and MongoDB. Check out my projects, resume, and contact information",
   keywords: [
