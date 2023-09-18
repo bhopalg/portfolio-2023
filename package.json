@@ -44,7 +44,7 @@
     "react-dom": "18.2.0",
     "react-intersection-observer": "^9.5.2",
     "remark-gfm": "^3.0.1",
-    "sharp": "^0.32.2",
+    "sharp": "^0.32.6",
     "shiki": "^0.14.4",
     "typeit-react": "^2.6.4",
     "typescript": "5.2.2"
