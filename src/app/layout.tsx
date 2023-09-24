@@ -53,6 +53,7 @@ export const metadata: Metadata = {
 
     url: "https://gbhopal.com",
   },
+  metadataBase: new URL("https://gbhopal.com"),
 };
 
 export default function RootLayout({
