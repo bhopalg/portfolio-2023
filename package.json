@@ -9,8 +9,7 @@
   },
   "author": "Gurpreet Bhopal",
   "engines": {
-    "npm": "PLEASE USE PNPM TO DO INSTALL",
-    "yarn": "PLEASE USE PNPM TO DO INSTALL"
+    "npm": "PLEASE USE PNPM TO DO INSTALL"
   },
   "scripts": {
     "dev": "next dev",
