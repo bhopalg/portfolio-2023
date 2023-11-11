@@ -8,14 +8,12 @@
     "url": "https://github.com/bhopalg/portfolio-2023"
   },
   "author": "Gurpreet Bhopal",
-  "engines": {
-    "npm": "PLEASE USE PNPM TO DO INSTALL"
-  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
     "@code-hike/mdx": "^0.9.0",
