@@ -1,6 +1,6 @@
 "use client";
 
-import clsx from "clsx";
+import { cn } from "@/lib";
 import Typescript from "@/components/icons/Typescript";
 import Link from "next/link";
 import Python from "@/components/icons/Python";
@@ -39,7 +39,7 @@ export function Frameworks({ isInView }: { isInView: boolean }) {
           rel={"noreferrer"}
           href={item.href}
           key={item.alt}
-          className={clsx(
+          className={cn(
             !isInView && "-translate-y-40 opacity-0 blur-lg",
             isInView && "translate-y-0 opacity-100 blur-none",
             "transition-all ease-in-out duration-700 col-span-1 bg-zinc-900 ring-1 ring-zinc-300/20 hover:bg-zinc-700 rounded-xl flex justify-center items-center py-8",

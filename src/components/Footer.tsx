@@ -5,8 +5,8 @@ import { InnerContainer, OuterContainer } from "@/components/Container";
 import Link from "next/link";
 import { ReactNode } from "react";
 import { usePathname } from "next/navigation";
-import clsx from "clsx";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/Tooltip";
+import { cn } from "@/lib";
 
 function NavLink({ href, children, target }: { href: string; children: ReactNode; target?: string }) {
   return (
@@ -57,7 +57,7 @@ export function Footer() {
   const pathname = usePathname();
   return (
     <footer
-      className={clsx(
+      className={cn(
         "bg-zinc-900 ring-1 ring-zinc-300/20",
         pathname === "/uses" && "mt-10",
         pathname.includes("/my-docs") && "lg:pl-72",

@@ -1,6 +1,6 @@
 "use client";
 
-import clsx from "clsx";
+import { cn } from "@/lib";
 import { ForwardedRef, forwardRef, ReactNode } from "react";
 
 export const OuterContainer = forwardRef(function OuterContainer(
@@ -8,7 +8,7 @@ export const OuterContainer = forwardRef(function OuterContainer(
   ref: ForwardedRef<any>,
 ) {
   return (
-    <div ref={ref} className={clsx("sm:px-8", className)} {...props}>
+    <div ref={ref} className={cn("sm:px-8", className)} {...props}>
       <div className="mx-auto max-w-7xl lg:px-8">{children}</div>
     </div>
   );
@@ -24,9 +24,9 @@ export const InnerContainer = forwardRef(function InnerContainer(
   ref: ForwardedRef<any>,
 ) {
   return (
-    <div ref={ref} className={clsx("relative px-4 sm:px-8 lg:px-12", className)} {...props}>
+    <div ref={ref} className={cn("relative px-4 sm:px-8 lg:px-12", className)} {...props}>
       <div
-        className={clsx(
+        className={cn(
           isBackgroundColourRequired && "bg-zinc-900 ring-1 ring-zinc-300/20 rounded-xl",
           "mx-auto max-w-2xl lg:max-w-5xl",
         )}

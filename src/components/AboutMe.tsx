@@ -6,8 +6,8 @@ import { Resume } from "@/components/Resume";
 import { Socials } from "@/components/Socials";
 import { useMediaQuery } from "@/lib/use-media-query";
 import { useInView } from "react-intersection-observer";
-import clsx from "clsx";
 import { ReactNode } from "react";
+import { cn } from "@/lib";
 
 export function AboutMe() {
   const { ref, inView } = useInView({
@@ -23,7 +23,7 @@ export function AboutMe() {
         <div className={"col-span-1 grid grid-rows-1 gap-6"}>
           <Frameworks isInView={isMobile ? true : inView} />
           <div
-            className={clsx(
+            className={cn(
               !isMobile
                 ? {
                     "opacity-0 blur-lg": !inView,
@@ -40,7 +40,7 @@ export function AboutMe() {
         </div>
         <div className={"col-span-1 h-full grid grid-cols-1 gap-6"}>
           <div
-            className={clsx(
+            className={cn(
               !isMobile
                 ? {
                     "-translate-y-40 opacity-0 blur-lg": !inView,
@@ -55,7 +55,7 @@ export function AboutMe() {
           </div>
           <div
             ref={!isMobile ? ref : null}
-            className={clsx(
+            className={cn(
               !isMobile
                 ? {
                     "-translate-y-40 opacity-0 blur-lg": !inView,
@@ -76,7 +76,7 @@ export function AboutMe() {
 }
 
 function Title({ children, className }: { children: ReactNode; className?: string }) {
-  const classes = clsx(
+  const classes = cn(
     "text-3xl md:text-5xl font-extrabold text-transparent font-spaceMono bg-clip-text bg-gradient-to-r from-light-blue-600 to-light-blue-300",
     className,
   );

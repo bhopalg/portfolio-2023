@@ -2,14 +2,14 @@
 
 import { RESUME } from "@/common/constants";
 import Image from "next/image";
-import clsx from "clsx";
+import { cn } from "@/lib";
 import Link from "next/link";
 import { Briefcase } from "lucide-react";
 
 export function Resume({ isInView }: { isInView: boolean }) {
   return (
     <div
-      className={clsx(
+      className={cn(
         !isInView && "translate-y-40 opacity-0 blur-lg",
         isInView && "translate-y-0 opacity-100 blur-none",
         "transition-all ease-in-out duration-700 rounded-xl bg-zinc-900 ring-1 ring-zinc-300/20 p-6",

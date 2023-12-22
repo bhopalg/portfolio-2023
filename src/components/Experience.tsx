@@ -2,7 +2,7 @@
 
 import { EXPERIENCE_START_YEAR } from "@/common/constants";
 import { ReactNode, useMemo } from "react";
-import clsx from "clsx";
+import { cn } from "@/lib";
 import Interests from "@/components/Interests";
 
 export function Experience({ isInView }: { isInView: boolean }) {
@@ -15,7 +15,7 @@ export function Experience({ isInView }: { isInView: boolean }) {
   return (
     <div className="col-span-1 h-full bg-inherit flex flex-col gap-5">
       <div
-        className={clsx(
+        className={cn(
           transitionsClass,
           baseClass,
           "rounded-lg flex flex-col justify-center items-center py-6 bg-zinc-900 ring-1 ring-zinc-300/20",
@@ -26,7 +26,7 @@ export function Experience({ isInView }: { isInView: boolean }) {
         <Description>Experience</Description>
       </div>
       <div
-        className={clsx(
+        className={cn(
           transitionsClass,
           baseClass,
           "bg-zinc-900 ring-1 ring-zinc-300/20 rounded-lg flex flex-col justify-center items-center py-6",
@@ -47,7 +47,7 @@ function Heading({ children }: { children: ReactNode }) {
 }
 
 function Title({ children, className }: { children: ReactNode; className?: string }) {
-  const classes = clsx(
+  const classes = cn(
     "text-2xl text-center md:text-4xl font-extrabold text-transparent font-spaceMono bg-clip-text bg-gradient-to-r from-light-blue-600 to-light-blue-300",
     className,
   );
