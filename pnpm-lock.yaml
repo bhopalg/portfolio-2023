@@ -4,122 +4,123 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-importers:
+dependencies:
+  '@radix-ui/react-dropdown-menu':
+    specifier: ^2.0.6
+    version: 2.0.6(@types/react-dom@18.2.18)(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)
+  '@radix-ui/react-slot':
+    specifier: ^1.0.2
+    version: 1.0.2(@types/react@18.2.45)(react@18.2.0)
+  '@radix-ui/react-tooltip':
+    specifier: ^1.0.7
+    version: 1.0.7(@types/react-dom@18.2.18)(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)
+  '@tailwindcss/forms':
+    specifier: ^0.5.6
+    version: 0.5.7(tailwindcss@3.4.0)
+  '@tailwindcss/typography':
+    specifier: ^0.5.10
+    version: 0.5.10(tailwindcss@3.4.0)
+  '@types/node':
+    specifier: ^20.8.6
+    version: 20.10.5
+  '@types/react':
+    specifier: 18.2.45
+    version: 18.2.45
+  '@types/react-dom':
+    specifier: 18.2.18
+    version: 18.2.18
+  '@vercel/analytics':
+    specifier: ^1.0.2
+    version: 1.1.1
+  '@vercel/speed-insights':
+    specifier: ^1.0.2
+    version: 1.0.2
+  class-variance-authority:
+    specifier: ^0.7.0
+    version: 0.7.0
+  classnames:
+    specifier: ^2.3.2
+    version: 2.3.2
+  clsx:
+    specifier: ^2.0.0
+    version: 2.0.0
+  lucide-react:
+    specifier: ^0.300.0
+    version: 0.300.0(react@18.2.0)
+  next:
+    specifier: 14.0.4
+    version: 14.0.4(@babel/core@7.23.3)(react-dom@18.2.0)(react@18.2.0)
+  next-pwa:
+    specifier: ^5.6.0
+    version: 5.6.0(@babel/core@7.23.3)(next@14.0.4)(webpack@5.89.0)
+  react:
+    specifier: 18.2.0
+    version: 18.2.0
+  react-dom:
+    specifier: 18.2.0
+    version: 18.2.0(react@18.2.0)
+  react-intersection-observer:
+    specifier: ^9.5.2
+    version: 9.5.3(react@18.2.0)
+  tailwind-merge:
+    specifier: ^2.2.0
+    version: 2.2.0
+  tailwindcss-animate:
+    specifier: ^1.0.7
+    version: 1.0.7(tailwindcss@3.4.0)
+  typeit-react:
+    specifier: ^2.6.4
+    version: 2.7.0
+  typescript:
+    specifier: 5.3.3
+    version: 5.3.3
 
-  .:
-    dependencies:
-      '@radix-ui/react-dropdown-menu':
-        specifier: ^2.0.6
-        version: 2.0.6(@types/react-dom@18.2.18)(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)
-      '@radix-ui/react-slot':
-        specifier: ^1.0.2
-        version: 1.0.2(@types/react@18.2.45)(react@18.2.0)
-      '@radix-ui/react-tooltip':
-        specifier: ^1.0.7
-        version: 1.0.7(@types/react-dom@18.2.18)(@types/react@18.2.45)(react-dom@18.2.0)(react@18.2.0)
-      '@tailwindcss/forms':
-        specifier: ^0.5.6
-        version: 0.5.7(tailwindcss@3.4.0)
-      '@tailwindcss/typography':
-        specifier: ^0.5.10
-        version: 0.5.10(tailwindcss@3.4.0)
-      '@types/node':
-        specifier: ^20.8.6
-        version: 20.10.5
-      '@types/react':
-        specifier: 18.2.45
-        version: 18.2.45
-      '@types/react-dom':
-        specifier: 18.2.18
-        version: 18.2.18
-      '@vercel/analytics':
-        specifier: ^1.0.2
-        version: 1.1.1
-      class-variance-authority:
-        specifier: ^0.7.0
-        version: 0.7.0
-      classnames:
-        specifier: ^2.3.2
-        version: 2.3.2
-      clsx:
-        specifier: ^2.0.0
-        version: 2.0.0
-      lucide-react:
-        specifier: ^0.300.0
-        version: 0.300.0(react@18.2.0)
-      next:
-        specifier: 14.0.4
-        version: 14.0.4(@babel/core@7.23.3)(react-dom@18.2.0)(react@18.2.0)
-      next-pwa:
-        specifier: ^5.6.0
-        version: 5.6.0(@babel/core@7.23.3)(next@14.0.4)(webpack@5.89.0)
-      react:
-        specifier: 18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: 18.2.0
-        version: 18.2.0(react@18.2.0)
-      react-intersection-observer:
-        specifier: ^9.5.2
-        version: 9.5.3(react@18.2.0)
-      tailwind-merge:
-        specifier: ^2.2.0
-        version: 2.2.0
-      tailwindcss-animate:
-        specifier: ^1.0.7
-        version: 1.0.7(tailwindcss@3.4.0)
-      typeit-react:
-        specifier: ^2.6.4
-        version: 2.7.0
-      typescript:
-        specifier: 5.3.3
-        version: 5.3.3
-    devDependencies:
-      '@trivago/prettier-plugin-sort-imports':
-        specifier: ^4.2.0
-        version: 4.3.0(prettier@3.1.1)
-      '@typescript-eslint/eslint-plugin':
-        specifier: ^6.7.2
-        version: 6.15.0(@typescript-eslint/parser@6.15.0)(eslint@8.56.0)(typescript@5.3.3)
-      '@typescript-eslint/parser':
-        specifier: ^6.7.2
-        version: 6.15.0(eslint@8.56.0)(typescript@5.3.3)
-      autoprefixer:
-        specifier: ^10.4.16
-        version: 10.4.16(postcss@8.4.32)
-      eslint:
-        specifier: 8.56.0
-        version: 8.56.0
-      eslint-config-next:
-        specifier: 14.0.4
-        version: 14.0.4(eslint@8.56.0)(typescript@5.3.3)
-      eslint-config-prettier:
-        specifier: ^9.0.0
-        version: 9.1.0(eslint@8.56.0)
-      eslint-plugin-jsx-a11y:
-        specifier: ^6.7.1
-        version: 6.8.0(eslint@8.56.0)
-      eslint-plugin-react:
-        specifier: ^7.33.2
-        version: 7.33.2(eslint@8.56.0)
-      husky:
-        specifier: ^8.0.3
-        version: 8.0.3
-      lint-staged:
-        specifier: ^15.2.0
-        version: 15.2.0
-      postcss:
-        specifier: ^8.4.30
-        version: 8.4.32
-      prettier:
-        specifier: ^3.0.3
-        version: 3.1.1
-      prettier-plugin-tailwindcss:
-        specifier: ^0.5.4
-        version: 0.5.9(@trivago/prettier-plugin-sort-imports@4.3.0)(prettier@3.1.1)
-      tailwindcss:
-        specifier: ^3.3.3
-        version: 3.4.0
+devDependencies:
+  '@trivago/prettier-plugin-sort-imports':
+    specifier: ^4.2.0
+    version: 4.3.0(prettier@3.1.1)
+  '@typescript-eslint/eslint-plugin':
+    specifier: ^6.7.2
+    version: 6.15.0(@typescript-eslint/parser@6.15.0)(eslint@8.56.0)(typescript@5.3.3)
+  '@typescript-eslint/parser':
+    specifier: ^6.7.2
+    version: 6.15.0(eslint@8.56.0)(typescript@5.3.3)
+  autoprefixer:
+    specifier: ^10.4.16
+    version: 10.4.16(postcss@8.4.32)
+  eslint:
+    specifier: 8.56.0
+    version: 8.56.0
+  eslint-config-next:
+    specifier: 14.0.4
+    version: 14.0.4(eslint@8.56.0)(typescript@5.3.3)
+  eslint-config-prettier:
+    specifier: ^9.0.0
+    version: 9.1.0(eslint@8.56.0)
+  eslint-plugin-jsx-a11y:
+    specifier: ^6.7.1
+    version: 6.8.0(eslint@8.56.0)
+  eslint-plugin-react:
+    specifier: ^7.33.2
+    version: 7.33.2(eslint@8.56.0)
+  husky:
+    specifier: ^8.0.3
+    version: 8.0.3
+  lint-staged:
+    specifier: ^15.2.0
+    version: 15.2.0
+  postcss:
+    specifier: ^8.4.30
+    version: 8.4.32
+  prettier:
+    specifier: ^3.0.3
+    version: 3.1.1
+  prettier-plugin-tailwindcss:
+    specifier: ^0.5.4
+    version: 0.5.9(@trivago/prettier-plugin-sort-imports@4.3.0)(prettier@3.1.1)
+  tailwindcss:
+    specifier: ^3.3.3
+    version: 3.4.0
 
 packages:
 
@@ -2441,6 +2442,11 @@ packages:
     resolution: {integrity: sha512-+NqgNmSabg3IFfxYhrWCfB/H+RCUOCR5ExRudNG2+pcRehq628DJB5e1u1xqwpLtn4pAYii4D98w7kofORAGQA==}
     dependencies:
       server-only: 0.0.1
+    dev: false
+
+  /@vercel/speed-insights@1.0.2:
+    resolution: {integrity: sha512-y5HWeB6RmlyVYxJAMrjiDEz8qAIy2cit0fhBq+MD78WaUwQvuBnQlX4+5MuwVTWi46bV3klaRMq83u9zUy1KOg==}
+    requiresBuild: true
     dev: false
 
   /@webassemblyjs/ast@1.11.6:

@@ -3,6 +3,8 @@ import { Roboto_Mono } from "next/font/google";
 import { Metadata } from "next";
 import Header from "@/components/header/Header";
 import { Footer } from "@/components/Footer";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
 
 const robotoMono = Roboto_Mono({ subsets: ["latin"] });
 
@@ -69,6 +71,8 @@ export default function RootLayout({
         <Header />
         <main className="flex-1 flex flex-col min-h-[calc(100vh_-_125px)] pt-20">{children}</main>
         <Footer />
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
