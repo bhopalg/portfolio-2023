@@ -2,11 +2,11 @@
 
 import { NAVIGATION, SOCIALS } from "@/common/constants";
 import { InnerContainer, OuterContainer } from "@/components/Container";
-import { Tooltip } from "flowbite-react";
 import Link from "next/link";
 import { ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/Tooltip";
 
 function NavLink({ href, children, target }: { href: string; children: ReactNode; target?: string }) {
   return (
@@ -36,11 +36,18 @@ function SocialIcons() {
   return (
     <div className={"grid grid-cols-4 gap-5"}>
       {SOCIALS.map((item) => (
-        <Tooltip key={item.name} content={`Follow me on ${item.name}`}>
-          <a href={item.link} target={"_blank"} rel={"noreferrer"} className={"col-span-1"}>
-            <item.icon className="text-zinc-50 w-5 h-5" />
-          </a>
-        </Tooltip>
+        <TooltipProvider key={item.name}>
+          <Tooltip>
+            <TooltipTrigger className="col-span-1">
+              <Link href={item.link} target={"_blank"} rel={"noreferrer"}>
+                <item.icon className="text-zinc-50 w-5 h-5" />
+              </Link>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>{`Follow me on ${item.name}`}</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
       ))}
     </div>
   );
