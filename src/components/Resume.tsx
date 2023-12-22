@@ -1,10 +1,10 @@
 "use client";
 
 import { RESUME } from "@/common/constants";
-import { BriefcaseIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import clsx from "clsx";
 import Link from "next/link";
+import { Briefcase } from "lucide-react";
 
 export function Resume({ isInView }: { isInView: boolean }) {
   return (
@@ -16,7 +16,7 @@ export function Resume({ isInView }: { isInView: boolean }) {
       )}
     >
       <h2 className="flex text-sm font-semibold text-zinc-100">
-        <BriefcaseIcon className="h-6 w-6 flex-none" />
+        <Briefcase className="h-6 w-6 flex-none" />
         <span className="ml-3">Work</span>
       </h2>
       <ol className="mt-6 space-y-4">

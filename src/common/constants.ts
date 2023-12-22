@@ -1,7 +1,3 @@
-import { ArrowPathIcon, HomeIcon, LinkIcon, RectangleGroupIcon, TableCellsIcon, WindowIcon } from "@heroicons/react/20/solid";
-import TailwindCSSIcon from "@/components/icons/TailwindCSS";
-import ReactIcon from "@/components/icons/React";
-import Kubernetes from "@/components/icons/Kubernetes";
 import BJSSIcon from "@/components/icons/BJSS";
 import GitHub from "@/components/icons/GitHub";
 import Instagram from "@/components/icons/Instagram";
@@ -86,58 +82,5 @@ export const SOCIALS = [
     name: "Instagram",
     link: "https://instagram.com/gurps_bhopal?igshid=YmMyMTA2M2Y=",
     icon: Instagram,
-  },
-];
-
-export const MILLISECONDS_IN_ONE_MINUTE = 60000;
-
-export interface MyDocsNavigation {
-  name: string;
-  href: string;
-  icon?: any;
-  isHome?: boolean;
-  children?: MyDocsNavigation[];
-}
-
-export const MY_DOCS_NAVIGATION: MyDocsNavigation[] = [
-  { name: "Home", href: "/", icon: HomeIcon, isHome: true },
-  { name: "Table of contents", href: "/my-docs", icon: TableCellsIcon },
-  {
-    name: "Useful Links",
-    href: "/my-docs/useful-links",
-    icon: LinkIcon,
-  },
-  {
-    name: "Tailwind CSS",
-    href: "/my-docs/tailwindcss",
-    icon: TailwindCSSIcon,
-    children: [
-      {
-        name: "Templates",
-        href: "/templates",
-        icon: RectangleGroupIcon,
-        children: [
-          { name: "Side Navigation", href: "/side-nav", icon: WindowIcon },
-          { name: "Loading Spinner", href: "/loading-spinner", icon: ArrowPathIcon },
-        ],
-      },
-    ],
-  },
-  {
-    name: "React",
-    href: "/my-docs/react",
-    icon: ReactIcon,
-    children: [
-      {
-        name: "React Query",
-        href: "/react-query",
-        icon: ReactIcon,
-      },
-    ],
-  },
-  {
-    name: "Kubernetes",
-    href: "/my-docs/kubernetes",
-    icon: Kubernetes,
   },
 ];
