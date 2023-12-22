@@ -1,8 +1,8 @@
 import "@/styles/globals.css";
-import "@code-hike/mdx/dist/index.css";
 import { Roboto_Mono } from "next/font/google";
-import BaseLayout from "@/components/BaseLayout";
 import { Metadata } from "next";
+import Header from "@/components/header/Header";
+import { Footer } from "@/components/Footer";
 
 const robotoMono = Roboto_Mono({ subsets: ["latin"] });
 
@@ -66,7 +66,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body className={"h-full bg-black overflow-x-hidden font-sans" + robotoMono.className}>
-        <BaseLayout>{children}</BaseLayout>
+        <Header />
+        <main className="flex-1 flex flex-col min-h-[calc(100vh_-_125px)] pt-20">{children}</main>
+        <Footer />
       </body>
     </html>
   );

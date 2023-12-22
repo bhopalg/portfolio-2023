@@ -5,7 +5,7 @@ import Logo from "@/components/Logo";
 
 export function Hero() {
   return (
-    <div className="grow flex justify-center items-center mx-auto md:max-w-7xl w-full hero-text-typer flex-col gap-5">
+    <div className="grow flex justify-center items-center mx-auto md:max-w-7xl w-full hero-text-typer flex-col gap-5 px-5">
       <Logo className="h-20 w-20" />
       <HackerText />
     </div>

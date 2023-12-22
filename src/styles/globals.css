@@ -1,38 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "prism.css";
-@import "code-hike.css";
-
-.hackerText {
-    border-radius: clamp(0.4rem, 0.75vw, 1rem);
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-.animate-spin-speed-override {
-    animation-duration: 3s;
-}
-
-.filter-white {
-    filter: invert(95%) sepia(10%) saturate(70%) hue-rotate(182deg) brightness(98%) contrast(89%);
-}
-
-.prose :where(li):not(:where([class~="not-prose"] *)) {
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-.ch-codeblock .ch-code-button {
-    display: none;
-}
-
-.ch-codeblock:hover .ch-code-button {
-    display: block;
-}
-
-.prose :where(code):not(:where([class~="not-prose"] *)) {
-    color: #d4d4d8;
-}

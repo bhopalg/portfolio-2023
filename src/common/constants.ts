@@ -20,10 +20,6 @@ export const NAVIGATION = [
     name: "About",
     href: "/about-me",
   },
-  {
-    name: "My Docs",
-    href: "/my-docs",
-  },
 ];
 
 interface ResumeItem {
