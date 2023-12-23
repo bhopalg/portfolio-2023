@@ -5,8 +5,9 @@ import Header from "@/components/header/Header";
 import { Footer } from "@/components/Footer";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
+import { cn } from "@/lib";
 
-const robotoMono = Roboto_Mono({ subsets: ["latin"] });
+const robotoMono = Roboto_Mono({ subsets: ["latin"], variable: "--font-latin" });
 
 export const metadata: Metadata = {
   title: "Gurps's Portfolio",
@@ -67,9 +68,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full">
-      <body className={"h-full bg-black overflow-x-hidden font-sans" + robotoMono.className}>
+      <body className={cn("h-full bg-black overflow-x-hidden font-sans", robotoMono.variable)}>
         <Header />
-        <main className="flex-1 flex flex-col min-h-[calc(100vh_-_125px)] pt-20">{children}</main>
+        <main className="flex-1 flex flex-col min-h-[calc(100vh_-_80px)] pt-20">{children}</main>
         <Footer />
         <SpeedInsights />
         <Analytics />

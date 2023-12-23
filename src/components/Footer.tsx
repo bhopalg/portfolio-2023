@@ -64,7 +64,7 @@ export function Footer() {
       )}
     >
       <OuterContainer>
-        <div className="border-t pt-10 pb-16 border-zinc-700/40">
+        <div className="border-t py-8 border-zinc-700/40">
           <InnerContainer>
             <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
               <Navigation />
