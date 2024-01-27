@@ -43,12 +43,12 @@ export function Experience({ isInView }: { isInView: boolean }) {
 }
 
 function Heading({ children }: { children: ReactNode }) {
-  return <p className="font-spaceMono text-gray-200 font-thin pb-8">{children}</p>;
+  return <p className="font-roboto text-gray-200 font-thin pb-8">{children}</p>;
 }
 
 function Title({ children, className }: { children: ReactNode; className?: string }) {
   const classes = cn(
-    "text-2xl text-center md:text-4xl font-extrabold text-transparent font-spaceMono bg-clip-text bg-gradient-to-r from-light-blue-600 to-light-blue-300",
+    "text-2xl text-center md:text-4xl font-extrabold text-transparent font-roboto bg-clip-text bg-gradient-to-r from-light-blue-600 to-light-blue-300",
     className,
   );
 
@@ -56,5 +56,5 @@ function Title({ children, className }: { children: ReactNode; className?: strin
 }
 
 function Description({ children }: { children: ReactNode }) {
-  return <p className="font-spaceMono text-gray-200 font-thin pt-8">{children}</p>;
+  return <p className="font-roboto text-gray-200 font-thin pt-8">{children}</p>;
 }

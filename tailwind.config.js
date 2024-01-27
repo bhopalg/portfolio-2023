@@ -13,7 +13,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-inter)"],
+        roboto: ["var(--font-roboto-mono)", "monospace"],
       },
       colors: {
         "dark-blue": {
