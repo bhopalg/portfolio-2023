@@ -11,6 +11,7 @@ export function Hero() {
   );
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function HeroVideo() {
   return (
     <video
