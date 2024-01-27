@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import { cn } from "@/lib";
+import LayoutHeight from "@/components/LayoutHeight";
 
 const robotoMono = Roboto_Mono({ subsets: ["latin"], variable: "--font-roboto-mono" });
 
@@ -70,7 +71,9 @@ export default function RootLayout({
     <html lang="en" className="h-full">
       <body className={cn("h-full bg-black overflow-x-hidden font-roboto", robotoMono.variable)}>
         <Header />
-        <main className="flex-1 flex flex-col min-h-[calc(100vh_-_80px)] pt-20">{children}</main>
+        <LayoutHeight className="flex-1 flex flex-col min-h-[calc(100dvh_-_80px)]">
+          <main>{children}</main>
+        </LayoutHeight>
         <Footer />
         <SpeedInsights />
         <Analytics />
