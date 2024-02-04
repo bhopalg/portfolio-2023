@@ -10,7 +10,7 @@ import AboutMeItem from "@/components/about-me/ui/AboutMeItem";
 const interests = [
   {
     icon: UFC,
-    alt: "URC",
+    alt: "UFC",
     href: "https://www.ufc.com/",
     position: "top",
   },
