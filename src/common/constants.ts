@@ -4,6 +4,7 @@ import Instagram from "@/components/icons/Instagram";
 import Linkedin from "@/components/icons/Linkedin";
 import Twitter from "@/components/icons/Twitter";
 import RES from "@/components/icons/RES";
+import SDS from "@/components/icons/SDS";
 
 export const EXPERIENCE_START_YEAR = 2014;
 
@@ -58,7 +59,7 @@ export const RESUME: ResumeItem[] = [
   {
     company: "Smarter Data Solutions",
     title: "Software Engineer",
-    logo: "/sdm-logo.jpeg",
+    icon: SDS,
     start: "2016",
     end: "2022",
     href: "https://www.smarterds.com/",
