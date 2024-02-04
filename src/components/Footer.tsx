@@ -24,7 +24,7 @@ function Navigation() {
   return (
     <div className="flex gap-6 text-sm font-medium text-zinc-200">
       {NAVIGATION.map(({ name, href }) => (
-        <NavLink key={name} href={href} target={""}>
+        <NavLink key={name} href={href} target={"_blank"}>
           {name}
         </NavLink>
       ))}
@@ -38,8 +38,8 @@ function SocialIcons() {
       {SOCIALS.map((item) => (
         <TooltipProvider key={item.name}>
           <Tooltip>
-            <TooltipTrigger className="col-span-1">
-              <Link href={item.link} target={"_blank"} rel={"noreferrer"}>
+            <TooltipTrigger className="col-span-1" aria-label={`Tooltip trigger for ${item.name}`}>
+              <Link href={item.link} target={"_blank"} rel={"noreferrer"} aria-label={`Link to ${item.name}`}>
                 <item.icon className="text-zinc-50 w-5 h-5" />
               </Link>
             </TooltipTrigger>

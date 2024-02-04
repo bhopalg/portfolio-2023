@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <header className="px-5 py-5 w-full flex justify-end backdrop-blur bg-black/50 z-40 fixed">
       <DropdownMenu>
-        <Button asChild size="icon">
+        <Button asChild size="icon" aria-label="Open dropdown menu">
           <DropdownMenuTrigger>
             <MenuIcon />
           </DropdownMenuTrigger>
