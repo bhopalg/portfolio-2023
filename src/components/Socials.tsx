@@ -2,7 +2,7 @@
 
 import { SOCIALS } from "@/common/constants";
 import Link from "next/link";
-import AboutMeItem from "@/components/about-me/ui/AboutMeItem";
+import { AboutMeItem } from "@/components/about-me/ui";
 
 export default function Socials() {
   return (

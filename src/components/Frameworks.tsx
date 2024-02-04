@@ -1,12 +1,11 @@
 "use client";
 
-import { cn } from "@/lib";
 import Typescript from "@/components/icons/Typescript";
 import Link from "next/link";
 import Python from "@/components/icons/Python";
 import Devops from "@/components/icons/Devops";
 import SwiftUI from "@/components/icons/SwiftUI";
-import AboutMeItem from "@/components/about-me/ui/AboutMeItem";
+import { AboutMeItem } from "@/components/about-me/ui";
 
 const frameworks = [
   {
@@ -31,7 +30,7 @@ const frameworks = [
   },
 ];
 
-export function Frameworks() {
+export default function Frameworks() {
   return (
     <div className="row-span-1 grid grid-cols-1 gap-6 md:grid-cols-2">
       {frameworks.map((item) => (

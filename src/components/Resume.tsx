@@ -4,7 +4,7 @@ import { RESUME } from "@/common/constants";
 import Image from "next/image";
 import Link from "next/link";
 import { Briefcase } from "lucide-react";
-import AboutMeItem from "@/components/about-me/ui/AboutMeItem";
+import { AboutMeItem } from "@/components/about-me/ui";
 
 export default function Resume() {
   return (

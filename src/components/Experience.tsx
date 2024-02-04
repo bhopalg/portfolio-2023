@@ -3,10 +3,7 @@
 import { EXPERIENCE_START_YEAR } from "@/common/constants";
 import { useMemo } from "react";
 import Interests from "@/components/Interests";
-import AboutMeItem from "@/components/about-me/ui/AboutMeItem";
-import Title from "@/components/about-me/ui/Title";
-import Description from "@/components/about-me/ui/Description";
-import Heading from "@/components/about-me/ui/Heading";
+import { AboutMeItem, Description, Heading, Title } from "@/components/about-me/ui";
 
 export default function Experience() {
   const yearsOfExperience = useMemo(() => {
