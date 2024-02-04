@@ -21,6 +21,7 @@ export default function Resume() {
               href={item.href}
               rel={"noreferrer"}
               className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 border border-zinc-700/50 bg-zinc-800 ring-0"
+              aria-label={`Link to ${item.company}`}
             >
               {item.icon && <item.icon className="text-zinc-50 h-6 w-6" />}
               {item.logo && <Image src={item.logo} alt={item.company} width={28} height={28} className={"rounded-full"} />}
