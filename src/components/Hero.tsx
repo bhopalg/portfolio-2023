@@ -1,5 +1,3 @@
-"use client";
-
 export function Hero() {
   return (
     <div className="grow flex justify-center items-center mx-auto w-full hero-text-typer flex-col gap-5 px-5 relative">
