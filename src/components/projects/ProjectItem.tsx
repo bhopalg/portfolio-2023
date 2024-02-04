@@ -1,13 +1,34 @@
+"use client";
+
 import { Project } from "@/components/projects/project";
 import Image from "next/image";
 import Link from "next/link";
 import LinkIcon from "@/components/icons/Link";
+import { useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
+import { motion } from "framer-motion";
 
 interface ProjectItemProps extends Project {}
 
 export default function ProjectItem({ url, description, img, title }: ProjectItemProps) {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
   return (
-    <li className="relative flex flex-col items-start">
+    <motion.li
+      ref={ref}
+      animate={controls}
+      variants={variants}
+      initial="hidden"
+      className="relative flex flex-col items-start"
+    >
       <Link
         href={url}
         target="_blank"
@@ -39,6 +60,25 @@ export default function ProjectItem({ url, description, img, title }: ProjectIte
           <span className="ml-2">{url.replace("https://", "")}</span>
         </div>
       </Link>
-    </li>
+    </motion.li>
   );
 }
+
+const variants = {
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      staggerChildren: 0.4,
+    },
+  },
+  hidden: {
+    opacity: 0,
+    y: -15,
+    transition: {
+      type: "spring",
+      staggerChildren: 0.4,
+    },
+  },
+};
