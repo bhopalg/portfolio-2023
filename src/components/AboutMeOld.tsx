@@ -9,7 +9,7 @@ import { useInView } from "react-intersection-observer";
 import { ReactNode } from "react";
 import { cn } from "@/lib";
 
-export function AboutMe() {
+export function AboutMeOld() {
   const { ref, inView } = useInView({
     threshold: 0,
   });

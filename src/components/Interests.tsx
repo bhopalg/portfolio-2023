@@ -5,6 +5,7 @@ import F1 from "@/components/icons/F1";
 import Khanda from "@/components/icons/Khanda";
 import Link from "next/link";
 import { cn } from "@/lib";
+import AboutMeItem from "@/components/about-me/ui/AboutMeItem";
 
 const interests = [
   {
@@ -27,47 +28,41 @@ const interests = [
   },
 ];
 
-export default function Interests({ isInView }: { isInView: boolean }) {
+export default function Interests() {
   return (
     <div className="grid grid-cols-1 gap-5">
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         {interests
           .filter((i) => i.position === "top")
           .map((item) => (
-            <Link
-              target={"_blank"}
-              rel={"noreferrer"}
-              href={item.href}
-              className={cn(
-                !isInView && "translate-y-40 opacity-0 blur-lg",
-                isInView && "translate-y-0 opacity-100 blur-none",
-                "transition-all ease-in-out duration-700 col-span-1 bg-zinc-900 ring-1 ring-zinc-300/20 hover:bg-zinc-700 rounded-xl flex justify-center items-center py-8",
-              )}
-              key={item.alt}
-            >
-              <span className={"sr-only"}>{item.alt} Image</span>
-              <item.icon className="text-zinc-50 h-16 w-16" />
-            </Link>
+            <AboutMeItem key={item.alt} asChild>
+              <Link
+                target={"_blank"}
+                rel={"noreferrer"}
+                href={item.href}
+                className={cn("hover:bg-zinc-700 transition-colors duration-300 ease-in-out")}
+              >
+                <span className={"sr-only"}>{item.alt} Image</span>
+                <item.icon className="text-zinc-50 h-16 w-16" />
+              </Link>
+            </AboutMeItem>
           ))}
       </div>
       <div className="grid grid-cols-1">
         {interests
           .filter((i) => i.position === "bottom")
           .map((item) => (
-            <Link
-              target={"_blank"}
-              rel={"noreferrer"}
-              href={item.href}
-              className={cn(
-                !isInView && "translate-y-40 opacity-0 blur-lg",
-                isInView && "translate-y-0 opacity-100 blur-none",
-                "transition-all ease-in-out duration-700 col-span-1 bg-zinc-900 ring-1 ring-zinc-300/20 hover:bg-zinc-700 rounded-xl flex justify-center items-center py-8",
-              )}
-              key={item.alt}
-            >
-              <span className={"sr-only"}>{item.alt} Image</span>
-              <item.icon className="text-zinc-50 h-16 w-16" />
-            </Link>
+            <AboutMeItem key={item.alt} asChild>
+              <Link
+                target={"_blank"}
+                rel={"noreferrer"}
+                href={item.href}
+                className={cn("hover:bg-zinc-700 transition-colors duration-300 ease-in-out")}
+              >
+                <span className={"sr-only"}>{item.alt} Image</span>
+                <item.icon className="text-zinc-50 h-16 w-16" />
+              </Link>
+            </AboutMeItem>
           ))}
       </div>
     </div>
