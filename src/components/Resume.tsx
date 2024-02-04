@@ -2,19 +2,13 @@
 
 import { RESUME } from "@/common/constants";
 import Image from "next/image";
-import { cn } from "@/lib";
 import Link from "next/link";
 import { Briefcase } from "lucide-react";
+import AboutMeItem from "@/components/about-me/ui/AboutMeItem";
 
-export function Resume({ isInView }: { isInView: boolean }) {
+export default function Resume() {
   return (
-    <div
-      className={cn(
-        !isInView && "translate-y-40 opacity-0 blur-lg",
-        isInView && "translate-y-0 opacity-100 blur-none",
-        "transition-all ease-in-out duration-700 rounded-xl bg-zinc-900 ring-1 ring-zinc-300/20 p-6",
-      )}
-    >
+    <AboutMeItem className="items-baseline p-6">
       <h2 className="flex text-sm font-semibold text-zinc-100">
         <Briefcase className="h-6 w-6 flex-none" />
         <span className="ml-3">Work</span>
@@ -63,6 +57,6 @@ export function Resume({ isInView }: { isInView: boolean }) {
           </li>
         ))}
       </ol>
-    </div>
+    </AboutMeItem>
   );
 }

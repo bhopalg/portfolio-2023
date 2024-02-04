@@ -6,6 +6,7 @@ import Link from "next/link";
 import Python from "@/components/icons/Python";
 import Devops from "@/components/icons/Devops";
 import SwiftUI from "@/components/icons/SwiftUI";
+import AboutMeItem from "@/components/about-me/ui/AboutMeItem";
 
 const frameworks = [
   {
@@ -30,24 +31,16 @@ const frameworks = [
   },
 ];
 
-export function Frameworks({ isInView }: { isInView: boolean }) {
+export function Frameworks() {
   return (
     <div className="row-span-1 grid grid-cols-1 gap-6 md:grid-cols-2">
       {frameworks.map((item) => (
-        <Link
-          target={"_blank"}
-          rel={"noreferrer"}
-          href={item.href}
-          key={item.alt}
-          className={cn(
-            !isInView && "-translate-y-40 opacity-0 blur-lg",
-            isInView && "translate-y-0 opacity-100 blur-none",
-            "transition-all ease-in-out duration-700 col-span-1 bg-zinc-900 ring-1 ring-zinc-300/20 hover:bg-zinc-700 rounded-xl flex justify-center items-center py-8",
-          )}
-        >
-          <span className="sr-only">{item.alt} Image</span>
-          <item.icon className="text-zinc-50 w-16 h-16" />
-        </Link>
+        <AboutMeItem asChild key={item.alt} className="hover:bg-zinc-700 transition-colors duration-300 ease-in-out">
+          <Link target={"_blank"} rel={"noreferrer"} href={item.href}>
+            <span className="sr-only">{item.alt} Image</span>
+            <item.icon className="text-zinc-50 w-16 h-16" />
+          </Link>
+        </AboutMeItem>
       ))}
     </div>
   );
