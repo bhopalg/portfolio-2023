@@ -77,7 +77,7 @@ export function AboutMe() {
 
 function Title({ children, className }: { children: ReactNode; className?: string }) {
   const classes = cn(
-    "text-3xl md:text-5xl font-extrabold text-transparent font-roboto bg-clip-text bg-gradient-to-r from-light-blue-600 to-light-blue-300",
+    "text-3xl md:text-5xl font-extrabold text-transparent font-roboto bg-clip-text bg-gradient-to-r from-zinc-50 to-zinc-400",
     className,
   );
 

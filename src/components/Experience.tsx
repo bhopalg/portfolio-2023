@@ -48,7 +48,7 @@ function Heading({ children }: { children: ReactNode }) {
 
 function Title({ children, className }: { children: ReactNode; className?: string }) {
   const classes = cn(
-    "text-2xl text-center md:text-4xl font-extrabold text-transparent font-roboto bg-clip-text bg-gradient-to-r from-light-blue-600 to-light-blue-300",
+    "text-2xl text-center md:text-4xl font-extrabold text-transparent font-roboto bg-clip-text bg-gradient-to-r from-zinc-50 to-zinc-400",
     className,
   );
 
