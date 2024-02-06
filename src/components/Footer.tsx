@@ -24,7 +24,7 @@ function Navigation() {
   return (
     <div className="flex gap-6 text-sm font-medium text-zinc-200">
       {NAVIGATION.map(({ name, href }) => (
-        <NavLink key={name} href={href} target={"_blank"}>
+        <NavLink key={name} href={href}>
           {name}
         </NavLink>
       ))}
