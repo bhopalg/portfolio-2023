@@ -8,9 +8,9 @@ import { usePathname } from "next/navigation";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/Tooltip";
 import { cn } from "@/lib";
 
-function NavLink({ href, children, target }: { href: string; children: ReactNode; target?: string }) {
+function NavLink({ href, children }: { href: string; children: ReactNode; }) {
   return (
-    <Link href={href} target={target} className="transition hover:text-light-blue-300">
+    <Link href={href} className="transition hover:text-light-blue-300">
       {children}
     </Link>
   );
