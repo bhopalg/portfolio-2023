@@ -16,14 +16,14 @@ const Experience = forwardRef<HTMLDivElement, ExperienceProps>((props, ref) => {
 
   return (
     <>
-      <motion.div ref={ref} variants={variants}>
+      <motion.div ref={ref} variants={variants} className="h-full">
         <AboutMeItem>
           <span className="sr-only">{yearsOfExperience} years of experience</span>
           <Title>{yearsOfExperience} Years</Title>
           <Description>Experience</Description>
         </AboutMeItem>
       </motion.div>
-      <motion.div ref={ref} variants={variants}>
+      <motion.div ref={ref} variants={variants} className="h-full">
         <AboutMeItem ref={ref}>
           <span className="sr-only">Expertise in building data analysis tools and apps for a large user base.</span>
           <Heading>Expertise in Building</Heading>
@@ -31,7 +31,7 @@ const Experience = forwardRef<HTMLDivElement, ExperienceProps>((props, ref) => {
           <Description>for a large user base.</Description>
         </AboutMeItem>
       </motion.div>
-      <motion.div ref={ref} variants={variants}>
+      <motion.div ref={ref} variants={variants} className="h-full">
         <Interests />
       </motion.div>
     </>

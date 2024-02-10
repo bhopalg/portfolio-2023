@@ -20,7 +20,7 @@ export default function AboutMe() {
   return (
     <motion.section
       id="about-me"
-      className="relative grow flex items-center overflow-x-hidden p-10"
+      className="relative grow flex items-center overflow-x-hidden p-10 mt-[85px]"
       ref={ref}
       animate={controls}
       variants={aboutMeVariants}
@@ -43,19 +43,19 @@ export default function AboutMe() {
           </motion.div>
         </AboutMeColumn>
         <AboutMeColumn className="justify-between">
-          <motion.div variants={variantXPositive}>
+          <motion.div variants={variantXPositive} className="h-full">
             <AboutMeItem className="py-8">
               <span className="sr-only">Website</span>
               <Title>Websites</Title>
             </AboutMeItem>
           </motion.div>
-          <motion.div variants={variantXPositive}>
+          <motion.div variants={variantXPositive} className="h-full">
             <AboutMeItem className="py-8">
               <span className="sr-only">Apps</span>
               <Title>Apps</Title>
             </AboutMeItem>
           </motion.div>
-          <motion.div variants={variantXPositive}>
+          <motion.div variants={variantXPositive} className="h-full">
             <Socials />
           </motion.div>
         </AboutMeColumn>
