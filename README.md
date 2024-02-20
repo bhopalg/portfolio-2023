@@ -46,13 +46,6 @@ pnpm build
 
 This will generate a `.next` directory with the optimised HTML, CSS, and JavaScript files.
 
-### Environment Variables
-
-```dotenv
-NEXT_PUBLIC_SUPABASE_URL=
-SUPABASE_SERVICE_ROLE_KEY=
-```
-
 ## License
 
 This project is licensed under the [MIT License](LICENSE). Feel free to use it as a template for your own portfolio website.
