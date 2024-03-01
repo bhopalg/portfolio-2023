@@ -4,7 +4,6 @@ import { NAVIGATION, SOCIALS } from "@/common/constants";
 import { InnerContainer, OuterContainer } from "@/components/Container";
 import Link from "next/link";
 import { ReactNode } from "react";
-import { usePathname } from "next/navigation";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/Tooltip";
 import { cn } from "@/lib";
 
@@ -54,19 +53,16 @@ function SocialIcons() {
 }
 
 export function Footer() {
-  const pathname = usePathname();
   return (
     <footer
       className={cn(
         "bg-zinc-900 ring-1 ring-zinc-300/20",
-        pathname === "/uses" && "mt-10",
-        pathname.includes("/my-docs") && "lg:pl-72",
       )}
     >
       <OuterContainer>
         <div className="border-t py-8 border-zinc-700/40">
           <InnerContainer>
-            <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
+            <div className="flex flex-col items-center justify-between gap-6 lg:flex-row">
               <Navigation />
               <SocialIcons />
               <CopyrightText />

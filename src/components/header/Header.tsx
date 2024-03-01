@@ -6,7 +6,7 @@ import HeaderItem from "@/components/header/HeaderItem";
 
 export default function Header() {
   return (
-    <header className="px-5 py-5 w-full flex justify-end backdrop-blur bg-black/50 z-40 fixed">
+    <header className="px-5 py-5 w-full flex justify-end backdrop-blur bg-black/50 z-40 fixed top-0">
       <DropdownMenu>
         <Button asChild size="icon" aria-label="Open dropdown menu">
           <DropdownMenuTrigger>

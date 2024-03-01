@@ -5,6 +5,10 @@ import Linkedin from "@/components/icons/Linkedin";
 import Twitter from "@/components/icons/Twitter";
 import RES from "@/components/icons/RES";
 import SDS from "@/components/icons/SDS";
+import AzureIcon from "@/components/icons/Azure";
+import AWSIcon from "@/components/icons/AWS";
+import VercelIcon from "@/components/icons/Vercel";
+import SupabaseIcon from "@/components/icons/Supabase";
 
 export const EXPERIENCE_START_YEAR = 2014;
 
@@ -20,6 +24,10 @@ export const NAVIGATION = [
   {
     name: "Projects",
     href: "/projects",
+  },
+  {
+    name: "Things I know",
+    href: "/things-i-know",
   },
 ];
 
@@ -89,3 +97,176 @@ export const SOCIALS = [
     icon: Instagram,
   },
 ];
+
+export const CERTIFICATIONS = [
+  {
+    name: "AWS Cloud Practitioner",
+    image: "/aws-certified-cloud-practitioner-badge.png",
+    href: "https://aws.amazon.com/certification/certified-cloud-practitioner/",
+  },
+];
+
+export const CLOUD_SERVICES = [
+  {
+    name: "AWS",
+    icon: AWSIcon,
+    href: "https://aws.amazon.com/",
+  },
+  {
+    name: "Azure",
+    icon: AzureIcon,
+    href: "https://azure.microsoft.com/",
+  },
+  {
+    name: "Vercel",
+    icon: VercelIcon,
+    href: "https://vercel.com/",
+  },
+  {
+    name: "Supabase",
+    icon: SupabaseIcon,
+    href: "https://supabase.io/",
+  },
+];
+
+export const LANGUAGES = [
+  {
+    name: "Python",
+    href: "https://www.python.org/",
+  },
+  {
+    name: "TypeScript",
+    href: "https://www.typescriptlang.org/",
+  },
+  {
+    name: "JavaScript",
+    href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+  },
+  {
+    name: "git",
+    href: "https://git-scm.com/",
+  },
+  {
+    name: "Go Lang",
+    href: "https://golang.org/",
+  },
+  {
+    name: "Swift",
+    href: "https://developer.apple.com/swift/",
+  },
+  {
+    name: "Java",
+    href: "https://www.java.com/",
+  },
+  {
+    name: "SQL",
+    href: "https://en.wikipedia.org/wiki/SQL",
+  },
+  {
+    name: "HTML",
+    href: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+  },
+  {
+    name: "CSS",
+    href: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+  },
+].sort((a, b) => a.name.localeCompare(b.name));
+
+export const FRAMEWORKS = [
+  {
+    name: "GitHub Actions",
+    href: "https://docs.github.com/en/actions",
+  },
+  {
+    name: "Next.js",
+    href: "https://nextjs.org/",
+  },
+  {
+    name: "Node.js",
+    href: "https://nodejs.org/",
+  },
+  {
+    name: "Angular",
+    href: "https://angular.io/",
+  },
+  {
+    name: "Docker",
+    href: "https://www.docker.com/",
+  },
+  {
+    name: "Kubernetes",
+    href: "https://kubernetes.io/",
+  },
+  {
+    name: "GraphQL",
+    href: "https://graphql.org/",
+  },
+  {
+    name: "MongoDB",
+    href: "https://www.mongodb.com/",
+  },
+  {
+    name: "PostgreSQL",
+    href: "https://www.postgresql.org/",
+  },
+  {
+    name: "MySQL",
+    href: "https://www.mysql.com/",
+  },
+  {
+    name: "React",
+    href: "https://reactjs.org/",
+  },
+  {
+    name: "Tailwind CSS",
+    href: "https://tailwindcss.com/",
+  },
+  {
+    name: "Terrafom",
+    href: "https://www.terraform.io/",
+  },
+  {
+    name: "NestJS",
+    href: "https://nestjs.com/",
+  },
+  {
+    name: "TypeORM",
+    href: "https://typeorm.io/",
+  },
+  {
+    name: "AWS CDK",
+    href: "https://aws.amazon.com/cdk/",
+  },
+  {
+    name: "JSON",
+    href: "https://www.json.org/json-en.html",
+  },
+  {
+    name: "MSSQL",
+    href: "https://www.microsoft.com/en-us/sql-server/sql-server-2019",
+  },
+  {
+    name: "OpenAI",
+    href: "https://openai.com/",
+  },
+  {
+    name: "Playwright",
+    href: "https://playwright.dev/",
+  },
+  {
+    name: "Redis",
+    href: "https://redis.io/",
+  },
+  {
+    name: "Storybook",
+    href: "https://storybook.js.org/",
+  },
+  {
+    name: "Vite",
+    href: "https://vitejs.dev/",
+  },
+  {
+    name: "Flask",
+    href: "https://flask.palletsprojects.com/",
+  },
+].sort((a, b) => a.name.localeCompare(b.name));

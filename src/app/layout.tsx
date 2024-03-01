@@ -69,9 +69,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full">
-      <body className={cn("h-full bg-black overflow-x-hidden font-roboto", robotoMono.variable)}>
+      <body className={cn("bg-black overflow-x-hidden font-roboto", robotoMono.variable)}>
         <Header />
-        <LayoutHeight className="flex-1 flex flex-col min-h-[calc(100dvh_-_85px)]">
+        <LayoutHeight className="flex-1 flex flex-col min-h-[calc(100dvh_-_80px_-_173px)] lg:min-h-[calc(100dvh_-_80px_-_85px)] mt-[80px]">
           <main>{children}</main>
         </LayoutHeight>
         <Footer />

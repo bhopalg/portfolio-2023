@@ -20,7 +20,7 @@ export default function AboutMe() {
   return (
     <motion.section
       id="about-me"
-      className="relative grow flex items-center overflow-x-hidden p-10 mt-[85px]"
+      className="relative grow flex items-center overflow-x-hidden p-10"
       ref={ref}
       animate={controls}
       variants={aboutMeVariants}
