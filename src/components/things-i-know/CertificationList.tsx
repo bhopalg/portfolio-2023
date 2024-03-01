@@ -5,7 +5,7 @@ import ThingsIKnowItem from "@/components/things-i-know/ThingsIKnowItem";
 
 export default function CertificationList() {
   return (
-    <ThingsIKnowItem title="Certifactions" containerClassName="h-full">
+    <ThingsIKnowItem title="Certifactions">
       <ul className="grid grid-cols-1 h-full">
         {CERTIFICATIONS.map((props) => (
           <CertificationItem key={props.name} {...props} />
