@@ -2,7 +2,8 @@
 
 import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
+import HeroVideo from "@/components/HeroVideo";
 
 export function Hero() {
   const controls = useAnimation();
@@ -22,6 +23,9 @@ export function Hero() {
       initial="hidden"
       className="grow flex justify-center items-center mx-auto w-full hero-text-typer flex-col gap-5 px-5 relative"
     >
+      <Suspense fallback={<div>Loading...</div>}>
+        <HeroVideo />
+      </Suspense>
       <div className="absolute top-0 left-0 w-full h-full z-30 flex flex-col justify-center items-center mix-blend-difference">
         <motion.h1 variants={heroContentVariants} className="text-white text-5xl md:text-7xl font-bold text-center">
           Hi, I&apos;m Gurps
