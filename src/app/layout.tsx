@@ -60,18 +60,12 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://gbhopal.com"),
 };
 
-export default function RootLayout({
-  // Layouts must accept a children prop.
-  // This will be populated with nested layouts or pages
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="h-full">
       <body className={cn("bg-black overflow-x-hidden font-roboto", robotoMono.variable)}>
         <Header />
-        <LayoutHeight className="flex-1 flex flex-col min-h-[calc(100dvh_-_80px_-_173px)] lg:min-h-[calc(100dvh_-_80px_-_85px)] mt-[80px]">
+        <LayoutHeight className="flex-1 flex flex-col">
           <main>{children}</main>
         </LayoutHeight>
         <Footer />
