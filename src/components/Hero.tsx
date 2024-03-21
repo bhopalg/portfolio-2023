@@ -21,7 +21,7 @@ export function Hero() {
       animate={controls}
       variants={heroContentVariants}
       initial="hidden"
-      className="grow flex justify-center items-center mx-auto w-full hero-text-typer flex-col gap-5 px-5 relative"
+      className="grow flex justify-center items-center mx-auto w-full hero-text-typer flex-col gap-5 px-5 relative overflow-hidden"
     >
       <Suspense fallback={<div>Loading...</div>}>
         <HeroVideo />
