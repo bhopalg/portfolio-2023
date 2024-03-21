@@ -31,7 +31,7 @@ const interests = [
 export default function Interests() {
   return (
     <div className="grid grid-cols-1 gap-5">
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+      <div className="grid gap-6 grid-cols-2">
         {interests
           .filter((i) => i.position === "top")
           .map((item) => (

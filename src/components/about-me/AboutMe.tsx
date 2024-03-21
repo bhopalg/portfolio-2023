@@ -1,3 +1,5 @@
+"use client";
+
 import Experience from "@/components/Experience";
 import Frameworks from "@/components/Frameworks";
 import Resume from "@/components/Resume";

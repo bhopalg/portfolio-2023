@@ -32,7 +32,7 @@ const frameworks = [
 
 export default function Frameworks() {
   return (
-    <div className="row-span-1 grid grid-cols-1 gap-6 md:grid-cols-2">
+    <div className="row-span-1 grid gap-6 grid-cols-2">
       {frameworks.map((item) => (
         <AboutMeItem asChild key={item.alt} className="hover:bg-zinc-700 transition-colors duration-300 ease-in-out">
           <Link target={"_blank"} rel={"noreferrer"} href={item.href}>

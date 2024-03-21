@@ -6,7 +6,7 @@ import { AboutMeItem } from "@/components/about-me/ui";
 
 export default function Socials() {
   return (
-    <div className="col-span-1 rounded-xl grid grid-cols-1 gap-6 sm:grid-cols-2">
+    <div className="col-span-1 rounded-xl grid gap-6 grid-cols-2">
       {SOCIALS.map((item) => (
         <AboutMeItem key={item.name} asChild className="py-8 hover:bg-zinc-700 transition-colors duration-300 ease-in-out">
           <Link rel="noreferrer" href={item.link} target="_blank">
