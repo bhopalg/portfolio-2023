@@ -1,6 +1,6 @@
 import ThingsIKnowItem from "@/components/things-i-know/ThingsIKnowItem";
 import Link from "next/link";
-import { CLOUD_SERVICES } from "@/common/constants";
+import { CLOUD_SERVICES, HOVER_EFFECTS_CLASSNAMES } from "@/common/constants";
 import { cn } from "@/lib";
 
 export default function CloudServices({ className }: { className?: string }) {
@@ -12,7 +12,10 @@ export default function CloudServices({ className }: { className?: string }) {
             <Link
               href={href}
               target="_blank"
-              className="py-5 bg-zinc-900 ring-1 ring-zinc-300/20 rounded-lg px-5 flex flex-col justify-center items-center hover:bg-zinc-700 transition-colors duration-300 ease-in-out"
+              className={cn(
+                "py-5 bg-zinc-900 ring-1 ring-zinc-300/20 rounded-lg px-5 flex flex-col justify-center items-center hover:bg-zinc-700",
+                HOVER_EFFECTS_CLASSNAMES,
+              )}
             >
               <props.icon className="w-12 h-12 text-zinc-50" />
               <p className="mt-2 text-sm font-semibold leading-6 text-zinc-300">{name}</p>

@@ -6,6 +6,7 @@ import Khanda from "@/components/icons/Khanda";
 import Link from "next/link";
 import { cn } from "@/lib";
 import AboutMeItem from "@/components/about-me/ui/AboutMeItem";
+import { HOVER_EFFECTS_CLASSNAMES } from "@/common/constants";
 
 const interests = [
   {
@@ -37,10 +38,10 @@ export default function Interests() {
           .map((item) => (
             <AboutMeItem key={item.alt} asChild>
               <Link
-                target={"_blank"}
-                rel={"noreferrer"}
+                target="_blank"
+                rel="noreferrer"
                 href={item.href}
-                className={cn("hover:bg-zinc-700 transition-colors duration-300 ease-in-out")}
+                className={cn("hover:bg-zinc-700", HOVER_EFFECTS_CLASSNAMES)}
               >
                 <span className={"sr-only"}>{item.alt} Image</span>
                 <item.icon className="text-zinc-50 h-16 w-16" />
@@ -54,10 +55,10 @@ export default function Interests() {
           .map((item) => (
             <AboutMeItem key={item.alt} asChild>
               <Link
-                target={"_blank"}
-                rel={"noreferrer"}
+                target="_blank"
+                rel="noreferrer"
                 href={item.href}
-                className={cn("hover:bg-zinc-700 transition-colors duration-300 ease-in-out")}
+                className={cn("hover:bg-zinc-700", HOVER_EFFECTS_CLASSNAMES)}
               >
                 <span className={"sr-only"}>{item.alt} Image</span>
                 <item.icon className="text-zinc-50 h-16 w-16" />

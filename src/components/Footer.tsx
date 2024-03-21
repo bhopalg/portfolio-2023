@@ -1,13 +1,13 @@
 "use client";
 
-import { NAVIGATION, SOCIALS } from "@/common/constants";
+import { HOVER_EFFECTS_CLASSNAMES, NAVIGATION, SOCIALS } from "@/common/constants";
 import { InnerContainer, OuterContainer } from "@/components/Container";
 import Link from "next/link";
 import { ReactNode } from "react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/Tooltip";
 import { cn } from "@/lib";
 
-function NavLink({ href, children }: { href: string; children: ReactNode; }) {
+function NavLink({ href, children }: { href: string; children: ReactNode }) {
   return (
     <Link href={href} className="transition hover:text-light-blue-300">
       {children}
@@ -38,8 +38,8 @@ function SocialIcons() {
         <TooltipProvider key={item.name}>
           <Tooltip>
             <TooltipTrigger className="col-span-1" aria-label={`Tooltip trigger for ${item.name}`}>
-              <Link href={item.link} target={"_blank"} rel={"noreferrer"} aria-label={`Link to ${item.name}`}>
-                <item.icon className="text-zinc-50 w-5 h-5" />
+              <Link href={item.link} target="_blank" rel="noreferrer" aria-label={`Link to ${item.name}`} className="group">
+                <item.icon className={cn("text-zinc-50 w-5 h-5 group-hover:text-light-blue-300", HOVER_EFFECTS_CLASSNAMES)} />
               </Link>
             </TooltipTrigger>
             <TooltipContent>
@@ -54,11 +54,7 @@ function SocialIcons() {
 
 export function Footer() {
   return (
-    <footer
-      className={cn(
-        "bg-zinc-900 ring-1 ring-zinc-300/20",
-      )}
-    >
+    <footer className={cn("bg-zinc-900 ring-1 ring-zinc-300/20")}>
       <OuterContainer>
         <div className="border-t py-8 border-zinc-700/40">
           <InnerContainer>

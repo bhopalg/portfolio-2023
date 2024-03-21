@@ -270,3 +270,5 @@ export const FRAMEWORKS = [
     href: "https://flask.palletsprojects.com/",
   },
 ].sort((a, b) => a.name.localeCompare(b.name));
+
+export const HOVER_EFFECTS_CLASSNAMES = ["duration-300", "ease-in-out", "transition-colors"];

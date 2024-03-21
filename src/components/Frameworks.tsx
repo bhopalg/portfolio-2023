@@ -6,6 +6,8 @@ import Python from "@/components/icons/Python";
 import Devops from "@/components/icons/Devops";
 import SwiftUI from "@/components/icons/SwiftUI";
 import { AboutMeItem } from "@/components/about-me/ui";
+import { cn } from "@/lib";
+import { HOVER_EFFECTS_CLASSNAMES } from "@/common/constants";
 
 const frameworks = [
   {
@@ -34,8 +36,8 @@ export default function Frameworks() {
   return (
     <div className="row-span-1 grid gap-6 grid-cols-2">
       {frameworks.map((item) => (
-        <AboutMeItem asChild key={item.alt} className="hover:bg-zinc-700 transition-colors duration-300 ease-in-out">
-          <Link target={"_blank"} rel={"noreferrer"} href={item.href}>
+        <AboutMeItem asChild key={item.alt} className={cn("hover:bg-zinc-700", HOVER_EFFECTS_CLASSNAMES)}>
+          <Link target="_blank" rel="noreferrer" href={item.href}>
             <span className="sr-only">{item.alt} Image</span>
             <item.icon className="text-zinc-50 w-16 h-16" />
           </Link>

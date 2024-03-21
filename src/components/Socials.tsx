@@ -1,14 +1,15 @@
 "use client";
 
-import { SOCIALS } from "@/common/constants";
+import { HOVER_EFFECTS_CLASSNAMES, SOCIALS } from "@/common/constants";
 import Link from "next/link";
 import { AboutMeItem } from "@/components/about-me/ui";
+import { cn } from "@/lib";
 
 export default function Socials() {
   return (
     <div className="col-span-1 rounded-xl grid gap-6 grid-cols-2">
       {SOCIALS.map((item) => (
-        <AboutMeItem key={item.name} asChild className="py-8 hover:bg-zinc-700 transition-colors duration-300 ease-in-out">
+        <AboutMeItem key={item.name} asChild className={cn("py-8 hover:bg-zinc-700", HOVER_EFFECTS_CLASSNAMES)}>
           <Link rel="noreferrer" href={item.link} target="_blank">
             <span className="sr-only">Follow me on {item.name}</span>
             <item.icon className="text-zinc-50 w-14 h-14" />

@@ -8,6 +8,8 @@ import { useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
+import { cn } from "@/lib";
+import { HOVER_EFFECTS_CLASSNAMES } from "@/common/constants";
 
 interface ProjectItemProps extends Project {}
 
@@ -32,7 +34,7 @@ export default function ProjectItem({ url, description, img, title }: ProjectIte
       <Link
         href={url}
         target="_blank"
-        className="rounded-lg p-6 bg-zinc-900 ring-1 ring-zinc-300/20 hover:bg-zinc-950 transition-colors duration-300"
+        className={cn("rounded-lg p-6 bg-zinc-900 ring-1 ring-zinc-300/20 hover:bg-zinc-950", HOVER_EFFECTS_CLASSNAMES)}
       >
         <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-zinc-900/5 border border-zinc-700/50 bg-white ring-0">
           <Image
