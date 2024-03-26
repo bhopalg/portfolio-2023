@@ -272,3 +272,5 @@ export const FRAMEWORKS = [
 ].sort((a, b) => a.name.localeCompare(b.name));
 
 export const HOVER_EFFECTS_CLASSNAMES = ["duration-300", "ease-in-out", "transition-colors"];
+
+export const CLOUD_FRONT_URL = "https://d36qya9vwg8890.cloudfront.net";
