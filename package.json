@@ -30,8 +30,8 @@
     "class-variance-authority": "^0.7.0",
     "classnames": "^2.5.1",
     "clsx": "^2.1.0",
-    "framer-motion": "^11.0.24",
-    "lucide-react": "^0.364.0",
+    "framer-motion": "^11.0.25",
+    "lucide-react": "^0.365.0",
     "next": "14.1.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -39,7 +39,7 @@
     "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7",
     "typeit-react": "^2.7.1",
-    "typescript": "5.4.3"
+    "typescript": "5.4.4"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.2.0",
