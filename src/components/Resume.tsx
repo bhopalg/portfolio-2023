@@ -33,7 +33,7 @@ export default function Resume() {
               <dd className="text-xs text-zinc-400">{item.title}</dd>
               <dt className="sr-only">Date</dt>
               <dd className="ml-auto text-xs text-zinc-500" aria-label={`${item.start} until ${item.end}`}>
-                <time dateTime={item.start}>{item.start}</time> <span aria-hidden="true">—</span>
+                <time dateTime={item.start}>{item.start}</time><span aria-hidden="true">—</span>
                 <time
                   dateTime={
                     String(
