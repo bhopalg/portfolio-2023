@@ -9,7 +9,7 @@ export default function LayoutHeight({ className, children }: PropsWithChildren<
   const pathname = usePathname();
 
   const nonHomepageCss = "min-h-[calc(100dvh_-_80px_-_173px)] lg:min-h-[calc(100dvh_-_80px_-_85px)] mt-[80px]";
-  const homepageCss = "min-h-[calc(100dvh_-_173px)] lg:min-h-[calc(100dvh_-_85px)]";
+  const homepageCss = "min-h-dvh";
 
   return <Slot className={cn(pathname !== "/" ? nonHomepageCss : homepageCss, className)}>{children}</Slot>;
 }

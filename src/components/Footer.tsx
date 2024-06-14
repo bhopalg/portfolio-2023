@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ReactNode } from "react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/Tooltip";
 import { cn } from "@/lib";
+import { usePathname } from "next/navigation";
 
 function NavLink({ href, children }: { href: string; children: ReactNode }) {
   return (
@@ -53,6 +54,10 @@ function SocialIcons() {
 }
 
 export function Footer() {
+  const pathname = usePathname();
+
+  if (pathname === "/") return null;
+
   return (
     <footer className={cn("bg-zinc-900 ring-1 ring-zinc-300/20")}>
       <OuterContainer>
