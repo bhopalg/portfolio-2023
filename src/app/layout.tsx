@@ -63,7 +63,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="h-full">
-      <body className={cn("bg-black overflow-hidden font-roboto", robotoMono.variable)}>
+      <body className={cn("bg-black overflow-x-hidden font-roboto", robotoMono.variable)}>
         <Header />
         <LayoutHeight className="flex-1 flex flex-col">
           <main>{children}</main>
