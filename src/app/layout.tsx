@@ -7,7 +7,6 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import { cn } from "@/lib";
 import LayoutHeight from "@/components/LayoutHeight";
-import MouseFollower from "@/components/MouseFollower";
 
 const robotoMono = Roboto_Mono({ subsets: ["latin"], variable: "--font-roboto-mono" });
 
@@ -70,7 +69,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main>{children}</main>
         </LayoutHeight>
         <Footer />
-        <MouseFollower />
         <SpeedInsights />
         <Analytics />
       </body>
