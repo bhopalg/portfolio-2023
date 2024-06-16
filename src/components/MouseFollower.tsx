@@ -28,7 +28,7 @@ export default function MouseFollower() {
     <div
       id="cube"
       style={{ transition: "left 0.1s, top 0.1s" }}
-      className="absolute w-10 h-10 bg-zinc-200 z-50 rounded-full mix-blend-difference"
+      className="hidden md:block absolute w-10 h-10 bg-zinc-200 z-50 rounded-full mix-blend-difference"
     ></div>
   );
 }
