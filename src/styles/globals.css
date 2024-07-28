@@ -12,6 +12,7 @@
     opacity: var(--active, 0);
     transition: opacity 0.2s;
     pointer-events: none;
+    border-radius: 0.5rem;
 }
 
 .card:before {
@@ -28,4 +29,5 @@
             linear-gradient(white, white) 50% 100% / 100% 4px no-repeat,
             linear-gradient(white, white) 0 50% / 4px 100% no-repeat,
             linear-gradient(white, white) 100% 50% / 4px 100% no-repeat;
+    border-radius: inherit;
 }
