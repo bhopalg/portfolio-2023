@@ -1,8 +1,10 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export default function MouseFollower() {
+  const pathname = usePathname();
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
       const x = event.pageX;
@@ -23,6 +25,10 @@ export default function MouseFollower() {
       document.body.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
+
+  if (pathname !== "/") {
+    return null;
+  }
 
   return (
     <div

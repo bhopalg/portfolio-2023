@@ -14,7 +14,7 @@ const AboutMeItem = forwardRef<HTMLDivElement, AboutMeItemProps>(({ asChild, cla
       ref={ref}
       {...props}
       className={cn(
-        "rounded-lg flex flex-col justify-center items-center py-6 bg-zinc-900 ring-1 ring-zinc-300/20 h-full",
+        "rounded-lg flex flex-col justify-center items-center py-6 bg-zinc-900 ring-1 ring-zinc-300/20 h-full card relative",
         className,
       )}
     >

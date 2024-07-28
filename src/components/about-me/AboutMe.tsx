@@ -19,6 +19,20 @@ export default function AboutMe() {
       controls.start("visible");
     }
   }, [controls, inView]);
+
+  useEffect(() => {
+    const updateCursor = ({ x, y }: { x: number; y: number }) => {
+      document.documentElement.style.setProperty("--x", String(x));
+      document.documentElement.style.setProperty("--y", String(y));
+    };
+
+    document.body.addEventListener("pointermove", updateCursor);
+
+    return () => {
+      document.body.removeEventListener("pointermove", updateCursor);
+    };
+  }, []);
+
   return (
     <motion.section
       id="about-me"
