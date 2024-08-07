@@ -31,7 +31,7 @@ export function Hero() {
           Hi, I&apos;m Gurps
         </motion.h1>
         <motion.h2 variants={heroContentVariants} className="text-white text-2xl md:text-4xl font-bold text-center">
-          I&apos;m a full-stack developer
+          A Full-Stack Developer
         </motion.h2>
       </div>
     </motion.div>
