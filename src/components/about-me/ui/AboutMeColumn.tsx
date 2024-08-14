@@ -6,7 +6,7 @@ export interface AboutMeColumnProps extends React.HTMLAttributes<HTMLDivElement>
 
 const AboutMeColumn = forwardRef<HTMLDivElement, AboutMeColumnProps>(({ className, children, ...props }, ref) => {
   return (
-    <div ref={ref} {...props} className={cn("col-span-1 h-full bg-inherit flex flex-col gap-5", className)}>
+    <div ref={ref} {...props} className={cn("col-span-1 h-full bg-inherit flex flex-col gap-6", className)}>
       {children}
     </div>
   );
