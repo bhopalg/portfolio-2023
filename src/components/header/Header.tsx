@@ -13,7 +13,7 @@ export default function Header() {
           asChild
           size="icon"
           aria-label="Open dropdown menu"
-          className={cn("hover:bg-light-blue-300 group", HOVER_EFFECTS_CLASSNAMES)}
+          className={cn("hover:bg-transparent hover:border-zinc-50 hover:border group", HOVER_EFFECTS_CLASSNAMES)}
         >
           <DropdownMenuTrigger>
             <MenuIcon className={cn("group-hover:text-zinc-50", HOVER_EFFECTS_CLASSNAMES)} />

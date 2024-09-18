@@ -10,7 +10,7 @@ import { usePathname } from "next/navigation";
 
 function NavLink({ href, children }: { href: string; children: ReactNode }) {
   return (
-    <Link href={href} className="transition hover:text-light-blue-300">
+    <Link href={href} className="transition hover:text-zinc-50/50">
       {children}
     </Link>
   );
@@ -40,7 +40,7 @@ function SocialIcons() {
           <Tooltip>
             <TooltipTrigger className="col-span-1" aria-label={`Tooltip trigger for ${item.name}`}>
               <Link href={item.link} target="_blank" rel="noreferrer" aria-label={`Link to ${item.name}`} className="group">
-                <item.icon className={cn("text-zinc-50 w-5 h-5 group-hover:text-light-blue-300", HOVER_EFFECTS_CLASSNAMES)} />
+                <item.icon className={cn("text-zinc-50 w-5 h-5 group-hover:text-zinc-50/50", HOVER_EFFECTS_CLASSNAMES)} />
               </Link>
             </TooltipTrigger>
             <TooltipContent>
