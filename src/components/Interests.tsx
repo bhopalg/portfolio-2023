@@ -41,7 +41,7 @@ export default function Interests() {
                 target="_blank"
                 rel="noreferrer"
                 href={item.href}
-                className={cn("hover:bg-zinc-700", HOVER_EFFECTS_CLASSNAMES)}
+                className={cn("hover:bg-transparent", HOVER_EFFECTS_CLASSNAMES)}
               >
                 <span className={"sr-only"}>{item.alt} Image</span>
                 <item.icon className="text-zinc-50 h-16 w-16" />
@@ -58,7 +58,7 @@ export default function Interests() {
                 target="_blank"
                 rel="noreferrer"
                 href={item.href}
-                className={cn("hover:bg-zinc-700", HOVER_EFFECTS_CLASSNAMES)}
+                className={cn("hover:bg-transparent", HOVER_EFFECTS_CLASSNAMES)}
               >
                 <span className={"sr-only"}>{item.alt} Image</span>
                 <item.icon className="text-zinc-50 h-16 w-16" />

@@ -36,7 +36,7 @@ export default function Frameworks() {
   return (
     <div className="row-span-1 grid gap-6 grid-cols-2">
       {frameworks.map((item) => (
-        <AboutMeItem asChild key={item.alt} className={cn("hover:bg-zinc-700", HOVER_EFFECTS_CLASSNAMES)}>
+        <AboutMeItem asChild key={item.alt} className={cn("hover:bg-transparent", HOVER_EFFECTS_CLASSNAMES)}>
           <Link target="_blank" rel="noreferrer" href={item.href}>
             <span className="sr-only">{item.alt} Image</span>
             <item.icon className="text-zinc-50 w-16 h-16" />
