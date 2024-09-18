@@ -29,7 +29,7 @@ export default function ProjectItem({ url, description, img, title }: ProjectIte
       animate={controls}
       variants={variants}
       initial="hidden"
-      className="relative flex flex-col items-start"
+      className="relative flex flex-col items-start card"
     >
       <Link
         href={url}

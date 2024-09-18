@@ -13,7 +13,7 @@ export default function CloudServices({ className }: { className?: string }) {
               href={href}
               target="_blank"
               className={cn(
-                "py-5 bg-zinc-900 ring-1 ring-zinc-300/20 rounded-lg px-5 flex flex-col justify-center items-center hover:bg-zinc-700",
+                "py-5 bg-zinc-900 ring-1 ring-zinc-300/20 rounded-lg px-5 flex flex-col justify-center items-center hover:bg-transparent card relative",
                 HOVER_EFFECTS_CLASSNAMES,
               )}
             >
