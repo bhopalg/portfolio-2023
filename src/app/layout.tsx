@@ -8,6 +8,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { cn } from "@/lib";
 import LayoutHeight from "@/components/LayoutHeight";
 import MouseFollower from "@/components/MouseFollower";
+import TailwindIndicator from "@/components/TailwindIndicator";
 
 const robotoMono = Roboto_Mono({ subsets: ["latin"], variable: "--font-roboto-mono" });
 
@@ -64,7 +65,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="h-full">
-      <body className={cn("bg-black overflow-x-hidden font-roboto", robotoMono.variable)}>
+      <body className={cn("bg-black overflow-x-hidden font-roboto relative", robotoMono.variable)}>
         <Header />
         <LayoutHeight className="flex-1 flex flex-col">
           <main>{children}</main>
@@ -73,6 +74,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <MouseFollower />
         <SpeedInsights />
         <Analytics />
+        <TailwindIndicator />
       </body>
     </html>
   );
